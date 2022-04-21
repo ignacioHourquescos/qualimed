@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"); 
+
+$TitleFont: 'Montserrat', sans-serif; 
+$MainFont: 'Open Sans', sans-serif;
+
+$mobile: "only screen and (max-width : 800px)";
+$mobileXl: "only screen and (min-width : 500px)";
+$mobileS: "only screen and (max-width : 340px)";
+$desktop: "only screen and (min-width : 801px)";
+$desktopXl: "only screen and (min-width : 1300px)";
+
+$lightRed: #f9313e;
+$darkRed: #AF1B26;
+$white: #ffffff;
+$darkBlue: #263C70;
+$grey:  rgba(202, 222, 234, 0.2);
+$black: #000000;
+$blue: #085B8F;
+$lightGrey: #5F5757;
+$blackBorder: #100E0E;
+.master_container{
+    height:100%;
+    width:100%;
+    padding:2rem;
+    box-sizing:border-box;
+}

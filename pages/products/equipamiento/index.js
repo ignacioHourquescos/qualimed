@@ -14,7 +14,7 @@ const index = () => {
       </div>
       <div className={styles.container}>
       
-        <input className={styles.input} placeholder='Buscar Producto'></input>
+        <input  className={styles.input} placeholder='Buscar Producto'></input>
         
         <Products/>
       </div>

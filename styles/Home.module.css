@@ -1,0 +1,30 @@
+.hero{
+    width: 100%;
+    height: 50vh;
+    background-color: red;
+}
+.products{
+width: 100%;
+    height: 50vh;
+    background-color: blue;
+}
+.sections{
+width: 100%;
+    height: 50vh;
+    background-color: yellow;
+}
+.branding{
+width: 100%;
+    height: 50vh;
+    background-color: orange;
+}
+.contact{
+width: 100%;
+    height: 50vh;
+    background-color: green;
+}
+.footer{
+width: 100%;
+    height: 50vh;
+    background-color: silver;
+}

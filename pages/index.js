@@ -29,10 +29,15 @@ export default function Home() {
       
     </Head>
     <Header/>
-    <About/>
-    <Products/>
+    <div className={styles.hero}><h1>Hero</h1></div>
+    <div className={styles.products}><h1>Productos</h1></div>
+    <div className={styles.sections}><h1>Secciones</h1></div>
+    <div className={styles.branding}><h1>Branding</h1></div>
+    <div className={styles.contact}><h1>Contacto</h1></div>
+    <div className={styles.footer} ><h1>Footer</h1></div>
+    {/* <About/>
     <Clients/>
-    <Contact/>
+    <Contact/> */}
     <Footer/>
 
 

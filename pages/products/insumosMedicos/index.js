@@ -12,7 +12,12 @@ const index = () => {
           <h3>Insumos Medicos</h3>
         </div>
       </div>
+      <div className={styles.container}>
+      
+      <input className={styles.input} placeholder='Buscar Producto'></input>
+      
       <Products/>
+    </div>
     </>
   )
 }

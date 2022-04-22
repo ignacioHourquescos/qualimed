@@ -3,4 +3,9 @@
 .cards{
     display: grid;
     grid-template-columns: repeat(3, 33.3%);
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
 }

@@ -5,7 +5,7 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
-    height: 180px;
+    height: 25vh;
     width: 100%;
     background-color: #3E4095;
     color: white;
@@ -13,58 +13,150 @@
     font-weight: 700;
 }
 .container{
-    height:100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contact{
+    height:75vh;
     width:100%;
     display: grid;
     justify-content: center;
     justify-items: center;
-    grid-template-columns: 5% 18% 18% 18% 35% 5%;
+    grid-template-columns: 3% 16% 16% 24% 35% 3%;
     grid-template-rows: 20% 80%;
-    grid-gap: 10px;
+    grid-gap: 17px;
     margin-top: 30px;
+    margin-bottom: 60px;
 }
 .wpp{
-    width: 240px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     grid-column: 2;
     grid-row: 1;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+
+    div{
+        margin-left: 3%;
+        h4{
+            font-family: $TitleFont;
+            font-weight: 700;
+        }
+        p{
+            font-family: $MainFont;
+            font-weight: 400;
+        }
+    }
+}
+.wppImg{
+    font-size: 3rem;
+    margin-bottom: 7%;
+    color:#3E4095;
+    
 }
 .tel{
-    width: 240px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     grid-column: 3;
     grid-row: 1;
     border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+
+
+    div{
+        margin-left: 3%;
+        h4{
+            margin-bottom: 0px;
+            font-family: $TitleFont;
+            font-weight: 700;
+        }
+        p{
+            font-family: $MainFont;
+            font-weight: 400;
+        }
+    }
+
 }
+
 .email{
-    width: 240px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     grid-column: 4;
     grid-row: 1;
     border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+
+    div{
+        margin-left: 3%;
+        h4{
+            margin-bottom: 0px;
+            font-family: $TitleFont;
+            font-weight: 700;
+        }
+        p{
+            font-family: $MainFont;
+            font-weight: 400;
+        }
+    }
 }
 .direction{
-    width: 800px;
-    height: 450px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
     grid-column: 2/5;
     grid-row: 2;
-    border-radius: 12px;
+    display: flex;
+    .pointImg{
+        font-size: 3rem;
+        color:#3E4095;
+        margin: 3% 0 0 3%;
+    }
+
+    div{
+        margin: 3% 0px 0px 10px;
+        width: 90%;
+        height: 96%;
+        h4{
+            margin-bottom: 0px;
+            font-family: $TitleFont;
+            font-weight: 700;
+        }
+        p{
+            font-family: $MainFont;
+            font-weight: 400;
+        }
+    }
 }
 .imgBig{
-    width: 510px;
-    height: 575px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     grid-column: 5;
     grid-row: 1/3;
     border-radius: 12px;
-    img{
-        width: 100%;
-        height: 100%;
-        border-radius: 12px;
-    }
+    background-image: url(../../public/fotoContact.png);
+    background-size: 100% 100%;     
+    background-repeat: no-repeat;
+    background-position: right; 
+
 }

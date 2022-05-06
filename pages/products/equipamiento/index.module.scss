@@ -7,7 +7,6 @@
     margin-right: 10%;
     display: flex;
     flex-direction: column;
-    
      
 }
 .hero{
@@ -41,7 +40,7 @@
     margin-right: 20%;
 }
 .input{
-    width: 30%;
+    width: 50%;
     height: 40px;
     background: #FFFFFF;
     border: 1px solid #979494;
@@ -51,4 +50,7 @@
 
     display: flex;
     justify-content: flex-start;
+        @media #{$desktopXl}{
+            width: 30%;
+        }
 }

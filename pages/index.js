@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import Products from '../components/Products/Products'
 import Header from '../components/Header/Header'
 import About from '../components/About/About'
 import Clients from '../components/Clients/Clients'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
+import Hero from '../components/Hero/Hero'
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
       
     </Head>
     <Header/>
-    <div className={styles.hero}><h1>Hero</h1></div>
+    <Hero/>
     <div className={styles.products}><h1>Productos</h1></div>
     <div className={styles.sections}><h1>Secciones</h1></div>
     <div className={styles.branding}><h1>Branding</h1></div>

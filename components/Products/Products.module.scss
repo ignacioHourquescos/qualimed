@@ -2,10 +2,16 @@
 
 .cards{
     display: grid;
-    grid-template-columns: repeat(3, 33.3%);
+    grid-template-columns: repeat(2, 50%);
     justify-items: center;
     justify-content: center;
     align-items: center;
     align-content: center;
-    
+
+    @media #{$mobileS}{
+        grid-template-columns: 100%;
+    }
+        @media #{$desktopXl}{
+            grid-template-columns: repeat(3, 33.3%);
+     }
 }

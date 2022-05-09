@@ -7,6 +7,9 @@ import Clients from '../components/Clients/Clients'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Hero from '../components/Hero/Hero'
+import ProductsLanding from '../components/Products/ProductsLanding'
+import ContactLanding from '../components/Contact/ContactLanding'
+import Branding from '../components/Branding/Branding'
 
 export default function Home() {
   return (
@@ -31,11 +34,10 @@ export default function Home() {
     </Head>
     <Header/>
     <Hero/>
-    <div className={styles.products}><h1>Productos</h1></div>
-    <div className={styles.sections}><h1>Secciones</h1></div>
-    <div className={styles.branding}><h1>Branding</h1></div>
-    <div className={styles.contact}><h1>Contacto</h1></div>
-    <div className={styles.footer} ><h1>Footer</h1></div>
+    <div className={styles.sections}><div className={styles.border} ></div></div>
+    <ProductsLanding/>
+    <Branding />
+    <ContactLanding />
     {/* <About/>
     <Clients/>
     <Contact/> */}

@@ -1,0 +1,85 @@
+@import "../../styles/constants.scss";
+
+.products{
+    height: 100vh;
+    width: 100%;
+    background-color:  #fff;
+    display: flex;
+    flex-direction: row;
+}
+.circle{
+    width: 37vw;
+    height: 65vh;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #94D2F6 0%, #061962 100%);
+    margin-left: 10%;
+    img{
+        width: 37vw;
+        height: 65vh;
+    }
+}
+.description{
+    width: 100vw;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    margin: 0 3% 10% 0%;
+    display: flex;
+    flex-direction: column;
+
+    h3{
+        align-self: flex-end;
+        width: 433px;
+        height: 44px;
+        margin: 0 0 0 15% ;
+        font-family: $TitleFont;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        color: #393838;
+    }
+    p{
+        align-self: flex-end;
+        width: 433px;
+        height: 44px;
+        margin: 0 0 0 20%;
+        font-family: $MainFont;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        /* or 125% */
+
+        text-align: right;
+        letter-spacing: 0.25px;
+
+        color: #595858;
+    }
+    button{
+        align-items: center;
+        align-self: flex-end;
+        width: 157px;
+        height: 40px;
+        background: #4B73AA;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        color: $white;
+        border: none;
+        margin-top: 20px;
+        
+    }
+}
+.paginationBtn{
+    bottom: -10px !important;
+    color: solid black;
+    height: 50px;
+    align-self: flex-end;
+}
+.wave{
+    
+        width: 100%;
+        height: 45vh;
+        background-color:  #000;
+        border-radius: 20% 900% 0% 0%;
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.35);
+    
+}

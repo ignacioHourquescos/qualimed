@@ -19,8 +19,19 @@
     color: #000;
     z-index: 100;
 
+    @media #{$mobile}{
+        background: #6F6BC0;
+        height: 100px;
+    
+        }
+
     img{
         margin-left: 5%;
+
+        @media #{$mobile}{
+            display: none;
+        
+            }
     }
 }
 
@@ -52,7 +63,11 @@
               padding: 1rem 1.5rem;
               color: #000 !important;
 
-          }
+          }    
+          @media #{$mobile}{
+            display: none;
+        
+            }
 
           a{
               color: #000;

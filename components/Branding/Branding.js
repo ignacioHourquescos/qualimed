@@ -13,7 +13,9 @@ const Branding = () => {
   return (
     <div className={styles.container}>
            <Swiper
-        slidesPerView={8}
+        slidesPerView={'auto'}
+        slidesPerGroup={1}
+
         spaceBetween={30}
         loop={true}
         loopFillGroupWithBlank={true}
@@ -32,6 +34,20 @@ const Branding = () => {
           }
 
       </Swiper>
+      <div className={styles.contentMobile}>
+        <h3>Nuestras Marcas</h3>
+        <div className={styles.gallery}>
+        {
+              images.map (img => 
+                <div className={styles.circleImg}>
+                  <img src={img} />
+                </div>
+
+              )
+          }
+        </div>
+
+      </div>
     </div>
     
   )

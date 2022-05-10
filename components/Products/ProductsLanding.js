@@ -1,14 +1,16 @@
-import React, { useRef, useState } from 'react'
-import styles from './ProductsLanding.module.scss'
+import React, { useRef, useState } from 'react';
+import styles from './ProductsLanding.module.scss';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, EffectFade } from "swiper";
+import {Pagination, Autoplay, EffectFade} from 'swiper';
+
 import 'swiper/css';
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import '../Products/ProductsLanding.module.scss';
 
-
 const ProductsLanding = () => {
+
+  const stylesNavigation = styles.navigation;
   const pagination = {
     clickable: true,
    
@@ -21,12 +23,25 @@ const ProductsLanding = () => {
       <Swiper 
       
       spaceBetween={30}
+      navigation={{
+        clickable: true,
+        el: {stylesNavigation},
+      }}
+      speed={2} 
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+        waitForTransition:true,
+      }}
       effect={"fade"}
-      navigation={true}
+      fadeEffect={{ crossFade: true }}
+      loop={true}
+      slidesPerView={1}
       pagination={{
         clickable: true,
       }}
-      modules={[EffectFade, Pagination]}
+      
+      modules={[EffectFade, Pagination, Autoplay]}
       className="mySwiper">
         <SwiperSlide className={styles.products}>
           <div className={styles.circle}>
@@ -42,8 +57,12 @@ const ProductsLanding = () => {
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
+        <div className={stylesNavigation}></div>
       </Swiper>
-      <path stroke='black' strokeWidth="1" fill='none' d='M 450 300 Q 300 400 100 250'></path>
+
+      <div className={styles.wave}>
+        <div ></div>
+      </div>
       
 
     {/* <img src='./wave2.png' style={{width:'100%', height:'200px', stroke: 'none', fill: '#000', borderTop:'3px solid #000'}}></img> */}

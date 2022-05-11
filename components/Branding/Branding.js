@@ -15,7 +15,6 @@ const Branding = () => {
            <Swiper
         slidesPerView={'auto'}
         slidesPerGroup={1}
-
         spaceBetween={30}
         loop={true}
         loopFillGroupWithBlank={true}

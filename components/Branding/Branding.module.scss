@@ -23,8 +23,8 @@
     }
 }
 .swiperSlide{
-    width: 150px;
-    height: 100%;
+    width: 150px !important;
+    height: 10%;
     background-color: white;
     border-radius: 100%;
     display: flex;
@@ -47,7 +47,12 @@
 
             color: #595858;
             margin: 10% 0 10% 0;
+            
         }
+        
+    }
+    @media #{$desktop}{
+        display: none;
     }
 }
 .gallery{
@@ -74,5 +79,10 @@
             height: 50%;
         }
     }
+    @media #{$desktop}{
+        display: none;
+    }
+    
+
     
 }

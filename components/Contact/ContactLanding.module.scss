@@ -137,4 +137,7 @@
             line-height: 1rem;
         }
         }
+        @media #{$desktop}{
+            display: none;
+        }
 }

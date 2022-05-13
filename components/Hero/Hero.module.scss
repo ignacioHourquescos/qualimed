@@ -71,7 +71,7 @@
     flex-direction: column;
     @media #{$mobile}{
         width: 100%;
-        height: 100vh;
+        height: 40vh;
         justify-content: top;
         align-items: center;
         margin: 0 0% 0 0%;
@@ -83,21 +83,15 @@
 
         @media #{$mobile}{
             position: absolute;
-            top: 20vh;
-            left: 14vw;
+            top: 15vh;
+            left: 16vw;
             z-index: 1200;
             filter: saturate(0%) brightness(10);
-            width: 80%;
-            height: 35%;
+            width: 70%;
+            height: 25%;
 
             }
-            @media #{$mobileXs}{
-                width: 65%;
-                height: 30%;
-                top: 20vh;
-                left: 20vw
             
-                }
     }
     p{
         width: 426px;
@@ -123,14 +117,13 @@
     input{
         width: 426px;
         height: 38.64px;
-        left: 172px;
-        top: 455.33px;
+   
 
         background: #F6F6F6;
         box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.3), 4px 4px 8px #CDCDCD;
         border-radius: 12px;
         margin-bottom: 30%;
-
+        border: none;
 
         @media #{$mobile}{
             background: #F6F6F6;

@@ -15,27 +15,18 @@ const ContactLanding = () => {
                 <input type='number'
                 placeholder=" Teléfono"
                 name="celphone"
-                autoComplete="on" style={{width: '45%', margin: '0 10% 0 0'}}></input>
+                autoComplete="on"></input>
                 <input type='text'
                 placeholder=" Correo"
                 name="email"
-                autoComplete="on" style={{width: '45%'}}></input>
+                autoComplete="on"></input>
             </div>
             <textarea type='text'
             placeholder=" Consulta"
             name="message"></textarea>
             <button>Enviar</button>
           </div>
-          <div className={styles.contentMobile}>
-          <h5>Suscribite a todas nuestras novedades</h5>
-            <input type='text'
-            placeholder=""
-            name="name"
-            autoComplete="on"></input>
-            <input type='email'
-            placeholder=""
-            name="email"
-            autoComplete="on"></input>
+          
             {/* <div style={{width: '100%'}}>
                 <input type='number'
                 placeholder=" Teléfono"
@@ -49,8 +40,7 @@ const ContactLanding = () => {
             {/* <textarea type='text'
             placeholder=" Consulta"
             name="message"></textarea> */}
-            <button>Suscribirme</button>
-          </div>
+            
       </div>
     </div>
   )

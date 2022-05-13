@@ -16,3 +16,32 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.slick-slider{
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.slick-center {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  transform: scale(1.5);
+  overflow-y: auto;
+  transition-duration: 1000ms;
+    transition-timing-function:ease-in-out;
+}
+
+/* .slick-center {
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  transform: scale(1.25);
+} */
+
+
+/* .slick-slide {
+  height: 0px!important;
+ }
+ .slick-slide.slick-active {
+    height: 100% !important;  
+ } */

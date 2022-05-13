@@ -28,6 +28,8 @@ const SideBar = (props) => {
     console.log(key);
         
    }
+   const text = 'aaaaaaaaaa';
+   
 
     
 
@@ -42,58 +44,35 @@ const SideBar = (props) => {
                 </div>
                 <div className={classes.close} onClick={props.click}>{closeIcon}</div>
                     
-                  <ul>
-                        <li onClick={props.click}><Link href="/">Inicio</Link></li>
+                  <ul className={classes.ul}>
+                        <li className={classes.liTop} onClick={props.click}><Link href="/">Inicio</Link></li>
                         <div className={classes.collapse}>
-                        <Collapse onChange={callback} className={classes.collapse} >
-                           {
-                                sideDrawerOpen ?
+                        <Collapse onChange={callback} className={classes.collapse} onClick={drawerToggleClickHandler} >
                                 <Panel header={<a onClick={drawerToggleClickHandler} style={{ color: '#595858'}}>Productos</a>} showArrow={false} key="1" className={classes.panel}  >
                                     <input type='text'
                                             placeholder='    Buscar Producto'
                                     ></input>
                                     <hr/>
-                                    <div className={classes.collapse2}>
-                                        <Collapse className={classes.collapse2} accordion={true} >
-                                        <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a>Equipamientos</a></>}>
-                                            <div><Link href="/products/insumosMedicos"><a>Equipos</a></Link></div>
-                                            <div><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></div>
-                                            <div><Link href="/products/insumosMedicos"><a>Servicio Tecnico</a></Link></div>
-                                        </Panel>
-                                            <Panel showArrow={false} key="2" header={<><img src='/maskIcon.png' /><a>Insumos médicos</a></>} className={classes.items}></Panel>
-                                            <Panel showArrow={false} key="3" header={<><img src='/bandageIcon.png' /><a>Medicina Deportiva</a></>} className={classes.items}></Panel>
-                                            <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><a>Marcas</a></>}className={classes.items}></Panel>
+                                        <Collapse defaultActiveKey="1"  accordion={true} className={classes.collapse2}>
+                                            <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a>Equipamientos</a></>}>
+                                                <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Equipos</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Servicio Tecnico</a></Link></li>
+                                            </Panel>
+                                                <li className={classes.items2}><img src='/maskIcon.png' /><a>Insumos médicos</a></li>
+                                                <li className={classes.items2}><img src='/bandageIcon.png' /><a>Medicina Deportiva</a></li>
+                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><a>Marcas</a></>}className={classes.items}></Panel>
                                         </Collapse>
-                                    </div>
                                     
-                                </Panel> :
-                                <Panel header={<a onClick={drawerToggleClickHandler} style={{ color: '#3E4095'}}>Productos</a>} showArrow={false} key="1" className={classes.panel}  >
-                                    <input type='text'
-                                            placeholder='    Buscar Producto'
-                                    ></input>
-                                    <hr/>
-                                    <div className={classes.collapse2}>
-                                        <Collapse className={classes.collapse2} accordion={true} >
-                                        <Panel key="2" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a>Equipamientos</a></>}>
-                                            <div><Link href="/products/insumosMedicos"><a>Equipos</a></Link></div>
-                                            <div><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></div>
-                                            <div><Link href="/products/insumosMedicos"><a>Servicio Tecnico</a></Link></div>
-                                        </Panel>
-                                            <Panel showArrow={false} key="3" header={<><img src='/maskIcon.png' /><a>Insumos médicos</a></>} className={classes.items}></Panel>
-                                            <Panel showArrow={false} key="4" header={<><img src='/bandageIcon.png' /><a>Medicina Deportiva</a></>} className={classes.items}></Panel>
-                                            <Panel showArrow={false} key="5" header={<><img src='/labelIcon.png' /><a>Marcas</a></>}className={classes.items}></Panel>
-                                        </Collapse>
-                                    </div>
-                                </Panel>
-                                    } 
+                                </Panel> 
                                     
                                 
                                 
                             </Collapse>
                             </div>
-                        <li><Link href="/"><a>Tienda Minorista</a></Link></li>
-                        <li><Link href="/about"><a>Quienes Somos</a></Link></li>
-                        <li><Link href="/contact"><a>Contacto</a></Link></li>
+                        <li className={classes.liTop}><Link href="/"><a >Tienda Minorista</a></Link></li>
+                        <li className={classes.liTop}><Link href="/about"><a >Quienes Somos</a></Link></li>
+                        <li className={classes.liTop}><Link href="/contact"><a >Contacto</a></Link></li>
                   </ul>
                  
 

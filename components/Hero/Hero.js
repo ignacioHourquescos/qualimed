@@ -25,7 +25,7 @@ const Hero = () => {
         <p>30 años dedicados a la venta de insumos y equipamiento médico</p>
         <input 
             type='text'
-            placeholder="Buscar producto"
+            placeholder="    Buscar producto"
             name="buscar"
             autoComplete="off"
             value={buscar}

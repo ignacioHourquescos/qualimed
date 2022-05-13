@@ -10,6 +10,10 @@
     justify-items: center;
     align-items: center;
     overflow: hidden;
+    @media #{$mobile}{
+    flex-direction: column-reverse;
+
+    }
     
 }
 .seccion2{
@@ -17,6 +21,11 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    @media #{$mobile}{
+        width: 100%;
+        height: 60vh;
+    }
+    
 
     div{
         width: 100%;
@@ -28,6 +37,17 @@
         z-index: 10;
         overflow: hidden;
         margin: -110px 0% 0px 20%;
+
+        @media #{$mobile}{
+            height: 100%;
+            border-radius: 0% 0% 50% 50% / 0% 0% 50% 50%;
+            margin: -10% 0 0 0;
+            mix-blend-mode: normal;
+            background-image:linear-gradient(0deg, rgba(111, 107, 192, 0.5), rgba(111, 107, 192, 0.5)) , url('../../public/medicoHero.png');
+            background-size: 85% 100%;     
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
         
 
         img{
@@ -35,6 +55,9 @@
             width: 100vh;
             height:100vh;
             margin: 110px 0px 0px 0px;
+            @media #{$mobile}{
+                display: none;
+            }
         }
     }
 
@@ -44,19 +67,58 @@
 .seccion1{
     width: 40%;
     margin: 0 0% 0 10%;
+    display: flex;
+    flex-direction: column;
+    @media #{$mobile}{
+        width: 100%;
+        height: 100vh;
+        justify-content: top;
+        align-items: center;
+        margin: 0 0% 0 0%;
+
+
+    }
     img{
-        filter: saturate(60%)
+        filter: saturate(60%);
+
+        @media #{$mobile}{
+            position: absolute;
+            top: 20vh;
+            left: 14vw;
+            z-index: 1200;
+            filter: saturate(0%) brightness(10);
+            width: 80%;
+            height: 35%;
+
+            }
+            @media #{$mobileXs}{
+                width: 65%;
+                height: 30%;
+                top: 20vh;
+                left: 20vw
+            
+                }
     }
     p{
         width: 426px;
         height: 48px;
         font-family: $TitleFont;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
         text-align: center;
-        
         color: #595858;
+
+        @media #{$mobile}{
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.2rem
+    
+        }
+        @media #{$mobileXs}{
+            width: 65%;
+            
+            }
     }
     input{
         width: 426px;
@@ -68,6 +130,24 @@
         box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.3), 4px 4px 8px #CDCDCD;
         border-radius: 12px;
         margin-bottom: 30%;
+
+
+        @media #{$mobile}{
+            background: #F6F6F6;
+            box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.3), 4px 4px 8px #CDCDCD;
+            border-radius: 200px;
+            border: none;
+    
+        }
+        @media #{$mobileXs}{
+            width: 85%;
+            height: 5%;
+            border-radius: 20px;
+            margin-top: 10px;
+
+        
+            }
+        
     }
 
 }

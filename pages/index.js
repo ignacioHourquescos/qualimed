@@ -7,6 +7,9 @@ import Clients from '../components/Clients/Clients'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Hero from '../components/Hero/Hero'
+import ProductsLanding from '../components/Products/ProductsLanding'
+import ContactLanding from '../components/Contact/ContactLanding'
+import Branding from '../components/Branding/Branding'
 
 export default function Home() {
   return (
@@ -27,15 +30,16 @@ export default function Home() {
       <meta property="og:site_name" 	content="Qualimed" />
       <link rel="icon" 		 href="/favicon.ico"/>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
+      <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       
     </Head>
     <Header/>
     <Hero/>
-    <div className={styles.products}><h1>Productos</h1></div>
-    <div className={styles.sections}><h1>Secciones</h1></div>
-    <div className={styles.branding}><h1>Branding</h1></div>
-    <div className={styles.contact}><h1>Contacto</h1></div>
-    <div className={styles.footer} ><h1>Footer</h1></div>
+    <div className={styles.sections}><div className={styles.border} ></div></div>
+    <ProductsLanding/>
+    <Branding />
+    <ContactLanding />
     {/* <About/>
     <Clients/>
     <Contact/> */}

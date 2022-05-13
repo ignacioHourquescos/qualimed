@@ -19,8 +19,19 @@
     color: #000;
     z-index: 100;
 
+    @media #{$mobile}{
+        background: #6F6BC0;
+        height: 100px;
+    
+        }
+
     img{
         margin-left: 5%;
+
+        @media #{$mobile}{
+            display: none;
+        
+            }
     }
 }
 
@@ -52,7 +63,11 @@
               padding: 1rem 1.5rem;
               color: #000 !important;
 
-          }
+          }    
+          @media #{$mobile}{
+            display: none;
+        
+            }
 
           a{
               color: #000;
@@ -74,7 +89,7 @@
     background-color: #F6F6F6 !important;
     border: none !important;
     color: #000 !important;
-    height: 100% !important;
+    height: 60px !important;
      
     button{
         padding: 12px 12px !important;
@@ -96,7 +111,6 @@
     font-weight: 800 !important;
     font-size: 16px !important;
     line-height: 2rem;
-    margin-top: 10px !important;
 
     img{
         margin-right: 10px;

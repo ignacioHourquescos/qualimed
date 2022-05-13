@@ -27,6 +27,10 @@
             margin-left: 35%;
         
             }
+            @media #{$mobileXs}{
+                margin-left: 20%;
+            
+                }
 
         
     }

@@ -8,6 +8,9 @@
     align-items: flex-end;
     overflow: hidden;
     background-color: $grey;
+    @media #{$mobile}{
+        height: 100vh;
+    }
 }
 .circle{
     width: 90%;
@@ -39,6 +42,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    @media #{$mobile}{
+        width: 100%;
+        }
     
 
     h5{
@@ -55,6 +61,12 @@
         font-size: 1.3rem;
         line-height: 1.3rem;
         color: $white;
+        @media #{$mobile}{
+            width: 80%;
+            margin: 0 0% 30px 0;
+            
+
+            }
     }
     input{
         width: 100%;
@@ -62,15 +74,23 @@
         border-radius: 5px;
         margin-bottom: 30px;
         border: none;
+        @media #{$mobile}{
+            width: 80%;
+            }
     }
     textArea{
         width: 100%;
         height: 30%;
         border-radius: 5px;
         margin-bottom: 20px;
+        @media #{$mobile}{
+            width: 80%;
+
+    
+            }
     }
     button{
-        width: 417px;
+        width: 80%;
         height: 36px;
         border: none;
         background: #3E4095;
@@ -81,12 +101,18 @@
         font-family: $MainFont;
         font-weight: 600;
         font-size: 1rem;
+        @media #{$mobile}{
+            width: 80%;
+            
+            
+
+            }
     }
     div{
         input{
             width: 45%;
             @media #{$mobile}{
-                width: 100%;
+                width: 80%;
                 margin-bottom: 30px;
 
                 }
@@ -94,8 +120,9 @@
         input[type=number]{
             margin: 0 10% 0 0;
             @media #{$mobile}{
+                width: 80%;
+                margin: 0 0% 30px 0;
                 
-                margin-bottom: 30px;
 
                 }
                 }

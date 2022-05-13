@@ -9,29 +9,28 @@ const Footer = () => {
         <img src='/logoChico.png'></img>
         
         <div className={styles.seccions}>
-          <h6>Inicio</h6>
+          <h5>Inicio</h5>
           <li>Quienes somos</li>
           <li>Productos</li>
           <li>Tienda minorista</li>
           <li>Contacto</li>
+          <img src="./instagram.png"></img>
         </div>
         <div style={{gridRow: 2}}>
-          <h6>Teléfono</h6>
+          <h5>Teléfono</h5>
           <li>4716-2699</li>
           <li>4716-2652</li>
-          <li>4716-1704</li>
         </div>
         <div style={{gridRow: 2}}>
-          <h6>E-mail</h6>
-          <li>info@qualimed.com.ar</li>
-          <li>asantiago@qualimed.com.ar</li>
-          <li>psantiago@qualimed.com.ar</li>
+          <h5>E-mail</h5>
+          <li>cotizaciones@qualimed.com.ar</li>
         </div>
         <div style={{gridRow: 2}}>
-          <h6>Dirección</h6>
-          <li>Infanta Isabel 2473, 1650 Villa Libertad<br/>
-Buenos Aires, Argentina</li>
+          <h5>Dirección</h5>
+          <li><h6>Sede Central:</h6>Partido Gral. San Martin, Buenos Aires, Argentina. </li>
+          <li><h6>Sucursales:</h6>Costa Atlántica, Buenos Aires, Argentina.<br/> Chascomús, Buenos Aires, Argentina. </li>
         </div>
+        <img src="./instagram.png" style={{width: '26px', height: '26px'}} className={styles.insta}></img>
       </div>
       
       </div>

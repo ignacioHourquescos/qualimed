@@ -10,6 +10,7 @@ import Hero from '../components/Hero/Hero'
 import ProductsLanding from '../components/Products/ProductsLanding'
 import ContactLanding from '../components/Contact/ContactLanding'
 import Branding from '../components/Branding/Branding'
+import Sections from '../components/Sections/Sections'
 
 export default function Home() {
   return (
@@ -31,12 +32,13 @@ export default function Home() {
       <link rel="icon" 		 href="/favicon.ico"/>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
       <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
       
     </Head>
     <Header/>
     <Hero/>
-    <div className={styles.sections}><div className={styles.border} ></div></div>
+    <Sections />
     <ProductsLanding/>
     <Branding />
     <ContactLanding />

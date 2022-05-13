@@ -1,0 +1,31 @@
+@import "../../styles/constants.scss";
+
+
+.toolbar {
+   position:fixed;
+   padding-top: 1rem;
+   display:flex;
+
+   background-color: transparent;
+   top:0;
+   right:0.7rem;  
+   z-index:1400;
+   color: #3E4090;    
+   @media #{$desktop}{
+      display: none;
+  
+      }  
+}  
+.burgerIcon {
+      width: 45px;
+      height:90x;
+      z-index:1000;
+      padding:0;
+      text-decoration:none;
+      background-color: transparent;
+      border: none;
+      color: #3E4090;
+      cursor: pointer;
+}
+
+   

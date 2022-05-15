@@ -66,7 +66,7 @@ const Sections = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "0px",
+    centerPadding: "0px 80px ",
     slidesToShow: 3,
     speed: 500,
     slidesToScroll: 24,
@@ -81,12 +81,12 @@ const Sections = () => {
   };
 
     return (
+      <>
      <div className={styles.container}>
       <div className={styles.carrousel_container}>
         <Slider {...settings}>
   
         <img src='./monitor.png'></img>
- 
         <img src='./medicinaDep1.png'></img>
         <img src='./barbijo1.png'></img>
         <img src='./monitor.png'></img>
@@ -96,6 +96,8 @@ const Sections = () => {
         </Slider>
         </div>
       </div>
+    <div className={styles.wave}><div></div></div> 
+    </>
     );
   }
 

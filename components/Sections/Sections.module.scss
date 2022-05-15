@@ -3,7 +3,7 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .container{
-        height:100vh;
+        height:80vh;
         width:100%;
         background-color:  #e5e5e5;
         // display: flex;
@@ -16,6 +16,7 @@
         padding:15%;
         // margin:15% 0;
         display: flex;
+        overflow: ai;
         @media #{$mobile}{
             height:115vh;
 
@@ -23,6 +24,12 @@
         .carrousel_container{
           width:70%;
           margin:0 15%;
+          height: 100%;
+          
+          img{
+              margin-top: 20%;
+          }
+
         }
 
 
@@ -244,7 +251,7 @@ display: none;
     z-index: 1500;
 }
 .wave{
-    height: 60%;
+    height: 60vh;
     width: 100%;
     background-color: white;
     display: flex;
@@ -263,7 +270,6 @@ display: none;
     }
 
     @media #{$mobile}{
-        height: 30%;
         
     }
 }

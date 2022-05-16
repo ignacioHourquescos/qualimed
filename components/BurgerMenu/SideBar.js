@@ -16,18 +16,18 @@ const SideBar = (props) => {
    // const {lang} = useAppContext();
    const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
-   const drawerToggleClickHandler = () =>{
-    setSideDrawerOpen((prevState)=>{
-        setSideDrawerOpen(!prevState.sideDrawerOpen); 
-    })
-}
-
-
+    const [state, setState] = useState(false);
 
    function callback(key) {
     console.log(key);
-        
+    setSideDrawerOpen(!sideDrawerOpen);
    }
+   function colorice(key1) {
+    console.log(key1);
+    setState(!state);
+
+   }
+
    const text = 'aaaaaaaaaa';
    
 
@@ -47,14 +47,14 @@ const SideBar = (props) => {
                   <ul className={classes.ul}>
                         <li className={classes.liTop} onClick={props.click}><Link href="/">Inicio</Link></li>
                         <div className={classes.collapse}>
-                        <Collapse onChange={callback} className={classes.collapse} onClick={drawerToggleClickHandler} >
-                                <Panel header={<a onClick={drawerToggleClickHandler} style={{ color: '#595858'}}>Productos</a>} showArrow={false} key="1" className={classes.panel}  >
+                        <Collapse onChange={callback} className={classes.collapse}  >
+                                <Panel header={<a  style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: sideDrawerOpen ? '700' : '400' }}  >Productos</a>} showArrow={false} key="1" className={classes.panel}  >
                                     <input type='text'
                                             placeholder='    Buscar Producto'
                                     ></input>
                                     <hr/>
-                                        <Collapse defaultActiveKey="1"  accordion={true} className={classes.collapse2}>
-                                            <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a>Equipamientos</a></>}>
+                                        <Collapse onChange={colorice} defaultActiveKey="1"  accordion={true} className={classes.collapse2}>
+                                            <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a style={{ color: state ? '#595858' : '#3E4095' }}>Equipamientos</a></>}>
                                                 <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Equipos</a></Link></li>
                                                 <li className={classes.liBott}><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></li>
                                                 <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Servicio Tecnico</a></Link></li>

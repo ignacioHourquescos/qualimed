@@ -52,7 +52,7 @@ const ProductsLanding = () => {
             display: 'flex',
             width: '20%',
             padding: "10px",
-            margin: '0 0 -12% 44%',
+            margin: '0 0 -16% 42%',
             zIndex: '1500',
                
           }}

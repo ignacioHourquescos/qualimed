@@ -88,10 +88,10 @@ const Sections = () => {
   
         <img src='./monitor.png'></img>
         <img src='./medicinaDep1.png'></img>
-        <img src='./barbijo1.png'></img>
+        <img src='./seccionLand.png'></img>
         <img src='./monitor.png'></img>
         <img src='./medicinaDep1.png'></img>
-        <img src='./barbijo1.png'></img>
+        <img src='./seccionLand.png'></img>
 
         </Slider>
         </div>

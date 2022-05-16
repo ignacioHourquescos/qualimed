@@ -20,7 +20,7 @@ const ProductsLanding = () => {
             display: 'flex',
             width: '20%',
             padding: "10px",
-            margin: '0 0 10% 85%'
+            margin: '0 0 12% 75%'
                
           }}
            

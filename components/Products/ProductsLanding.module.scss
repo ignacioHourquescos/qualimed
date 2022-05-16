@@ -1,85 +1,129 @@
 @import "../../styles/constants.scss";
 
 .slider{
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     background-color:  #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
     overflow: hidden;
-
-    @media #{$mobile}{
+    @media #{$desktopXl}{
         height: 120vh;
+
+    }
+    @media #{$mobile}{
+        height: 135vh;
+        flex-direction: column;
 
     }
 
 }
 .slide1{
+    margin-top: 10%;
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    
     @media #{$mobile}{
+        margin-top: 5%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        
 
     }
 }
 .circle{
-    width: 37vw;
-    height: 65vh;
+    width: 30vw;
+    height: 50vh;
     border-radius: 100%;
     background: linear-gradient(180deg, #94D2F6 0%, #061962 100%);
-    margin-left: 10%;
+    margin-left: 20vw;
+    margin-top: 3%;
+
     @media #{$mobile}{
-        width: 65vw;
+        width: 50vw;
+        height: 40vh;
         margin-left: 0%;
         margin-bottom: 5%;
+        margin-top: 15%;
+
+    }
+    @media #{$mobileS}{
+        margin-top: 40%;
+
+    }
+    @media #{$desktopXl}{
+        width: 30vw;
+        height: 60vh;
     }
     img{
-        width: 37vw;
-        height: 65vh;
+        width: 30vw;
+        height: 50vh;
         @media #{$mobile}{
-            width: 65vw;
-            
+            width: 50vw;
+            height: 40vh;
+        }
+        @media #{$desktopXl}{
+            width: 30vw;
+            height: 60vh;
         }
     }
 }
 .description{
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-self: center;
-    margin: 0% 10vw 10% 0%;
+    margin: 10% 0% 0% 0%;
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
+    justify-self: flex-start;
+    justify-content: center;
+    align-self: center;
+    text-align: end;
+    overflow: visible;
+    @media #{$mobile}{
+       text-align: center;
+       margin: 0% 0% 0% 0%;
 
-    
+    }
 
     h3{
         align-self: flex-end;
-        width: 433px;
+        width: 100%;
         height: 44px;
-        margin: 0 10% 0 15% ;
+        margin: 0 37% 0 0% ;
 
         font-family: $TitleFont;
         font-weight: 700;
-        font-size: 2.2rem;
+        font-size: 1.7rem;
         line-height: 2.2rem;
         color: #393838;
         @media #{$mobile}{
-            align-self: center;
+            width: 60%;
+            margin: auto auto auto auto;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            align-self: flex-start;
+        }
+        @media #{$desktopXl}{
             font-size: 1.8rem;
-
+            line-height: 2.2rem;
 
         }
     }
     p{
         align-self: flex-end;
-        width: 433px;
+        width: 50%;
         height: 44px;
-        margin: 0 10% 0 20%;
+        margin: 0 37% 0 0%;
 
         font-family: $MainFont;
         font-weight: 400;
@@ -92,28 +136,39 @@
 
         color: #595858;
         @media #{$mobile}{
-            align-self: center;
             text-align: center;
-            width: 339px;
-            height: 60px;
-
+            align-self: center;
+            margin: 0 0% 0 0;
+            width: 45%;
+            height: 44px;
+            font-size: 0.9rem;
+            line-height: 1rem;
         }
     }
     button{
         align-items: center;
         align-self: flex-end;
-        margin: 0 10% 0 0%;
+        margin: 8% 37% 0 10%;
         width: 157px;
-        height: 40px;
+        height: 35px;
         background: #4B73AA;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
         border-radius: 8px;
         color: $white;
         border: none;
-        margin-top: 20px;
+        
         @media #{$mobile}{
             align-self: center;
-            margin: 5% 0% 0 10%;
+            margin: 5% 6% 0 10%;
+
+        }
+        @media #{$mobileXs}{
+            align-self: center;
+            margin: 20% 6% 0 10%;
+
+        }
+        @media #{$mobileS}{
+            margin: 10% 6% 0 10%;
 
         }
         
@@ -183,10 +238,12 @@
 	
 }
 .slides{
-    width: 100%;
+    width: 100vw;
     height: 100%;
 }
 .slick-dots{
+    width: 100%;
+    height: 100%;
     div{
         @media #{$mobile}{
             margin: 0 0 0% 0;

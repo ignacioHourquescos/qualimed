@@ -11,6 +11,7 @@
     align-items: flex-start;
     align-content: flex-start;
     overflow: hidden;
+    box-sizing: content-box;
     @media #{$desktopXl}{
         height: 120vh;
 
@@ -28,17 +29,21 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    
+    box-sizing: content-box;
+
     @media #{$mobile}{
-        margin-top: 5%;
+        margin-top: 18%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        
+    }
+    @media #{$mobileXs}{
+        margin-top: -20%;
 
     }
+
 }
 .circle{
     width: 30vw;
@@ -53,12 +58,10 @@
         height: 40vh;
         margin-left: 0%;
         margin-bottom: 5%;
-        margin-top: 15%;
 
     }
-    @media #{$mobileS}{
-        margin-top: 40%;
-
+    @media #{$mobileXs}{
+        margin-top: 25%;
     }
     @media #{$desktopXl}{
         width: 30vw;
@@ -159,7 +162,7 @@
         
         @media #{$mobile}{
             align-self: center;
-            margin: 5% 6% 0 10%;
+            margin: 5% 0% 0 0%;
 
         }
         @media #{$mobileXs}{
@@ -238,8 +241,14 @@
 	
 }
 .slides{
-    width: 100vw;
-    height: 100%;
+    display: flex !important;
+    max-width: 100% !important;
+    max-height: 100vh !important;
+    box-sizing: content-box;
+    @media #{$mobileXs}{
+        margin-top: 50%;
+
+    }
 }
 .slick-dots{
     width: 100%;

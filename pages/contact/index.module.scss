@@ -8,10 +8,12 @@
     align-content: center;
     text-align: center;
     text-justify: center;
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);;
-
+    @media #{$mobile}{
+        height: 30vh;
+    }
     h1{
         justify-self: center;
         align-self: center;

@@ -59,15 +59,13 @@ const SideBar = (props) => {
                                                 <li className={classes.liBott}><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></li>
                                                 <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Servicio Tecnico</a></Link></li>
                                             </Panel>
-                                                <li className={classes.items2}><img src='/maskIcon.png' /><a>Insumos médicos</a></li>
-                                                <li className={classes.items2}><img src='/bandageIcon.png' /><a>Medicina Deportiva</a></li>
-                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><a>Marcas</a></>}className={classes.items}></Panel>
+                                                <li className={classes.items2}><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"><a>Insumos médicos</a></Link></li>
+                                                <li className={classes.items2}><img src='/bandageIcon.png' /><Link href="/products/medicinaDeportiva"><a>Medicina Deportiva</a></Link></li>
+                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><Link href="/products/marcas"><a>Marcas</a></Link></>}className={classes.items}></Panel>
                                         </Collapse>
                                     
                                 </Panel> 
                                     
-                                
-                                
                             </Collapse>
                             </div>
                         <li className={classes.liTop}><Link href="/"><a >Tienda Minorista</a></Link></li>

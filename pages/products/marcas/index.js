@@ -1,7 +1,7 @@
-import React from 'react'
-import Header from '../../../components/Header/Header'
-import Products from '../../../components/Products/Products'
-import styles from '../insumosMedicos/index.module.scss'
+import React from 'react';
+import Header from '../../../components/Header/Header';
+import Products from '../../../components/Products/Products';
+import styles from './index.module.scss';
 
 const index = () => {
   return (
@@ -9,9 +9,7 @@ const index = () => {
       <Header/>
       <div className={styles.hero}>
         <div className={styles.rectangle}>
-          <div>
-            <h3>Insumos Medicos</h3>
-          </div>
+            <h3>Marcas</h3>
         </div>
       </div>
       <div className={styles.container}>

@@ -29,8 +29,8 @@ const Header = () => {
                       <DropdownMenu tag='div' className={styles.dropdownMenu}>
                         <DropdownItem><img src='/bandageIcon.png' /><Link href="/products/equipamiento"><a>Equipamientos</a></Link></DropdownItem>
                         <DropdownItem><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"><a>Insumos médicos</a></Link></DropdownItem>
-                        <DropdownItem><img src='/ventilatorIcon.png' /><Link href="/products/insumosDeportivos"><a>Medicina Deportiva</a></Link></DropdownItem>
-                        <DropdownItem><img src='/labelIcon.png' /><Link href="/products/insumosDeportivos"><a>Marcas</a></Link></DropdownItem>
+                        <DropdownItem><img src='/ventilatorIcon.png' /><Link href="/products/medicinaDeportiva"><a>Medicina Deportiva</a></Link></DropdownItem>
+                        <DropdownItem><img src='/labelIcon.png' /><Link href="/products/marcas"><a>Marcas</a></Link></DropdownItem>
                       </DropdownMenu>
                 </Dropdown>
               </li>

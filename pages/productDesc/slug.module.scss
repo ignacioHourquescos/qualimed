@@ -47,6 +47,13 @@
     grid-template-columns: 65% 37%;
     grid-gap: 20px;
 
+    @media #{$mobile}{
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
     img{
         height: 450px;
         width: 100%;
@@ -75,6 +82,12 @@
     height: 350px;
     position: sticky;
     top:80px;
+
+    @media #{$mobile}{
+        position: fixed;
+        top: 45%;
+        width: 90%;
+    }
 
 }
 .cotizacion{
@@ -152,9 +165,10 @@
         margin: 0 3% 0 3%;
         box-shadow: none;
         
+    }  
+    @media #{$mobile}{
+        display: none;
     }
-    
-
 }
 .seccions{
     height: 100%;

@@ -8,7 +8,7 @@
     align-items: center;
     align-content: center;
 
-    @media #{$mobileS}{
+    @media #{$mobile}{
         grid-template-columns: 100%;
     }
         @media #{$desktopXl}{

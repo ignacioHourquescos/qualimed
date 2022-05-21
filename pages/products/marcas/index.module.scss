@@ -33,7 +33,7 @@
     overflow: hidden;
     @media #{$mobile}{
         background-image: linear-gradient(90deg, rgba(146, 143, 202, 0.7) 44.27%, rgba(146, 143, 202, 0) 100%),  url(../../../public/equipMobile.png);
-        background-size: 100% 70%;
+        background-size: 100% 77%;
         background-position: right bottom; 
    
 
@@ -224,7 +224,7 @@
 .seccions{
     height: 100%;
     width: 100%;
-    margin-bottom: 30px;
+    margin: 30px 0 30px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -30,7 +30,7 @@ const Footer = () => {
           <li><h6>Sede Central:</h6>Partido Gral. San Martin, Buenos Aires, Argentina. </li>
           <li><h6>Sucursales:</h6>Costa Atlántica, Buenos Aires, Argentina.<br/> Chascomús, Buenos Aires, Argentina. </li>
         </div>
-        <img src="./instagram.png" style={{width: '26px', height: '26px'}} className={styles.insta}></img>
+        <img src="/instagram.png" style={{width: '26px', height: '26px'}} className={styles.insta}></img>
       </div>
       
       </div>

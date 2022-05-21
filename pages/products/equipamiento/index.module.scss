@@ -33,7 +33,7 @@
     overflow: hidden;
     @media #{$mobile}{
         background-image: linear-gradient(90deg, rgba(146, 143, 202, 0.7) 44.27%, rgba(146, 143, 202, 0) 100%),  url(../../../public/equipMobile.png);
-        background-size: 100% 70%;
+        background-size: 100% 77%;
         background-position: right bottom; 
    
 
@@ -54,7 +54,8 @@
     border-radius:  5% / 0 50% 50% 0%;
     @media #{$mobile}{
         background-color: transparent;
-        width: 50%;
+        width: 100%;
+        justify-content: flex-start;
 
     }
 
@@ -67,6 +68,7 @@
         font-size: 40px;
         line-height: 49px;
         @media #{$mobile}{
+            margin: 0 0 0 10%;
             justify-self: start;
             font-size: 24px;
             line-height: 29px;

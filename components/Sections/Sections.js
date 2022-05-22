@@ -67,6 +67,8 @@ const Sections = () => {
 		speed: 500,
 		slidesToScroll: 24,
 		slidesToShow: 3,
+		autoplay: true,
+		autoplaySpeed: 1800,
 		// autoplay: true,
 		// speed: 2000,
 		// autoplaySpeed: 2000,

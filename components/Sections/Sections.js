@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import styles from "./Sections.module.scss";
+import Link from 'next/link';
 
 
 // const Sections = () => {
@@ -85,14 +86,12 @@ const Sections = () => {
      <div className={styles.container}>
       <div className={styles.carrousel_container}>
         <Slider {...settings}>
-  
-        <img src='./monitor.png'></img>
-        <img src='./medicinaDep1.png'></img>
-        <img src='./seccionLand.png'></img>
-        <img src='./monitor.png'></img>
-        <img src='./medicinaDep1.png'></img>
-        <img src='./seccionLand.png'></img>
-
+          <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
+          <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
+          <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
+          <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
+          <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
+          <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
         </Slider>
         </div>
       </div>

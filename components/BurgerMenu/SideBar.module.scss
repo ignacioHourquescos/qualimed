@@ -11,7 +11,8 @@
    
    overflow-y: nscroll;
    position:fixed;
-   height:100vh;
+   height:100%;
+   overflow-y: auto;
    background-color: #F6F6F6;
    backdrop-filter: blur(8px);
    background-attachment: fixed;

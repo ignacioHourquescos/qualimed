@@ -28,7 +28,7 @@ const index = () => {
       <Header/>
       <div className={styles.hero}>
         <div className={styles.rectangle}>
-          <div><h3>Insumos médicos</h3></div>
+          <div><h3>Medicina deportiva</h3></div>
         </div>
       </div>
       <div className={styles.container}>

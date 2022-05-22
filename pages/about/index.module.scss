@@ -1,0 +1,117 @@
+@import "../../styles/constants.scss";
+
+.body{
+    background-color:#E5E5E5;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    text-justify: center;
+    height: 35vh;
+    width: 100%;
+    background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);;
+    @media #{$mobile}{
+        height: 30vh;
+    }
+    h1{
+        justify-self: center;
+        align-self: center;
+        margin: 60px 0 0 0;
+        color: white;
+        font-family: $TitleFont;
+        font-size: 40px;
+        line-height: 49px;
+        font-weight: 700;
+        @media #{$mobile}{
+            width: 60%;
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 700;
+        }
+    }
+}
+.container{
+    height: 100vh;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    text-justify: center;
+    box-sizing: content-box;
+    margin: 3% 3% 3% 3%;
+    overflow: hidden;
+
+    @media #{$mobile}{
+        flex-direction: column;
+        height: 100%;
+        width: 95%;
+        
+
+    }
+    
+}
+.seccion1{
+    width: 55vw;
+    height: 100%;
+    margin: 0 10px 0 0;
+    border-radius: 15px;
+    background-image: url(../../public/pibeCajasAbout.png);
+    background-size: 100% 100%;     
+    background-repeat: no-repeat;
+    background-position: center; 
+
+    @media #{$mobile}{
+        width: 100%;
+        height: 45vh;
+        margin: 0 0 10px 0;
+    }
+
+}
+.seccion2{
+    width: 35vw;
+    height: 100%;
+    margin: 0;    
+    background-color: white;
+    border-radius: 12px;
+    text-align: justify;
+    font-family: $MainFont;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #595858;
+    box-sizing: content-box;
+    overflow: auto;
+
+    @media #{$mobile}{
+        width: 100%;
+
+    }
+
+    
+    p{
+        padding: 20px;
+    }
+
+    
+}
+.seccion2::-webkit-scrollbar,
+.seccion2::-webkit-scrollbar-thumb {
+  width: 24px;
+  border-radius: 13px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+
+}
+
+.seccion2::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
+}

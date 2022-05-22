@@ -1,8 +1,8 @@
 @import "../../styles/constants.scss";
 
 .button2{
-    width: 180px;
-    height: 42px;
+    width: 200px;
+    height: 58px;
     background-color: white;
     position: fixed;
     right:1.5rem;
@@ -19,17 +19,28 @@
     box-shadow: 3px 4px 5px 0px rgb(67, 67, 67);
     border:0px solid whitesmoke;
     z-index:1000;
+    cursor: pointer;
+    @media #{$mobile}{
+        width: 180px;
+        height: 42px;
+
+        }
 
     p{
         width: 102px;
         font-family: $MainFont;
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 21px;
         /* identical to box height */
         margin: auto 0 auto 0;
 
         color: #595858;
+        @media #{$mobile}{
+            font-size: 16px;
+
+    
+            }
     }
     img{
         margin-left: 5%;

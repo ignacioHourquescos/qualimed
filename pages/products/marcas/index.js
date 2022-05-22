@@ -1,14 +1,36 @@
-import React, {useState} from 'react'
 import Header from '../../../components/Header/Header'
 import Products from '../../../components/Products/Products'
 import styles from './index.module.scss'
 import { Collapse } from 'antd';
+import { useFetch } from '../../../hooks/useFetch';
+import Cards from '../../../components/Ui/Cards/Cards';
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
+
 
 const index = () => {
 
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
   const [state, setState] = useState(false);
+
+  const marcas = ['Alere', 'Braun', 'Drager', 'Fujifilm', 'Nutricia', 'Philips'];
+
+  const description = 'lorem';
+  
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: false,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500
+  };
+
+  const { loading, data } =  useFetch(`https://qualimed.herokuapp.com/articulos`);
 
   function callback(key) {
     console.log(key);
@@ -61,6 +83,44 @@ const index = () => {
         <div className={styles.products}>
           <Products/>
         </div>
+          {/* {
+                loading &&
+                data.map(({id, description}) => (
+                  <div>
+                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
+                  </div>
+                    )
+                  )
+        
+              } */}
+        {
+                marcas.map((marca) => (
+                  <div className={styles.seccions}>
+
+                    <h3>{marca}</h3>
+                
+                    <div className={styles.swiper}>
+                      
+                      <Swiper
+                                slidesPerView={"auto"}
+                                spaceBetween={30}
+                                modules={[Pagination]}
+                                className={styles.swiper}
+                              >
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
+                              </Swiper>
+                        </div>
+                </div>
+                ))
+              }
+        
+            
       </div>
     </div>
   )

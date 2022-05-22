@@ -4,7 +4,7 @@
   width: 100%;
   height: 80vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   overflow: hidden;
   background-color: $grey;
@@ -17,9 +17,9 @@
 .circle {
   width: 90%;
   height: 100%;
-  background: #6F6BC0;
+  // background: #6F6BC0;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  margin-right: -8%;
+  // margin-right: -8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
     border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
     margin: 0 0 0 0;
     width: 100%;
-    background: rgba(111, 107, 192, 0.4);
+    // background: rgba(111, 107, 192, 0.4);
 
   }
 
@@ -54,10 +54,14 @@
   h5 {
     font-family: $TitleFont;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     line-height: 1.3rem;
-    color: $white;
+    color: #393838;
     margin: 15% 0 20px 0;
+
+    @media #{$mobile} {
+      font-size: 2rem;
+    }
   }
 
   p {
@@ -65,7 +69,7 @@
     font-weight: 400;
     font-size: 1.3rem;
     line-height: 1.3rem;
-    color: $white;
+    color: #393838;
 
     @media #{$mobile} {
       width: 80%;
@@ -78,7 +82,7 @@
   input {
     width: 100%;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 0px;
 
     margin-bottom: 30px;
     border: none;
@@ -90,10 +94,11 @@
 
   textArea {
     width: 100%;
-    height: 30%;
-    border-radius: 5px;
+    height: 40%;
+    border-radius: 0px;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border-radius: 0px;
+    border: none;
 
     @media #{$mobile} {
       width: 80%;
@@ -104,16 +109,17 @@
 
   button {
     width: 20%;
-    height: 36px;
+    // height: 36px;
     border: none;
     background: #3E4095;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
+    border-radius: 40px;
     color: white;
+    padding: 1rem;
 
     font-family: $MainFont;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.2rem;
 
     @media #{$mobile} {
       width: 80%;
@@ -149,6 +155,7 @@
 
 .wave_bottom {
   // position: absolute;
-  // width: 100%;
+  width: 100%;
   bottom: 0px;
+  background-color: $grey;
 }

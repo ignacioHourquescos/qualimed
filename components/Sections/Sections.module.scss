@@ -3,9 +3,9 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .container {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
-  background-color: #F3F4F5;
+  background-color: $grey;
 
   // display: flex;
   // flex-direction: column;
@@ -14,11 +14,16 @@
   // align-items: center;
   // align-content: center;
   // overflow: hidden;  
-  padding-top: 20%;
+  padding-top: 5%;
   padding: 10%;
+  padding-top: 5%;
   // margin:15% 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
   overflow: ai;
+
 
 
   @media #{$mobile} {
@@ -39,6 +44,19 @@
       margin-top: 20%;
     }
 
+  }
+
+  h5 {
+    font-family: $TitleFont;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.3rem;
+    color: #393838;
+
+
+    @media #{$mobile} {
+      font-size: 2rem;
+    }
   }
 
 

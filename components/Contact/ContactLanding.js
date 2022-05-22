@@ -35,7 +35,7 @@ const ContactLanding = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className={styles.wave_bottom}>{waveSvg_Bottom}</div> */}
+			<div className={styles.wave_bottom}>{waveSvg_Bottom}</div>
 		</>
 	);
 };
@@ -45,9 +45,9 @@ export default ContactLanding;
 const waveSvg_Bottom = (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 		<path
-			fill="#E5E5E5"
+			fill="#3E4095"
 			fill-opacity="1"
-			d="M0,160L120,144C240,128,480,96,720,117.3C960,139,1200,213,1320,250.7L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+			d="M0,288L80,288C160,288,320,288,480,256C640,224,800,160,960,144C1120,128,1280,160,1360,176L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
 		></path>
 	</svg>
 );

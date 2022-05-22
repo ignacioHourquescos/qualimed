@@ -79,6 +79,7 @@ const Sections = () => {
 	return (
 		<>
 			<div className={styles.container}>
+				<h5>Categorias</h5>
 				<div className={styles.carrousel_container}>
 					<Slider {...settings}>
 						<img src="./monitor.png"></img>

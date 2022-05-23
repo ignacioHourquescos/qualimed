@@ -1,17 +1,18 @@
 @import "../../styles/constants.scss";
 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 
-    @media #{$mobile}{
-        grid-template-columns: 100%;
-    }
-        @media #{$desktopXl}{
-            grid-template-columns: repeat(3, 33.3%);
-     }
+  @media #{$mobile} {
+    grid-template-columns: 100%;
+  }
+
+  @media #{$desktopXl} {
+    grid-template-columns: repeat(3, 33.3%);
+  }
 }

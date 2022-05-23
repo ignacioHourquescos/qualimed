@@ -9,7 +9,6 @@ const index = () => {
       <Header/>
       <div className={styles.title}><h1>Somos Qualimed S.A</h1></div>
       <div className={styles.container}>
-          <div className={styles.seccion1}></div>
           <div className={styles.seccion2}><p>
           Somos una empresa familiar con más de 30 años dedicados a la venta de insumos y equipamiento médico, brindando asistencia personalizada a instituciones públicas y privadas.<br/><br/>
 
@@ -21,6 +20,7 @@ const index = () => {
           <br/><br/>
           Nuestra sede central se encuentra ubicada en el Partido de San Martin, Buenos Aires, Argentina. Contamos con sucursales mayoristas en la Costa Atlántica, el Partido de Chascomús y realizamos ventas a todo el país a través de las empresas de logística más importantes
             </p></div>
+            <div className={styles.seccion1}></div>
       </div>
       <Footer/>
     </div>

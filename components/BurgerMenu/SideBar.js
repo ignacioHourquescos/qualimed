@@ -49,11 +49,8 @@ const SideBar = (props) => {
                         <div className={classes.collapse}>
                         <Collapse onChange={callback} className={classes.collapse}  >
                                 <Panel header={<a  style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: sideDrawerOpen ? '700' : '400' }}  >Productos</a>} showArrow={false} key="1" className={classes.panel}  >
-                                    <input type='text'
-                                            placeholder='    Buscar Producto'
-                                    ></input>
                                     <hr/>
-                                        <Collapse onChange={colorice} defaultActiveKey="1"  accordion={true} className={classes.collapse2}>
+                                        <Collapse onChange={colorice} accordion={true} className={classes.collapse2}>
                                             <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a style={{ color: state ? '#595858' : '#3E4095' }}>Equipamientos</a></>}>
                                                 <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Equipos</a></Link></li>
                                                 <li className={classes.liBott}><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></li>

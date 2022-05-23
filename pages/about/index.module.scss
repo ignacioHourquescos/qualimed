@@ -15,7 +15,7 @@
   height: 35vh;
   width: 100%;
   background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
-  ;
+  
 
   @media #{$mobile} {
     height: 30vh;
@@ -32,10 +32,9 @@
     font-weight: 700;
 
     @media #{$mobile} {
-      width: 60%;
-      font-size: 30px;
-      line-height: 30px;
-      font-weight: 700;
+      width: 90%;
+      font-size: 35px;
+
     }
   }
 }
@@ -60,7 +59,6 @@
     height: 100%;
     width: 80%;
 
-
   }
 
 }
@@ -68,13 +66,12 @@
 .seccion1 {
   width: 55vw;
   height: 100%;
-  // margin: 0 10px 0 0;
+  margin: 0 0 0 -10px;
 
   background-image: url(../../public/pibeCajasAbout.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-
   @media #{$mobile} {
     width: 100%;
     height: 45vh;
@@ -88,7 +85,8 @@
   height: 100%;
   margin: 0;
   background-color: white;
-
+  z-index: 100;
+  border-radius: 20px 0 0 20px;
   text-align: justify;
   font-family: $MainFont;
   font-weight: 400;

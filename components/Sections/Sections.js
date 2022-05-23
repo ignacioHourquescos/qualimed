@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import styles from "./Sections.module.scss";
 import Link from 'next/link';
+import { useMediaQuery } from "react-responsive";
 
 // const Sections = () => {
 
@@ -59,6 +60,9 @@ import Link from 'next/link';
 // }
 
 const Sections = () => {
+
+	const isDesktop = useMediaQuery({ query: "(min-width: 700px)" });
+
 	const settings = {
 		className: "center",
 		centerMode: true,
@@ -78,6 +82,25 @@ const Sections = () => {
 
 		// lazyLoad: true,
 	};
+	const settings1 = {
+		className: "center",
+		centerMode: true,
+		infinite: true,
+		centerPadding: "0px 80px ",
+		slidesToShow: 1,
+		speed: 700,
+		slidesToScroll: 24,
+		slidesToShow: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		// autoplay: true,
+		// speed: 2000,
+		// autoplaySpeed: 2000,
+		// cssEase: "linear"
+		// height:"50%",
+
+		// lazyLoad: true,
+	};
 
 
     return (
@@ -85,7 +108,9 @@ const Sections = () => {
      <div className={styles.container}>
 	 <h5>Categorias</h5>
       <div className={styles.carrousel_container}>
-        <Slider {...settings}>
+        { isDesktop ?
+			
+		<Slider {...settings}>
           <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
           <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
           <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
@@ -93,6 +118,14 @@ const Sections = () => {
           <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
           <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
         </Slider>
+		:
+		<Slider {...settings1}>
+          <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
+          <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
+          <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
+        </Slider>
+
+	}
         </div>
       </div>
     {/* <div className={styles.wave}><div></div></div>  */}

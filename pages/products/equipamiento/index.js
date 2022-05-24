@@ -1,8 +1,7 @@
 import Header from '../../../components/Header/Header'
 import Products from '../../../components/Products/Products'
 import styles from '../equipamiento/index.module.scss'
-import { Collapse } from 'antd';
-import Slider from "react-slick";
+import { Collapse} from 'antd';
 import { useFetch } from '../../../hooks/useFetch';
 import Cards from '../../../components/Ui/Cards/Cards';
 import React, { useRef, useState } from "react";
@@ -14,14 +13,14 @@ import { Pagination } from "swiper";
 
 const index = () => {
 
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(true);
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
 
   const settings = {
     className: "center",
     centerMode: true,
-    infinite: false,
+    infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 500
@@ -54,11 +53,12 @@ const index = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.filter}>
-          <input className={styles.input} placeholder='Buscar Producto'></input>
           <div className={styles.categories}>
+          <input className={styles.input} placeholder='Buscar Producto'></input>
+          <hr/>
             <h3>Categorías</h3>
-            <Collapse onChange={callback} ghost>
-              <Panel className={styles.categoryPanel} showArrow={false} header={<><img src='/ventilatorIcon.png'/><a style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: '700'  }}>Equipamiento</a></>} key="1">
+            <Collapse onChange={callback} ghost expandIconPosition='right' >
+              <Panel className={styles.categoryPanel} showArrow={true} header={<><img src='/ventilatorIcon.png'/><a style={{ color: sideDrawerOpen ?  '#595858'  : '#3E4095', fontWeight: '700'  }}>Equipamiento</a></>} key="1">
                 <li>Equipos</li>
                 <li>Alquileres</li>
                 <li>Servicio técnico</li>
@@ -66,8 +66,8 @@ const index = () => {
               <li className={styles.category}><img src='/maskIcon.png' /><div><a>Insumos médicos</a></div></li>
               <li className={styles.category}><img src='/bandageIcon.png' /><div><a>Medicina deportiva</a></div></li>
               </Collapse>
-              <Collapse onChange={colorice} ghost>
-              <Panel  className={styles.categoryPanel} showArrow={false} header={<><img src='/labelIcon.png' /><a  style={{ color: state ? '#3E4095' : '#595858', fontWeight: '700' }}>Marcas</a></>} key="3">
+              <Collapse onChange={colorice} ghost defaultActiveKey={['1']} expandIconPosition='right'>
+              <Panel  className={styles.categoryPanel}   showArrow={true} header={<><a className={styles.marcas}  style={{ color: state ? '#3E4095' : '#595858' }}>Marcas</a></>} key="1">
                 <li>Alere</li>
                 <li>Braun</li>
                 <li>Drager</li>

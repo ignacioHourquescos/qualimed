@@ -1,53 +1,56 @@
 @import "../../../styles/constants.scss";
 
-.card{
-    width: 315px;
-    height: 423px;
-    background: $white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+.card {
+  width: 280px;
+  height: 450px;
+  background: $white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
 
-    @media #{$mobile}{
-        width: 300px;
-        height: 380px;
- }
+  @media #{$mobile} {
+    width: 300px;
+    height: 380px;
+  }
 }
+
 .card img {
-    width: 100%;
-    height: 55%;
-    margin: auto;
+  width: 70%;
+  margin: auto;
 }
-.card h5{
-    font-family: $TitleFont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.25px;
-    margin-bottom: 0;
-    margin-left: 20px;
-    color: #000000;
+
+.card h5 {
+  font-family: $TitleFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.25px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  color: #000000;
 }
-.card p{
-    font-family: $MainFont;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.8rem;
-    letter-spacing: 0.25px;
-    color: #000000;
-    margin-left: 20px;
+
+.card p {
+  font-family: $MainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.25px;
+  color: #000000;
+  margin-left: 20px;
 }
-.card button{
-    width: 100%;
-    height: 15%;
-    background: #3E4095;
-    border-radius: 0px 0px 12px 12px;
-    border: none;
-    font-family: $MainFont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    color: $white;
+
+.card button {
+  width: 100%;
+  height: 15%;
+  background: #3E4095;
+  border-radius: 0px 0px 12px 12px;
+  border: none;
+  font-family: $MainFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $white;
 }

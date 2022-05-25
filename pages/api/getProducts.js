@@ -24,11 +24,12 @@ const getProducts = (req, res) => {
 					code: data.values[i][0],
 					category: data.values[i][1],
 					brand: data.values[i][2],
-					title: data.values[i][2],
+					title: data.values[i][3],
 					description: data.values[i][4],
 					application: data.values[i][5],
 					techcnial: data.values[i][6],
-					img: data.values[i][7],
+					img:
+						"https://drive.google.com/uc?export=view&id=" + data.values[i][7],
 				});
 
 				categoriesArray.push(data.values[i][0]);

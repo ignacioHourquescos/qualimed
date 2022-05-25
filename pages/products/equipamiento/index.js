@@ -5,16 +5,24 @@ import { Collapse } from "antd";
 import Slider from "react-slick";
 import { useFetch } from "../../../hooks/useFetch";
 import Cards from "../../../components/Ui/Cards/Cards";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import SubHeader from "../../../components/SubHeader/SubHeader";
 
 const index = () => {
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
-
 	const [state, setState] = useState(false);
+	const [products, setProducts] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		fetch("../api/getProducts")
+			.then((response) => response.json())
+			.then((data) => (setProducts(data[0]), setLoading(false)));
+	}, []);
 
 	const settings = {
 		className: "center",
@@ -24,10 +32,6 @@ const index = () => {
 		slidesToShow: 3,
 		speed: 500,
 	};
-
-	const { loading, data } = useFetch(
-		`https://qualimed.herokuapp.com/articulos`
-	);
 
 	function callback(key) {
 		console.log(key);
@@ -48,11 +52,8 @@ const index = () => {
 			className={styles.mainCont}
 		>
 			<Header />
-			<div className={styles.hero}>
-				<div className={styles.rectangle}>
-					<h3>Equipamiento</h3>
-				</div>
-			</div>
+			<SubHeader title="Equipamientos" img="equipHero1.png" />
+
 			<div className={styles.container}>
 				<div className={styles.filter}>
 					<input className={styles.input} placeholder="Buscar Producto"></input>
@@ -125,7 +126,12 @@ const index = () => {
 				</div>
 
 				<div className={styles.products}>
-					<Products />
+					<Products
+						data={products.filter(
+							(element) => element.category == "EQUIPAMIENTO"
+						)}
+						loading={loading}
+					/>
 				</div>
 
 				<div className={styles.carrousel}>

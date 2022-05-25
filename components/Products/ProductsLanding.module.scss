@@ -19,13 +19,14 @@
   align-content: flex-start;
   box-sizing: content-box;
 
+
   @media #{$desktopXl} {
     height: 120vh;
 
   }
 
   @media #{$mobile} {
-    height: 140vh;
+    height: 110vh;
     flex-direction: column;
 
   }
@@ -52,6 +53,7 @@
   grid-template-columns: repeat(2, 50%);
   box-sizing: content-box;
 
+
   @media #{$mobile} {
     margin-top: 22%;
     margin-left: 3%;
@@ -63,32 +65,39 @@
     align-self: center;
     justify-self: center;
   }
+
   @media #{$mobileS} {
     margin-top: 26%;
-
+    transform: translateY(100px);
   }
 
   @media #{$mobileXs} {
     margin-top: -14%;
-
+    transform: translateY(100px);
   }
 
 
 }
 
 .circle {
-  width: 30vw;
-  height: 50vh;
+  width: 25vw;
+  height: 25vw;
   border-radius: 100%;
   background: linear-gradient(180deg, #94D2F6 0%, #061962 100%);
-  margin-left: 20vw;
-  margin-top: 3%;
+  margin-left: 22vw;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  z-index: 105px;
 
 
 
   @media #{$mobile} {
-    width: 50vw;
-    height: 40vh;
+    width: 60vw;
+    height: 60vw;
     margin-left: 0%;
     margin-bottom: 5%;
 
@@ -99,30 +108,32 @@
   }
 
   @media #{$desktopXl} {
-    width: 30vw;
-    height: 60vh;
+    width: 25vw;
+    height: 25vw;
   }
 
   img {
-    width: 30vw;
+
     height: 50vh;
 
     @media #{$mobile} {
+      height: auto;
       width: 50vw;
-      height: 40vh;
     }
 
     @media #{$desktopXl} {
-      width: 30vw;
-      height: 60vh;
+      height: 50vh;
+
+
     }
   }
 }
 
 .description {
-  width: 100%;
+
   height: 100%;
   margin: 10% 0% 0% 0%;
+  margin-right: 4rem;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -135,7 +146,8 @@
   @media #{$mobile} {
     text-align: center;
     margin: 0% 0% 0% 0%;
-    height: 40vh;
+    // height: 20vh;
+    margin-top: 2rem;
     align-self: center;
     justify-self: center;
     justify-content: center;
@@ -158,7 +170,7 @@
       margin: auto auto 0 auto;
       font-size: 1.2rem;
       line-height: 1.2rem;
-      
+
     }
 
     @media #{$desktopXl} {
@@ -196,7 +208,7 @@
     }
 
 
-    
+
   }
 
   button {
@@ -216,7 +228,7 @@
       justify-self: center;
       margin: 0 0 15% 0;
       width: 120px;
-      
+
 
     }
 
@@ -308,7 +320,8 @@
   }
 
   @media #{$mobile} {
-    margin: 0 0 30% 0;
+    margin: 0 0 10% 0;
+    padding: 0;
 
   }
 

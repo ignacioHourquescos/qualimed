@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import styles from "./Sections.module.scss";
-import Link from 'next/link';
+import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
 // const Sections = () => {
@@ -60,7 +60,6 @@ import { useMediaQuery } from "react-responsive";
 // }
 
 const Sections = () => {
-
 	const isDesktop = useMediaQuery({ query: "(min-width: 700px)" });
 
 	const settings = {
@@ -102,39 +101,53 @@ const Sections = () => {
 		// lazyLoad: true,
 	};
 
+	return (
+		<>
+			<div className={styles.container}>
+				<h5>Categorias </h5>
+				<div className={styles.carrousel_container}>
+					{isDesktop ? (
+						<Slider {...settings}>
+							<Link href="/products/equipamiento">
+								<img src="./monitor.png"></img>
+							</Link>
+							<Link href="/products/medicinaDeportiva">
+								<img src="./medicinaDep1.png"></img>
+							</Link>
+							<Link href="/products/insumosMedicos">
+								<img src="./seccionLand.png"></img>
+							</Link>
+							<Link href="/products/equipamiento">
+								<img src="./monitor.png"></img>
+							</Link>
+							<Link href="/products/medicinaDeportiva">
+								<img src="./medicinaDep1.png"></img>
+							</Link>
+							<Link href="/products/insumosMedicos">
+								<img src="./seccionLand.png"></img>
+							</Link>
+						</Slider>
+					) : (
+						<Slider {...settings1}>
+							<Link href="/products/equipamiento">
+								<img src="./monitor.png"></img>
+							</Link>
+							<Link href="/products/medicinaDeportiva">
+								<img src="./medicinaDep1.png"></img>
+							</Link>
+							<Link href="/products/insumosMedicos">
+								<img src="./seccionLand.png"></img>
+							</Link>
+						</Slider>
+					)}
+				</div>
+			</div>
+			{/* <div className={styles.wave}><div></div></div>  */}
+		</>
+	);
+};
 
-    return (
-      <>
-     <div className={styles.container}>
-	 <h5>Categorias</h5>
-      <div className={styles.carrousel_container}>
-        { isDesktop ?
-			
-		<Slider {...settings}>
-          <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
-          <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
-          <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
-          <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
-          <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
-          <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
-        </Slider>
-		:
-		<Slider {...settings1}>
-          <Link href="/products/equipamiento"><img src='./monitor.png'></img></Link> 
-          <Link  href="/products/medicinaDeportiva"><img src='./medicinaDep1.png'></img></Link>
-          <Link href="/products/insumosMedicos"><img src='./seccionLand.png'></img></Link>
-        </Slider>
-
-	}
-        </div>
-      </div>
-    {/* <div className={styles.wave}><div></div></div>  */}
-    </>
-    );
-  }
-
-
-  export default Sections
+export default Sections;
 
 const waveSvg = (
 	<svg

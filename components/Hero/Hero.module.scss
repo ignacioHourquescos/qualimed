@@ -61,7 +61,8 @@
       // margin: 110px 0px 0px 0px;
 
       @media #{$mobile} {
-        display: none;
+        width: 100vh;
+
       }
     }
   }
@@ -81,12 +82,12 @@
     justify-content: top;
     align-items: center;
     margin: 0 0% 0 0%;
-
-
+    z-index: 100;
   }
 
   img {
     filter: saturate(60%);
+
 
     @media #{$mobile} {
       position: absolute;
@@ -95,7 +96,7 @@
       z-index: 1200;
       filter: saturate(0%) brightness(10);
       width: 70%;
-      height: 25%;
+      // height: 25%;
 
     }
 
@@ -124,7 +125,7 @@
   }
 
   input {
-    width: 100%;
+    width: 80%;
     height: 38.64px;
 
 
@@ -136,7 +137,7 @@
 
     @media #{$mobile} {
       background: #F6F6F6;
-      box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.3), 4px 4px 8px #CDCDCD;
+      padding: 0 10%;
       border-radius: 200px;
       border: none;
       margin-bottom: 0%;
@@ -146,6 +147,7 @@
     @media #{$mobileXs} {
       width: 75%;
       height: 20%;
+      padding: 0 10%;
       border-radius: 20px;
       margin-top: 10px;
 

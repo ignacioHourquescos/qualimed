@@ -19,6 +19,7 @@ const Hero = () => {
 		<div className={styles.hero}>
 			<div className={styles.seccion1}>
 				<img src="./logoHero.png"></img>
+
 				<p>
 					30 años dedicados a la venta de insumos y equipamiasdasdento médico
 				</p>

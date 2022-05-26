@@ -26,6 +26,7 @@ const Products = ({ data, loading }) => {
 				  ))
 				: data.map((element) => (
 						<Cards
+							// key={element.code}
 							title={element.title}
 							description={element.description}
 							imageUrl={element.img}

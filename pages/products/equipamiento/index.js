@@ -2,7 +2,6 @@ import Header from "../../../components/Header/Header";
 import Products from "../../../components/Products/Products";
 import styles from "../equipamiento/index.module.scss";
 import { Collapse } from "antd";
-import Slider from "react-slick";
 import { useFetch } from "../../../hooks/useFetch";
 import Cards from "../../../components/Ui/Cards/Cards";
 import React, { useRef, useState, useEffect } from "react";
@@ -24,6 +23,7 @@ const index = () => {
 			.then((data) => (setProducts(data[0]), setLoading(false)));
 	}, []);
 
+	
 	const settings = {
 		className: "center",
 		centerMode: true,
@@ -56,16 +56,16 @@ const index = () => {
 
 			<div className={styles.container}>
 				<div className={styles.filter}>
-					<input className={styles.input} placeholder="Buscar Producto"></input>
 					<div className={styles.categories}>
+					<input className={styles.input} placeholder="Buscar Producto"></input>
+					<hr/>
 						<h3>Categorías</h3>
-						<Collapse onChange={callback} ghost>
+						<Collapse onChange={callback} ghost expandIconPosition='right'>
 							<Panel
 								className={styles.categoryPanel}
-								showArrow={false}
+								showArrow={true}
 								header={
-									<>
-										<img src="/ventilatorIcon.png" />
+									<><img src='/ventilatorIcon.png'/>
 										<a
 											style={{
 												color: sideDrawerOpen ? "#3E4095" : "#595858",
@@ -101,11 +101,10 @@ const index = () => {
 								showArrow={true}
 								header={
 									<>
-										<img src="/labelIcon.png" />
 										<a
 											className={styles.marcas}
 											style={{
-												color: state ? "#3E4095" : "#595858",
+												color: state ? "#595858" : "#3E4095" ,
 												fontWeight: "700",
 											}}
 										>
@@ -355,7 +354,7 @@ const index = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default index;
+export default index

@@ -26,7 +26,7 @@ const Hero = () => {
 				<p>
 					30 años dedicados a la venta de insumos y equipamiasdasdento médico
 				</p>
-				<div>
+				<div className={styles.divSearch}>
 					<SearchOutlined className={styles.search}/>
 					<input
 					type="text"
@@ -35,7 +35,7 @@ const Hero = () => {
 					autoComplete="off"
 					value={buscar}
 					onChange={handleInputChange}
-				></input>
+					></input>
 				</div>
 				
 			</div>

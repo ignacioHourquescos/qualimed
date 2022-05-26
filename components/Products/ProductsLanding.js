@@ -66,7 +66,7 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./camaTerapiaLanding.png"></img>
+									<img src="./camaTerapia2.png"></img>
 								</div>
 								<div className={styles.description}>
 									<h3>Cama terapia intensiva</h3>
@@ -99,7 +99,7 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./camaTerapiaLanding.png"></img>
+									<img src="./camaTerapia2.png"></img>
 								</div>
 								<div className={styles.description}>
 									<h3>Cama terapia intensiva</h3>

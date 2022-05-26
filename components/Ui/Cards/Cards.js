@@ -1,13 +1,13 @@
-import React from 'react'
-import styles from './Cards.module.scss';
-import Link  from "next/link";
+import React from "react";
+import styles from "./Cards.module.scss";
+import Link from "next/link";
 
 const Cards = ({img, title, description, id}) => {
   return (
     <div className={styles.card}>
       <img src={img}/>
       <h5>{title}</h5>
-      <p>{description}</p>
+      <p>{description.slice(0, 50)}...</p>
           <Link as={`/productDesc/${title}`} href="/productDesc/[id]" >
             <button>Ver mas</button>
           </Link>
@@ -15,4 +15,3 @@ const Cards = ({img, title, description, id}) => {
   )
 }
 
-export default Cards

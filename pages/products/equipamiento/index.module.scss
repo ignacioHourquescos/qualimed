@@ -129,21 +129,7 @@ display: none;
   }
 }
 
-.carrousel {
-  display: none;
-  width: 100%;
-  height: 100%;
 
-  @media #{$mobile} {
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-  }
-}
 // .input{
     
 //  
@@ -174,76 +160,19 @@ display: none;
   border-bottom: 1px solid black;
 
 }
-.swiper {
-  display: flex;
+
+.carrousel {
+  display: none;
   width: 100%;
   height: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 
-.swiperSlide:nth-child(1n) {
-  width: 50%;
+  @media #{$mobile} {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  @media #{$mobileS} {
-    width: 80%;
 
   }
-
-  @media #{$mobileXs} {
-    width: 100%;
-
-  }
-
-}
-
-.swiperSlide:nth-child(2n) {
-  width: 50%;
-
-  @media #{$mobileS} {
-    width: 80%;
-
-  }
-
-  @media #{$mobileXs} {
-    width: 100%;
-
-  }
-}
-
-.swiperSlide:nth-child(3n) {
-  width: 50%;
-
-  @media #{$mobileS} {
-    width: 80%;
-
-  }
-
-  @media #{$mobileXs} {
-    width: 100%;
-
-  }
-}
-
-.seccions {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h3 {
-    align-self: start;
-    font-family: $TitleFont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    color: #595858;
-    margin: 0 0 20px 0;
-  }
-
 }

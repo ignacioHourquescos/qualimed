@@ -2,14 +2,9 @@ import Header from "../../../components/Header/Header";
 import Products from "../../../components/Products/Products";
 import styles from "../equipamiento/index.module.scss";
 import { Collapse } from "antd";
-import { useFetch } from "../../../hooks/useFetch";
-import Cards from "../../../components/Ui/Cards/Cards";
 import React, { useRef, useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
 import SubHeader from "../../../components/SubHeader/SubHeader";
+import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";
 
 const index = () => {
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -23,15 +18,6 @@ const index = () => {
 			.then((data) => (setProducts(data[0]), setLoading(false)));
 	}, []);
 
-	
-	const settings = {
-		className: "center",
-		centerMode: true,
-		infinite: false,
-		centerPadding: "60px",
-		slidesToShow: 3,
-		speed: 500,
-	};
 
 	function callback(key) {
 		console.log(key);
@@ -135,222 +121,12 @@ const index = () => {
 				</div>
 
         <div className={styles.carrousel}>
-          <div className={styles.seccions}>
-            <h3>Equipos</h3>
-              {/* {
-				<div className={styles.carrousel}>
-					<div className={styles.seccions}>
-						<h3>Equipos</h3>
-						{/* {
-                loading &&
-                data.map(({id, description}) => (
-                  <div>
-                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
-                  </div>
-                    )
-                  )
-            
-              } */}
-						<div className={styles.swiper}>
-							<Swiper
-								slidesPerView={"auto"}
-								spaceBetween={30}
-								modules={[Pagination]}
-							>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-							</Swiper>
-						</div>
-					</div>
-					<div className={styles.seccions}>
-						<h3>Alquileres</h3>
-						{/* {
-                loading &&
-                data.map(({id, description}) => (
-                  <div>
-                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
-                  </div>
-                    )
-                  )
-        
-              } */}
-						<div className={styles.swiper}>
-							<Swiper
-								slidesPerView={"auto"}
-								spaceBetween={30}
-								modules={[Pagination]}
-								className={styles.swiper}
-							>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-							</Swiper>
-						</div>
-					</div>
-					<div className={styles.seccions}>
-						<h3>Servicio técnico</h3>
-						{/* {
-                loading &&
-                data.map(({id, description}) => (
-                  <div>
-                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
-                  </div>
-                    )
-                  )
-        
-              } */}
-						<div className={styles.swiper}>
-							<Swiper
-								slidesPerView={"auto"}
-								spaceBetween={30}
-								modules={[Pagination]}
-								className={styles.swiper}
-							>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-								<SwiperSlide className={styles.swiperSlide}>
-									<Cards
-										img="/monitorSignosVitales.png"
-										title="Monitor de signos vitales"
-										description={description}
-									/>
-								</SwiperSlide>
-							</Swiper>
-						</div>
-					</div>
+			<CarrouselMobile title='Equipos' />
+			<CarrouselMobile title='Alquileres' />
+			<CarrouselMobile title='Servicio técnico' />
+
+					
+					
 				</div>
 			</div>
 		</div>

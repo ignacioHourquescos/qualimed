@@ -6,16 +6,24 @@ import styles from "./Hero.module.scss";
 const Hero = () => {
 	// const dispatch = useDispatch();
 
-	const [formValues, handleInputChange] = useForm({
+
+	const navigate = useNavigate();
+    const location = useLocation();
+
+    const {q = ''} = queryString.parse(location.search);
+
+    const [formValues, handleInputChange] = useForm({
 		buscar: "",
-	});
+    });
+
+    const heroesFilter =useMemo(() => getHeroesByName(q), [q])
 
 	const { buscar } = formValues;
 
-	const handleLogin = (e) => {
-		e.preventDefault();
-		dispatch(login());
-	};
+    const handleSearch = (e) => {
+        e.preventDefault();
+        navigate(`?q=${searchText}`)
+      } 
 
 	return (
 		<>

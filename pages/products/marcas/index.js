@@ -1,129 +1,41 @@
-import Header from '../../../components/Header/Header'
-import Products from '../../../components/Products/Products'
-import styles from './index.module.scss'
-import { Collapse } from 'antd';
-import { useFetch } from '../../../hooks/useFetch';
-import Cards from '../../../components/Ui/Cards/Cards';
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
-
+import Header from "../../../components/Header/Header";
+import Products from "../../../components/Products/Products";
+import styles from "../equipamiento/index.module.scss";
+import React, { useRef, useState, useEffect } from "react";
+import SubHeader from "../../../components/SubHeader/SubHeader";
+import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";
+import Filter from "../../../components/Filter/Filter";
 
 const index = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
-
-  const [state, setState] = useState(false);
-
-  const marcas = ['Alere', 'Braun', 'Drager', 'Fujifilm', 'Nutricia', 'Philips'];
-
-  const description = 'lorem';
-  
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: false,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500
-  };
-
-  const { loading, data } =  useFetch(`https://qualimed.herokuapp.com/articulos`);
-
-  function callback(key) {
-    console.log(key);
-    setSideDrawerOpen(!sideDrawerOpen);
-  }
-  function colorice(key1) {
-    console.log(key1);
-    setState(!state);
-
-  }
-
-  const { Panel } = Collapse;
-
+  useEffect(() => {
+    fetch("../api/getProducts")
+      .then((response) => response.json())
+      .then((data) => (setProducts(data[0]), setLoading(false)));
+  }, []);
 
   return (
-    <div style={{background: '#E5E5E5', overflow: 'hidden'  }}>
-      <Header/>
-      <div className={styles.hero}>
-        <div className={styles.rectangle}>
-          <h3>Marcas</h3>
-        </div>
-      </div>
+    <div
+      style={{ background: "#E5E5E5", overflow: "hidden" }}
+      className={styles.mainCont}
+    >
+      <Header />
+      <SubHeader title="Marcas" img="marcas.png" />
+
       <div className={styles.container}>
-        <div className={styles.filter}>
-          <input className={styles.input} placeholder='Buscar Producto'></input>
-          <div className={styles.categories}>
-            <h3>Categorías</h3>
-            <Collapse onChange={callback} ghost>
-              <Panel className={styles.categoryPanel} showArrow={false} header={<><img src='/ventilatorIcon.png'/><a style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: '700'  }}>Equipamiento</a></>} key="1">
-                <li>Equipos</li>
-                <li>Alquileres</li>
-                <li>Servicio técnico</li>
-              </Panel>
-              <li className={styles.category}><img src='/maskIcon.png' /><div><a>Insumos médicos</a></div></li>
-              <li className={styles.category}><img src='/bandageIcon.png' /><div><a>Medicina deportiva</a></div></li>
-              </Collapse>
-              <Collapse onChange={colorice} ghost>
-              <Panel  className={styles.categoryPanel} showArrow={false} header={<><img src='/labelIcon.png' /><a  style={{ color: state ? '#3E4095' : '#595858', fontWeight: '700' }}>Marcas</a></>} key="3">
-                <li>Alere</li>
-                <li>Braun</li>
-                <li>Drager</li>
-                <li>Fujifilm</li>
-                <li>Nutricia</li>
-                <li>Philips</li>
-              </Panel>
-            </Collapse>
-          </div>
-        </div>
-
+        <Filter />
         <div className={styles.products}>
-          <Products/>
+          <Products
+            data={products}
+            loading={loading}
+          />
         </div>
-          {/* {
-                loading &&
-                data.map(({id, description}) => (
-                  <div>
-                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
-                  </div>
-                    )
-                  )
-        
-              } */}
-        {
-                marcas.map((marca) => (
-                  <div className={styles.seccions}>
 
-                    <h3>{marca}</h3>
-                
-                    <div className={styles.swiper}>
-                      
-                      <Swiper
-                                slidesPerView={"auto"}
-                                spaceBetween={30}
-                                modules={[Pagination]}
-                                className={styles.swiper}
-                              >
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                                <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                              </Swiper>
-                        </div>
-                </div>
-                ))
-              }
-        
-            
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;

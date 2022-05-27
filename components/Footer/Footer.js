@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.scss';
+import Link from 'next/link';
 
 const Footer = () => {
 
@@ -9,11 +10,11 @@ const Footer = () => {
         <img src='/logoChico.png'></img>
         
         <div className={styles.seccions}>
-          <h5>Inicio</h5>
-          <li>Quienes somos</li>
-          <li>Productos</li>
-          <li>Tienda minorista</li>
-          <li>Contacto</li>
+            <li><Link href="/"><a>Inicio</a></Link></li>
+            <li><Link href="/about"><a>Quienes somos</a></Link></li>
+            <li><Link href="/products/marcas"><a>Productos</a></Link></li>
+            <li><Link href="/contact"><a>Tienda minorista</a></Link></li>
+            <li><Link href="/contact"><a>Contacto</a></Link></li>
           <img src="./instagram.png"></img>
         </div>
         <div style={{gridRow: 2}}>

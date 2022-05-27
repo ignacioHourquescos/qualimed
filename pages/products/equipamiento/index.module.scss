@@ -11,6 +11,7 @@
     overflow: hidden;
     @media #{$mobile}{
         padding: 0;
+        margin: 0 0 0 3%;
         grid-template-columns: 100%;
         justify-content: center;
         align-items: center;
@@ -30,149 +31,26 @@
 
     }
 }
-
-.filter{
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;    
-@media #{$mobile}{
-        display: none;
-
-}
-}
-
-.categories {
-  background: #FFFFFF;
-  width: 100%;
-  height: 550px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-
-  h3 {
-    font-family: $TitleFont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
-    color: #595858;
-    padding: 20px 0 0 15px;
-
-  }
-}
-
-.category {
-  img{
-    margin: 0 0 0 5px;
-}
-div{
-    margin: -23px 0 18px 40px;
-
-@media #{$mobile} {
-display: none;
-
-}
-
-}
-  a {
-    font-family: $TitleFont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-
-  }
-
-  color: #595858;
-  margin: 0 0 0 13px;
-}
-
-.categoryPanel {
-  padding: 0;
-
-  a {
-    font-family: $TitleFont;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    margin: 0 0 0 13px;
-  }
-
-  li {
-    font-family: $MainFont;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    margin: 0 0 7px 35px;
-    color: #595858;
-  }
-}
-.marcas{
-        font-family: $TitleFont;
-        font-style: normal !important;
-        font-weight: 700 !important;
-        font-size: 20px   !important;
-        line-height: 20px !important;
-        color: #595858;
-        padding: 3px 0 0 0px;
-        margin: 0 0 0 0px !important;
-}
-
-.products {
+.products{
   grid-column: 2;
-
-  @media #{$mobile} {
-    display: none;
+  @media #{$mobile}{
+      grid-column: 1;
+      display: none;
 
   }
 }
-
-
-// .input{
-    
-//  
-.input {
-  width: 80%;
-    height: 40px;
-    background: #FFFFFF;
-    border: none;
-    border-bottom: 1px solid #595858;
-    margin: 10px auto auto auto;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-  font-family: $MainFont;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: #595858;
-}
-
-.input::placeholder {
-  margin: 0 0 0 55px;
-}
-.input:focus{
-  border: 1px solid transparent;
-  outline: none;
-  border-bottom: 1px solid black;
-
-}
-
-.carrousel {
+.carrousel{
   display: none;
   width: 100%;
   height: 100%;
-
-  @media #{$mobile} {
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+  @media #{$mobile}{
+      display: flex;
+      margin: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
 
   }
 }
+

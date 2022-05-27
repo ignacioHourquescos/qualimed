@@ -9,7 +9,7 @@ import { Pagination } from "swiper";
 import Cards from '../../components/Ui/Cards/Cards';
 
 const Slug = ({detail}) => {
-  const {img, title, description} = detail;
+  const {img, title, description, application, techcnial} = detail;
 
   const settings = {
     className: "center",
@@ -24,13 +24,18 @@ const Slug = ({detail}) => {
   return (
     <div className={styles.contAll}>
       <Header />
-        <div className={styles.title}><h1>Monitor de signos vitales</h1></div>
+        <div className={styles.title}><h1>{title}</h1></div>
 
         <div className={styles.container}>
         <div className={styles.detail}>
             <img src={img} />
             <div className={styles.detailInfo}>
-              {description}
+              Drescripcion:<br/>
+              {description}<br/>
+              Aplicaciones:<br/>
+              {application}<br/>
+              Ficha tecnica:<br/>
+              {techcnial}
             </div>
             <div className={styles.contact}>
 

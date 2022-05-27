@@ -70,6 +70,19 @@
             display: none;
         }
     }
+    a{
+        color: white;
+    } :hover{
+        color: grey;
+    }
+    h5 :hover{
+        color: grey;
+    }
+    
+    li :hover{
+        color: grey;
+    }
+    
 }
 .insta{
     display: none;
@@ -81,3 +94,24 @@
         height: 26px;
     }
 }
+.lists{
+    color: white;
+    a{
+        color: white;
+    } :hover{
+        color: grey;
+    }
+    h5{
+        color: white;
+
+    } :hover{
+        color: grey;
+    }
+    
+    li{
+        color: white;
+
+    } :hover{
+        color: grey;
+    }
+} 

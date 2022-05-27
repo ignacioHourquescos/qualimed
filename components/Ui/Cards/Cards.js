@@ -9,7 +9,7 @@ const Cards = ({imageUrl, title, description, id}) => {
       <h5>{title}</h5>
       <p>{description.slice(0, 50)}...</p>
           <Link as={`/productDesc/${title}`} href="/productDesc/[id]" >
-            <button>Ver mas</button>
+            <button type='submit'>Ver mas</button>
           </Link>
     </div>
   )

@@ -11,13 +11,13 @@
   font-weight: 700;
   font-size: 1.5rem;
   background-image: url(../../public/equipHero1.png);
-  background-size: 80% 100%;
+  background-size: 73% 80%;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   overflow: hidden;
 
   @media #{$mobile} {
-    background-size: 100% 77%;
+    background-size: 100% 76%;
     background-position: right bottom;
 
 
@@ -28,10 +28,9 @@
 .rectangle {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   height: 25vh;
-  width: 40%;
+  width: 30%;
   margin: 60px 0 0 0;
   background-color: #3E4095;
   color: white;
@@ -46,7 +45,8 @@
   }
 
   h3 {
-    margin-left: 10%;
+    width: 80%;
+    margin: 0 0 0 10%;
     color: white;
     font-family: $TitleFont;
     font-style: normal;
@@ -55,7 +55,7 @@
     line-height: 49px;
 
     @media #{$mobile} {
-      margin: 0 0 0 10%;
+      margin: 0 0 0 3%;
       justify-self: start;
       font-size: 24px;
       line-height: 29px;

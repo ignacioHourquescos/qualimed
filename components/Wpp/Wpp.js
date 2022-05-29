@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//asd
 import classes from './Wpp.module.scss'
-// import useAppContext from '../../Context/UseAppContext';
 const URL = 'https://wa.me';
 
 const ReactWhatsapp = ({ number, message, name, adress, element, onClick, ...props }) => {

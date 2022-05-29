@@ -1,6 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./ContactLanding.module.scss";
+const URL = 'https://wa.me';
+
+
 const ContactLanding = () => {
+
+	const [wapMessage, setWapMessage ] = useState({
+		Name: '',
+		Message: '' 
+	  });
+
+	  const handleInputChange = (event) =>{
+        setWapMessage({
+          ...wapMessage, 
+          [event.target.name] : event.target.value 
+        })
+    }
+
+	let number = "+54 011 47162699";
+	number = number.replace(/[^\w\s]/gi, '').replace(/ /g, '');
+    let url = `${URL}/${number}`;
+
+    const enviarMsj = (event) =>{
+        event.preventDefault();
+        url += `?text=${encodeURI("Hola me llamo "+ wapMessage.Name +" " + ' me gustaria pedirles: ' + wapMessage.Message)}`;
+
+        window.open(url);
+
+    }
+
 	return (
 		<>
 			<div className={styles.contact}>
@@ -8,30 +36,25 @@ const ContactLanding = () => {
 					<div className={styles.content}>
 						<h5>Contacto</h5>
 						<p>Contáctenos y responderemos su consulta en la brevedad.</p>
-						<input
-							type="text"
-							placeholder=" Nombre / Empresa"
-							name="name"
-							autoComplete="on"
-						></input>
-						<div style={{ width: "100%" }}>
-							{/* <input
-							type="number"
-							placeholder=" Teléfono"
-							name="celphone"
-							autoComplete="on"
-						></input> */}
-							{/* <input type='text'
-                placeholder=" Correo"
-                name="email"
-                autoComplete="on"></input> */}
-						</div>
-						<textarea
-							type="text"
-							placeholder=" Consulta"
-							name="message"
-						></textarea>
-						<button>Enviar</button>
+						<form action="#" onSubmit={enviarMsj} >
+							<input
+								type="text"
+								placeholder=" Nombre / Empresa"
+								name="Name"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<textarea
+								type="text"
+								placeholder=" &nbsp;Consulta"
+								name="Message"
+								onChange={handleInputChange}
+								required
+							></textarea>
+							<button type="submit">Enviar</button>
+						</form>
+						
 					</div>
 				</div>
 			</div>

@@ -30,11 +30,11 @@ const Slug = ({detail}) => {
         <div className={styles.detail}>
             <img src={img} />
             <div className={styles.detailInfo}>
-              Drescripcion:<br/>
-              {description}<br/>
-              Aplicaciones:<br/>
-              {application}<br/>
-              Ficha tecnica:<br/>
+              <b>Drescripcion</b><br/>
+              {description}<br/><br/>
+              <b>Aplicaciones</b><br/>
+              {application}<br/><br/>
+              <b>Ficha tecnica</b><br/>
               {techcnial}
             </div>
             <div className={styles.contact}>

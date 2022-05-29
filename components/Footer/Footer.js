@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.lists}>
-        <img src='/logoChico.png'></img>
+        <img src='/QualimedPNG.png' style={{ margin: '0 0 0 -5%'}}></img>
         
         <div className={styles.seccions}>
             <li><Link href="/"><a>Inicio</a></Link></li>

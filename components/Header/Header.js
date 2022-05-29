@@ -19,7 +19,7 @@ const Header = () => {
 		<>
 			<div className={styles.container}>
 				<div className={styles.navBar}>
-					{/* <img style={{ paddingLeft: "2rem" }} src="/logoChico.png"></img> */}
+					<Link href="/"><img style={{ paddingLeft: "2rem" }} src="/QualimedAzulPNG.png"></img></Link>
 					<ul className={styles.links}>
 						<li>
 							<Link href="/">

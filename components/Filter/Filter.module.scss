@@ -33,6 +33,7 @@
 .category {
   img{
     margin: 0 0 0 5px;
+
 }
 div{
     margin: -23px 0 18px 40px;
@@ -49,7 +50,10 @@ display: none;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+    color: #595858;
 
+  } :hover{
+    color: grey;
   }
 
   color: #595858;

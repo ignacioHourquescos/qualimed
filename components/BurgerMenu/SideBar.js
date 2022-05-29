@@ -49,16 +49,22 @@ const SideBar = (props) => {
                         <div className={classes.collapse}>
                         <Collapse onChange={callback} className={classes.collapse}  >
                                 <Panel header={<a  style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: sideDrawerOpen ? '700' : '400' }}  >Productos</a>} showArrow={false} key="1" className={classes.panel}  >
-                                    <hr/>
-                                        <Collapse onChange={colorice} accordion={true} className={classes.collapse2}>
-                                            <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a style={{ color: state ? '#595858' : '#3E4095' }}>Equipamientos</a></>}>
+                                        <Collapse onChange={colorice} accordion={true} className={classes.collapse2} expandIconPosition='right'>
+                                            <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a style={{ color: state ? '#3E4095' : '#595858' }}>Equipamientos</a></>}>
                                                 <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Equipos</a></Link></li>
                                                 <li className={classes.liBott}><Link href="/products/insumosDeportivos"><a>Alquileres</a></Link></li>
                                                 <li className={classes.liBott}><Link href="/products/insumosMedicos"><a>Servicio Tecnico</a></Link></li>
                                             </Panel>
                                                 <li className={classes.items2}><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"><a>Insumos médicos</a></Link></li>
                                                 <li className={classes.items2}><img src='/bandageIcon.png' /><Link href="/products/medicinaDeportiva"><a>Medicina Deportiva</a></Link></li>
-                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><Link href="/products/marcas"><a>Marcas</a></Link></>}className={classes.items}></Panel>
+                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><Link href="/products/marcas"><a>Marcas</a></Link></>}className={classes.items}>
+                                                <li>Alere</li>
+                                                <li>Braun</li>
+                                                <li>Drager</li>
+                                                <li>Fujifilm</li>
+                                                <li>Nutricia</li>
+                                                <li>Philips</li>
+                                                </Panel>
                                         </Collapse>
                                     
                                 </Panel> 

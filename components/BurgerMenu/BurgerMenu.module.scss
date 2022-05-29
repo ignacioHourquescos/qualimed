@@ -3,22 +3,22 @@
 
 .toolbar {
    position:fixed;
-   padding-top: 1rem;
+   padding-top: 1.4rem;
    display:flex;
 
    background-color: transparent;
    top:0;
-   right:0.7rem;  
-   z-index:1400;
+   right: 1rem;  
+   z-index:5500;
    color: #3E4090;    
    @media #{$desktop}{
       display: none;
-  
+      overflow: hidden;
+
       }  
 }  
 .burgerIcon {
       width: 45px;
-      height:90x;
       z-index:1000;
       padding:0;
       text-decoration:none;
@@ -26,6 +26,8 @@
       border: none;
       color: #3E4090;
       cursor: pointer;
+      overflow: hidden;
+
 }
 
    

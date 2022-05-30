@@ -50,7 +50,7 @@
     @media #{$mobile}{
         display: flex;
         flex-direction: column;
-
+        position: relative;
 
     }
 
@@ -85,8 +85,10 @@
 
     @media #{$mobile}{
         position: fixed;
-        top: 45%;
-        width: 90%;
+        top: 70%;
+        bottom: 0;
+        width: 100%;
+        z-index: 10000;
     }
 
 }
@@ -105,6 +107,10 @@
     justify-items: center;
     align-content: center;
     align-items: center;
+
+    @media #{$mobile}{
+        margin: 0 0 0 -10%;
+    }
     h5{
         font-family: $TitleFont;
         font-weight: 700;
@@ -178,6 +184,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media #{$mobile}{
+        height: 100vh;
+
+    }
     h3{
         align-self: start;
         font-family: $TitleFont;
@@ -187,6 +198,10 @@
         line-height: 1.5rem;
         color: #000000;        
         margin: 50px 0 20px 0;
+        @media #{$mobile}{
+            margin: -50% 0 10% 0;
+     
+         }
     }
 
 }
@@ -197,6 +212,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    @media #{$mobile}{
+       height: 50%;
+
+    }
 }
 .swiperSlide:nth-child(1n){
     width: 35%;
@@ -259,3 +279,49 @@
 
     }
   }
+
+
+// MOBILE CLASSES
+.btnMail{
+    background: #8183CA;
+    @media #{$mobile}{
+        display: none;
+    }
+}
+.shopMobile{
+    width: 95%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 3px dashed rgba(#3E4095, 0.2);
+    border-radius: 12px;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+
+    font-family: $MainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #000000;
+    
+    img{
+        width: auto;
+        height: auto;
+        margin: 0 3% 0 3%;
+        box-shadow: none;
+        
+    }  
+    @media #{$desktop}{
+        display: none;
+    }
+}
+.footer{
+    @media #{$mobile}{
+        display: none;
+    }
+}

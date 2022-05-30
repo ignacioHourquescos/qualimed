@@ -71,7 +71,7 @@ const SideBar = (props) => {
                                     
                             </Collapse>
                             </div>
-                        <li className={classes.liTop}><Link href="/"><a >Tienda Minorista</a></Link></li>
+                        <li className={classes.liTop}><Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}><a >Tienda Minorista</a></Link></li>
                         <li className={classes.liTop}><Link href="/about"><a >Quienes Somos</a></Link></li>
                         <li className={classes.liTop}><Link href="/contact"><a >Contacto</a></Link></li>
                   </ul>

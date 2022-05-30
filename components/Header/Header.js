@@ -65,7 +65,7 @@ const Header = () => {
 							</Dropdown>
 						</li>
 						<li>
-							<Link href="/">
+							<Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
 								<a>Tienda Minorista</a>
 							</Link>
 						</li>

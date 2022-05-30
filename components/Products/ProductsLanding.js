@@ -132,8 +132,8 @@ const ProductsLanding = () => {
 			{/* 
 			<div className={styles.wave_bottom}>{waveSvg_Bottom}</div> */}
 		</div>
-	);
-};
+	)
+}
 
 export default ProductsLanding;
 

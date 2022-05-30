@@ -7,11 +7,12 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const ProdCarrousel = ({ data, loading }) => {
+const ProdCarrousel = ({ data, loading, spaceBetween }) => {
 	return (
+		<>
             <Swiper
 								slidesPerView={"auto"}
-								spaceBetween={30}
+								spaceBetween={spaceBetween}
 								modules={[Pagination]}
                                 className={styles.cards}
 							>
@@ -45,8 +46,12 @@ const ProdCarrousel = ({ data, loading }) => {
 						
 				  ))}
                   </Swiper>
-	);
-};
+				
+		</>
+	)
+
+	
+}
 
 export default ProdCarrousel;
 

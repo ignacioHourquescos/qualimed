@@ -5,6 +5,7 @@ import React, { useRef, useState, useEffect } from "react";
 import SubHeader from "../../../components/SubHeader/SubHeader";
 import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../../components/Filter/Filter";
+import Footer from '/components/Footer/Footer';
 
 const index = () => {
   const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ const index = () => {
       className={styles.mainCont}
     >
       <Header />
-      <SubHeader title="Insumos médicos" img="barbijo.png" />
+      <SubHeader title="Insumos médicos" img="insumosMed.png" />
 
       <div className={styles.container}>
         <Filter />
@@ -36,6 +37,7 @@ const index = () => {
         </div>
 
       </div>
+      <Footer/>
     </div>
   );
 };

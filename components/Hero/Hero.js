@@ -31,7 +31,6 @@ const Hero = () => {
 		<div className={styles.hero}>
 			<div className={styles.seccion1}>
 				<img src="./QualimedPNG.png"></img>
-				<div className={styles.layout}></div>
 				<p>
 					30 años dedicados a la venta de insumos y equipamiasdasdento médico
 				</p>
@@ -51,6 +50,7 @@ const Hero = () => {
 			<div className={styles.seccion2}>
 				<div>
 					<img src="./medicoHero.png"></img>
+					<div className={styles.layout}></div>
 				</div>
 			</div>
 		</div>

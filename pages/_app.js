@@ -18,8 +18,8 @@ function MyApp({ Component, pageProps }) {
           setSideDrawerOpen(false);
   }
 
-  return(<>
-
+  return(
+          <>
           <BurgerMenu drawerToggleClickHandler={drawerToggleClickHandler} />
           <SideBar click={closeMenu} show={sideDrawerOpen}/> 
           <Component {...pageProps} />

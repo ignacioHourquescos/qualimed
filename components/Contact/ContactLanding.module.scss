@@ -10,7 +10,7 @@
   background-color: $grey;
 
   @media #{$mobile} {
-    height: 100vh;
+    height: 55vh;
   }
 }
 
@@ -57,7 +57,7 @@
     font-size: 2.5rem;
     line-height: 1.3rem;
     color: #393838;
-    margin: 15% 0 20px 0;
+    margin: 0% 0 20px 0;
 
     @media #{$mobile} {
       font-size: 2rem;

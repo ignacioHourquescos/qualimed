@@ -21,16 +21,12 @@ const SideBar = (props) => {
    function callback(key) {
     setSideDrawerOpen(!sideDrawerOpen);
    }
+
    function colorice(key1) {
-    setColor(!state);
+    setColor(!color);
 
-   }
-   
-
+}
    const text = 'aaaaaaaaaa';
-   
-
-    
 
     return(
     
@@ -52,19 +48,19 @@ const SideBar = (props) => {
                                 <Panel header={<a  style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: sideDrawerOpen ? '700' : '400' }}  >Productos</a>} showArrow={false} key="1" className={classes.panel}  >
                                         <Collapse onChange={colorice} accordion={true} className={classes.collapse2} expandIconPosition='right'>
                                             <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a style={{ color: color ? '#3E4095' : '#595858' }}>Equipamientos</a></>}>
-                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a>Equipos</a></Link></li>
-                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a>Alquileres</a></Link></li>
-                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a>Servicio Tecnico</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a onClick={props.click}>Equipos</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a onClick={props.click}>Alquileres</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a onClick={props.click}>Servicio Tecnico</a></Link></li>
                                             </Panel>
-                                                <li className={classes.items2}><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"><a>Insumos médicos</a></Link></li>
-                                                <li className={classes.items2}><img src='/bandageIcon.png' /><Link href="/products/medicinaDeportiva"><a>Medicina Deportiva</a></Link></li>
+                                                <li className={classes.items2}><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"><a onClick={props.click}>Insumos médicos</a></Link></li>
+                                                <li className={classes.items2}><img src='/bandageIcon.png' /><Link href="/products/medicinaDeportiva"><a onClick={props.click}>Medicina Deportiva</a></Link></li>
                                                 <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><Link href="/products/marcas"><a>Marcas</a></Link></>}className={classes.items}>
-                                                <li>Alere</li>
-                                                <li>Braun</li>
-                                                <li>Drager</li>
-                                                <li>Fujifilm</li>
-                                                <li>Nutricia</li>
-                                                <li>Philips</li>
+                                                <li onClick={props.click}>Alere</li>
+                                                <li onClick={props.click}>Braun</li>
+                                                <li onClick={props.click}>Drager</li>
+                                                <li onClick={props.click}>Fujifilm</li>
+                                                <li onClick={props.click}>Nutricia</li>
+                                                <li onClick={props.click}>Philips</li>
                                                 </Panel>
                                         </Collapse>
                                     

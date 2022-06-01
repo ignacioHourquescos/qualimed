@@ -182,20 +182,20 @@
     line-height: 2.2rem;
     color: #393838;
 
-    @media #{$mobileXs} {
-      width: 60%;
-      margin: auto auto 8% auto;
-      font-size: 1.2rem;
-      line-height: 1.2rem;
-
-    }
+   
     @media #{$mobile} {
       margin: auto auto 2% auto;
       font-size: 1.2rem;
       line-height: 1.2rem;
 
     }
+    @media #{$mobileXs} {
+      width: 60%;
+      margin: 10% auto 8% auto;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
 
+    }
     @media #{$desktopXl} {
       font-size: 1.8rem;
       line-height: 2.2rem;
@@ -246,7 +246,8 @@
     color: $white;
     border: none;
 
-    @media #{$mobileXs} {
+    
+    @media #{$mobile} {
       align-self: center;
       justify-self: center;
       margin: 0 0 70% 0;
@@ -254,15 +255,14 @@
 
 
     }
-    @media #{$mobile} {
+    @media #{$mobileXs} {
       align-self: center;
       justify-self: center;
-      margin: 0 0 80% 0;
+      margin: 0 0 100% 0;
       width: 120px;
 
 
     }
-
   }
 }
 

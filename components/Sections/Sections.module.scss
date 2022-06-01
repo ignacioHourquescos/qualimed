@@ -34,13 +34,13 @@
   .carrousel_container {
     width: 50%;
     margin: 0 25%;
-    margin-top: 10%;
+    margin-top: 20%;
     height: 100%;
     z-index: 1;
 
     @media #{$mobile} {
       width: 60%;
-      margin-top: 10%;
+      margin-top: 30%;
 
     }
 

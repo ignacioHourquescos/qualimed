@@ -7,23 +7,24 @@ const Hero = () => {
 	// const dispatch = useDispatch();
 
 
-	const navigate = useNavigate();
-    const location = useLocation();
+	// const navigate = useNavigate();
+  //   const location = useLocation();
 
-    const {q = ''} = queryString.parse(location.search);
+  //   const {q = ''} = queryString.parse(location.search);
 
-    const [formValues, handleInputChange] = useForm({
-		buscar: "",
-    });
+  //   const [formValues, handleInputChange] = useForm({
+	// 	buscar: "",
+  //   });
 
-    const heroesFilter =useMemo(() => getHeroesByName(q), [q])
+  //   const heroesFilter =useMemo(() => getHeroesByName(q), [q])
 
-	const { buscar } = formValues;
+	// const { buscar } = formValues;
+  const buscar= "";
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        navigate(`?q=${searchText}`)
-      } 
+    // const handleSearch = (e) => {
+    //     e.preventDefault();
+    //     navigate(`?q=${searchText}`)
+    //   } 
 
 	return (
 		<>
@@ -42,7 +43,7 @@ const Hero = () => {
 					name="buscar"
 					autoComplete="off"
 					value={buscar}
-					onChange={handleInputChange}
+					// onChange={handleInputChange}
 					></input>
 				</div>
 				

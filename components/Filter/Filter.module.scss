@@ -1,14 +1,15 @@
 @import "../../styles/constants.scss";
 
-.filter{
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;    
-@media #{$mobile}{
-        display: none;
+.filter {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-}
+  @media #{$mobile} {
+    display: none;
+
+  }
 }
 
 .categories {
@@ -17,6 +18,7 @@
   height: 550px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
+  padding: 1rem;
 
   h3 {
     font-family: $TitleFont;
@@ -31,18 +33,20 @@
 }
 
 .category {
-  img{
+  img {
     margin: 0 0 0 5px;
-}
-div{
+  }
+
+  div {
     margin: -23px 0 18px 40px;
 
-@media #{$mobile} {
-display: none;
+    @media #{$mobile} {
+      display: none;
 
-}
+    }
 
-}
+  }
+
   a {
     font-family: $TitleFont;
     font-style: normal;
@@ -78,15 +82,16 @@ display: none;
     color: #595858;
   }
 }
-.marcas{
-        font-family: $TitleFont;
-        font-style: normal !important;
-        font-weight: 700 !important;
-        font-size: 20px   !important;
-        line-height: 20px !important;
-        color: #595858;
-        padding: 3px 0 0 0px;
-        margin: 0 0 0 0px !important;
+
+.marcas {
+  font-family: $TitleFont;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  line-height: 20px !important;
+  color: #595858;
+  padding: 3px 0 0 0px;
+  margin: 0 0 0 0px !important;
 }
 
 .products {
@@ -100,18 +105,18 @@ display: none;
 
 
 // .input{
-    
+
 //  
 .input {
   width: 80%;
-    height: 40px;
-    background: #FFFFFF;
-    border: none;
-    border-bottom: 1px solid #595858;
-    margin: 10px auto auto auto;
-    display: flex;
-    align-self: center;
-    justify-self: center;
+  height: 40px;
+  background: #FFFFFF;
+  border: none;
+  border-bottom: 1px solid #595858;
+  margin: 10px auto auto auto;
+  display: flex;
+  align-self: center;
+  justify-self: center;
   font-family: $MainFont;
   font-style: normal;
   font-weight: 400;
@@ -123,7 +128,8 @@ display: none;
 .input::placeholder {
   margin: 0 0 0 55px;
 }
-.input:focus{
+
+.input:focus {
   border: 1px solid transparent;
   outline: none;
   border-bottom: 1px solid black;

@@ -21,8 +21,7 @@ const Filter = () => {
   return (
     <div className={styles.filter}>
 					<div className={styles.categories}>
-					<input className={styles.input} placeholder="Buscar Producto"></input>
-					<hr/>
+					<input className={styles.input} placeholder="Buscar"></input>
 						<h3>Categorías</h3>
 						<Collapse onChange={callback} ghost expandIconPosition='right'>
 							<Panel
@@ -31,7 +30,7 @@ const Filter = () => {
 								header={
 									<><img src='/ventilatorIcon.png'/>
 										<a
-											style={{
+											  style={{
 												color: sideDrawerOpen ? "#3E4095" : "#595858",
 												fontWeight: "700",
 											}}

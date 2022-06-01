@@ -24,9 +24,9 @@ const Products = ({ data, loading }) => {
 							</ContentLoader>
 						</div>
 				  ))
-				: data.map((element) => (
+				: data.map((element,idx) => (
 						<Cards
-							// key={element.code}
+							key={`bc_${idx}`}
 							title={element.title}
 							description={element.description}
 							imageUrl={element.img}

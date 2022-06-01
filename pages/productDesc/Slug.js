@@ -28,7 +28,7 @@ const Slug = ({detail}) => {
 
         <div className={styles.container}>
         <div className={styles.detail}>
-            <img src={img} />
+            <div className={styles.img_container}><img src={img} /></div>
             <div className={styles.detailInfo}>
               Drescripcion:<br/>
               {description}<br/>

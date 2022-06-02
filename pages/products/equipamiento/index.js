@@ -8,6 +8,21 @@ import Filter from "../../../components/Filter/Filter";
 import Footer from '/components/Footer/Footer';
 
 const index = () => {
+
+  const {searchText} = Filter;
+
+  const [test, setTest] = useState("");
+
+  useEffect(() => {
+    
+    console.log(searchText)
+  }, [searchText])
+  
+  const testFunction = (e) =>{
+    e.preventDefault();
+    console.log("esta es la fucntion test " + e )
+  }
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +31,11 @@ const index = () => {
       .then((response) => response.json())
       .then((data) => (setProducts(data[0]), setLoading(false)));
   }, []);
+
+  const prodFilter = function getProdByName(){
+      searchText = searchText.toLowerCase();
+      return products.filter(product => product.name.toLowerCase().includes(searchText))
+    }
 
   return (
     <div
@@ -26,14 +46,25 @@ const index = () => {
       <SubHeader title="Equipamiento" img="equipHero1.png" />
 
       <div className={styles.container}>
-        <Filter />
+        <Filter testFunction={testFunction}/>
         <div className={styles.products}>
+          {/* { 
+            searchText = "" ?
+              <Products
+              data={products.filter(
+                (element) => element.category == "EQUIPAMIENTO"
+              )}
+              loading={loading}
+            />
+          :
           <Products
-            data={products.filter(
-              (element) => element.category == "EQUIPAMIENTO"
-            )}
-            loading={loading}
-          />
+              data={products.filter(
+                (element) => element.title.toLowerCase() == searchText.toLowerCase()
+              )}
+              loading={loading}
+            />
+            
+          } */}
         </div>
 
         <div className={styles.carrousel}>

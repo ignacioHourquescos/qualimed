@@ -2,8 +2,9 @@ import React, { useRef, useState, useEffect } from "react";
 import { Collapse } from "antd";
 import styles from "./Filter.module.scss";
 import Link from "next/link";
+import useForm from "../../hooks/useForm";
 
-const Filter = () => {
+const Filter = ({testFunction}) => {
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 	const [state, setState] = useState(false);
 
@@ -15,13 +16,39 @@ const Filter = () => {
 		console.log(key1);
 		setState(!state);
 	}
+		const [ formValues, handleInputChange] = useForm({
+			searchText:'',
+		});
+
+
+	const {searchText} = formValues;
+
+	
+
+	const handleSearch = (e) =>{
+		e.preventDefault();
+		
+
+	}
 
     const { Panel } = Collapse;
 
   return (
     <div className={styles.filter}>
 					<div className={styles.categories}>
-					<input className={styles.input} placeholder="Buscar Producto"></input>
+						<form onSubmit={testFunction}>
+							<input 
+								type="text"
+								className={styles.input} 
+								placeholder="Buscar Producto"
+								name="searchText"
+								autoComplete="off"
+								value={searchText}
+								onChange={handleInputChange}
+								
+								/>
+						</form>
+						
 						<h3>Categorías</h3>
 						<Collapse onChange={callback} ghost expandIconPosition='right'>
 							<Panel

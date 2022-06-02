@@ -43,7 +43,7 @@ const Slug = ({detail}) => {
 
         <div className={styles.container}>
         <div className={styles.detail}>
-            <img src={img} />
+            <div className={styles.img_container}><img src={img} /></div>
             <div className={styles.detailInfo}>
               <b>Descripcion</b><br/>
               {description}<br/><br/>
@@ -61,12 +61,7 @@ const Slug = ({detail}) => {
                     <button className={styles.btnMail} style={{background:'#8183CA'}}>Cotización via mail</button>
                     <div className={styles.shopMobile}><img src='/cart2.png'/>Ver producto en tienda minorista</div>
                 </div>
-                <div className={styles.shop}>
-                  <img src='/cart2.png'/>
-                  <Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
-								    Ver producto en tienda minorista
-							      </Link>
-              </div>
+     
             </div>
         </div>
         <div className={styles.related}>

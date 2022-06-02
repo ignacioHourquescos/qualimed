@@ -57,7 +57,7 @@ const Filter = ({testFunction}) => {
 								header={
 									<><img src='/ventilatorIcon.png'/>
 										<a
-											style={{
+											  style={{
 												color: sideDrawerOpen ? "#3E4095" : "#595858",
 												fontWeight: "700",
 											}}

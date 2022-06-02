@@ -25,6 +25,7 @@
     font-size: 40px;
     line-height: 49px;
     font-weight: 700;
+
     @media #{$mobile} {
       width: 90%;
       font-size: 35px;
@@ -69,9 +70,11 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   color: #595858;
+
   @media #{$desktopXl} {
     grid-template-columns: repeat(3, 32%);
   }
+
   @media #{$mobile} {
     width: 100%;
     margin: auto;
@@ -80,7 +83,7 @@
     grid-gap: 20px;
     color: #fff;
     box-shadow: none;
-    
+
 
   }
 }
@@ -95,6 +98,7 @@
   justify-items: center;
   align-items: center;
   align-content: center;
+
   @media #{$mobile} {
     grid-row: 3;
     grid-column: 1;
@@ -107,6 +111,7 @@
   div {
     margin-left: 3%;
     margin-bottom: 5%;
+
     @media #{$mobile} {
       margin: auto 0 auto 3%;
     }
@@ -122,7 +127,7 @@
     p {
       font-family: $MainFont;
       font-weight: 400;
-      
+
     }
   }
 
@@ -157,8 +162,9 @@
   align-items: center;
   align-content: center;
   margin-left: 7%;
+
   @media #{$mobile} {
-    grid-row: 2;    
+    grid-row: 2;
     grid-column: 1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
@@ -204,6 +210,7 @@
   align-items: center;
   align-content: center;
   margin-left: 10%;
+
   @media #{$mobile} {
     grid-row: 1;
     grid-column: 1;
@@ -212,6 +219,7 @@
     color: #595858;
 
   }
+
   div {
     margin-left: 3%;
 
@@ -221,6 +229,7 @@
       font-weight: 700;
       color: #595858;
       margin-top: -8%;
+
       @media #{$mobile} {
         margin: auto 0 3% 0;
       }
@@ -254,6 +263,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   color: #595858;
+
   @media #{$mobile} {
     width: 90%;
     height: 70vh;
@@ -289,11 +299,12 @@
       }
     }
 
-    
+
   }
 
- 
+
 }
+
 .pointImg {
   font-size: 3rem;
   color: #3E4095;
@@ -301,6 +312,7 @@
   grid-column: 1;
   grid-row: 1;
 }
+
 .map {
   width: 100%;
   height: 100%;

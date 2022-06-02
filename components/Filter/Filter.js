@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Collapse } from "antd";
 import styles from "./Filter.module.scss";
-
+import Link from "next/link";
 
 const Filter = () => {
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -21,7 +21,7 @@ const Filter = () => {
   return (
     <div className={styles.filter}>
 					<div className={styles.categories}>
-					<input className={styles.input} placeholder="Buscar"></input>
+					<input className={styles.input} placeholder="Buscar Producto"></input>
 						<h3>Categorías</h3>
 						<Collapse onChange={callback} ghost expandIconPosition='right'>
 							<Panel
@@ -48,13 +48,13 @@ const Filter = () => {
 							<li className={styles.category}>
 								<img src="/maskIcon.png" />
 								<div>
-									<a>Insumos médicos</a>
+									<Link href="/products/insumosMedicos"><a>Insumos médicos</a></Link>
 								</div>
 							</li>
 							<li className={styles.category}>
 								<img src="/bandageIcon.png" />
 								<div>
-									<a>Medicina deportiva</a>
+									<Link href="/products/medicinaDeportiva"><a>Medicina deportiva</a></Link>
 								</div>
 							</li>
 						</Collapse>

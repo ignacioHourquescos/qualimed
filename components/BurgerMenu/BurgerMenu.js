@@ -3,11 +3,13 @@ import ss from './BurgerMenu.module.scss';
 const BurgerMenu = props => {
 
   	return (
+      <>
       <header className={ss.toolbar}>
          <button className={ss.burgerIcon} onClick={props.drawerToggleClickHandler}>
             {burger}
          </button> 
       </header>
+      </>
    )
 }
 

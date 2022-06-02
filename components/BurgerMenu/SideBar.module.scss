@@ -2,16 +2,14 @@
 
 
 .side_drawer_open{    
-   margin:0;
+   margin: 0px 0 0 0;
    position:fixed;
    top:0;
    left:0;
    width:100%;
-   z-index:4000;
-   
-   overflow-y: nscroll;
+   z-index:6000;
    position:fixed;
-   height:100%;
+   height:100vh;
    overflow-y: auto;
    background-color: #F6F6F6;
    backdrop-filter: blur(8px);
@@ -20,6 +18,7 @@
    transition: opacity 0.3s;
    -webkit-transition: opacity 0.3s;
    opacity: 1;
+
    @media #{$desktop}{
     display: none;
     // font-size:4rem;
@@ -29,15 +28,18 @@
 
    .close{
       position:absolute;
-      right: 0.2rem;
-      font-size:2rem;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
       border-radius:200px;
-      width:3rem;
-      height:3rem; 
+      width: 3rem;
+      height: 3rem; 
       cursor: pointer;
       fill: black;
-      z-index: 1500;
+      z-index: 5500;
+
       @media #{$desktop}{
+          
         top:0.6rem;
         right: 1rem;
         // font-size:4rem;
@@ -48,7 +50,7 @@
    }
 
    .ul {
-      height:100%;
+      height:150%;
       list-style:none;
       display:flex;
       flex-direction:column;
@@ -58,7 +60,7 @@
       padding:0;
       padding-top:4rem;
 
-      margin:0;  
+      margin: 30px 0 0 0;
       cursor: default;
       color: #595858;
        
@@ -70,18 +72,16 @@
     height: 64px;
     text-decoration:none;
     margin:0;
-    border-bottom: 1px solid #D8D8D8;
     font-family: $MainFont;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    
+    border-bottom: 1px solid #D8D8D8;
     color: #595858;
     
     cursor: pointer;
     padding: 1rem 0;
-    overflow: hidden;
     @media #{$desktop}{
         padding: 1rem 1.5rem;
 
@@ -117,13 +117,13 @@
 
 
 .side_drawer{
-    height:100vh;
+    overflow: hidden;
+    height:150%;
     margin:0;
     position:fixed;
     top:0;
     left:0;
-    width:100%;
-    max-width:400px;
+    width: 100%;
     z-index:-200;
    //  transform:translateX(-100%);
     transition: opacity 0.3s;
@@ -140,7 +140,8 @@
     align-self: flex-start;
     border: none;
     background-color: #F6F6F6;
-    
+    overflow: hidden;
+
     
 
 
@@ -222,22 +223,26 @@
 
 .items{
     width: 100%;
+    height: 100%;
     font-weight: 800;
     margin: 0;
     border-left: none ;
     border-right: none ;
-
+    padding: 0;
+    
     img{
-        margin-right: 20px;
+        margin: 0 20px 0 0;
+
     }
 
     div{
         border-left: none ;
         border-right: none ;
-        border-bottom: 1px solid #D8D8D8;
 
 
         a{
+            margin: 0;
+            padding: 0;
             border-left: none ;
             border-right: none ;
             color: #595858;

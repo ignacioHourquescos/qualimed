@@ -3,8 +3,8 @@ import "./ProductsLanding.module.scss";
 import React from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
-// import ".//stylesProd.module.css";
 import { useMediaQuery } from "react-responsive";
+import Link from "next/link";
 
 const ProductsLanding = () => {
 	const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
@@ -47,7 +47,7 @@ const ProductsLanding = () => {
 					display: "flex",
 					width: "20%",
 					padding: "10px",
-					margin: "0 0 -13% 43%",
+					margin: "0 0 10% 43%",
 					zIndex: "1500",
 				}}
 			>
@@ -74,7 +74,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<button>Ver mas</button>
+									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -89,7 +89,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<button>Ver mas</button>
+									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -107,7 +107,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<button>Ver mas</button>
+									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -122,7 +122,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<button>Ver mas</button>
+									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -132,8 +132,8 @@ const ProductsLanding = () => {
 			{/* 
 			<div className={styles.wave_bottom}>{waveSvg_Bottom}</div> */}
 		</div>
-	);
-};
+	)
+}
 
 export default ProductsLanding;
 

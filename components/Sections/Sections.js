@@ -1,66 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import styles from "./Sections.module.scss";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
-// const Sections = () => {
-
-//   const settings = {
-//     dots: true,
-//     fade: true,
-//     dotsClass: "slick-dots",
-//     infinite: true,
-//     speed: 1000,
-//     autoplay: true,
-//     autoplaySpeed: 4000,
-//     appendDots: dots => (
-//       <div
-//         style={{
-//           display: 'flex',
-//           width: '20%',
-//           padding: "10px",
-//           margin: '0 0 0% 41%'
-
-//         }}
-
-//       >
-//         <ul className={styles.dots}> {dots} </ul>
-//       </div>
-//     ),
-
-//     }
-//   return (
-//     <>
-//     <div className={styles.container}>
-//       <h3 className={styles.h3}>Lineas de productos</h3>
-//       <div className={styles.containerReal}>
-//         {/* <div className={styles.seccion1}><img src='./monitor.png'></img></div>
-//         <div className={styles.seccion2}><img src='./medicinaDep1.png'></img></div>
-//         <div className={styles.seccion3}><img src='./barbijo1.png'></img></div> */}
-//         <Slider {...settings} className={styles.slides} >
-//           <div className={styles.center}>
-//             <div className={styles.seccion}><img src='./monitor.png'></img></div>
-//           </div>
-//           <div className={styles.center}>
-//             <div className={styles.seccion}><img src='./medicinaDep1.png'></img></div>
-//           </div>
-//           <div className={styles.center}>
-//             <div className={styles.seccion}><img src='./barbijo1.png'></img></div>
-//           </div>
-
-//         </Slider>
-//         </div>
-//       <div className={styles.wave}><div></div></div>
-//       </div>
-
-//     </>
-//     )
-// }
-
 const Sections = () => {
+
+
 	const isDesktop = useMediaQuery({ query: "(min-width: 700px)" });
+
+	const [desktop, setDesktop] = useState(true);
+
+	useEffect(() => {
+	  if (!isDesktop) {
+		  setDesktop(false)
+	  }
+	}, [])
+	
 
 	const settings = {
 		className: "center",
@@ -69,7 +26,7 @@ const Sections = () => {
 		centerPadding: "0px 80px ",
 		slidesToShow: 3,
 		speed: 500,
-		slidesToScroll: 24,
+		slidesToScroll: 1,
 		slidesToShow: 3,
 		autoplay: true,
 		autoplaySpeed: 1800,
@@ -88,7 +45,7 @@ const Sections = () => {
 		centerPadding: "0px 80px ",
 		slidesToShow: 1,
 		speed: 700,
-		slidesToScroll: 24,
+		slidesToScroll: 1,
 		slidesToShow: 1,
 		autoplay: true,
 		autoplaySpeed: 2000,
@@ -101,43 +58,62 @@ const Sections = () => {
 		// lazyLoad: true,
 	};
 
+
 	return (
 		<>
 			<div className={styles.container}>
 				<h5>Categorias </h5>
 				<div className={styles.carrousel_container}>
-					{isDesktop ? (
+					{ desktop ? (
 						<Slider {...settings}>
-							<Link href="/products/equipamiento">
-								<img src="./monitor.png"></img>
-							</Link>
-							<Link href="/products/medicinaDeportiva">
-								<img src="./medicinaDep1.png"></img>
-							</Link>
-							<Link href="/products/insumosMedicos">
-								<img src="./seccionLand.png"></img>
-							</Link>
-							<Link href="/products/equipamiento">
-								<img src="./monitor.png"></img>
-							</Link>
-							<Link href="/products/medicinaDeportiva">
-								<img src="./medicinaDep1.png"></img>
-							</Link>
-							<Link href="/products/insumosMedicos">
-								<img src="./seccionLand.png"></img>
-							</Link>
+							<div>
+								<Link href="/products/equipamiento">
+									<img src={"/monitor.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/medicinaDeportiva">
+									<img src={"/medicinaDep1.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/insumosMedicos">
+									<img src={"/seccionLand.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/equipamiento">
+									<img src={"/monitor.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/medicinaDeportiva">
+									<img src={"/medicinaDep1.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/insumosMedicos">
+									<img src={"/seccionLand.png"}/>
+								</Link>
+							</div>
 						</Slider>
 					) : (
 						<Slider {...settings1}>
-							<Link href="/products/equipamiento">
-								<img src="./monitor.png"></img>
-							</Link>
-							<Link href="/products/medicinaDeportiva">
-								<img src="./medicinaDep1.png"></img>
-							</Link>
-							<Link href="/products/insumosMedicos">
-								<img src="./seccionLand.png"></img>
-							</Link>
+							<div>
+								<Link href="/products/equipamiento">
+									<img src={"/monitor.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/medicinaDeportiva">
+									<img src={"/medicinaDep1.png"}/>
+								</Link>
+							</div>
+							<div>
+								<Link href="/products/insumosMedicos">
+									<img src={"/seccionLand.png"}/>
+								</Link>
+							</div>
 						</Slider>
 					)}
 				</div>

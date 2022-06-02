@@ -5,6 +5,7 @@ import React, { useRef, useState, useEffect } from "react";
 import SubHeader from "../../../components/SubHeader/SubHeader";
 import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../../components/Filter/Filter";
+import Footer from '/components/Footer/Footer';
 
 const index = () => {
   const [products, setProducts] = useState([]);
@@ -36,11 +37,12 @@ const index = () => {
         </div>
 
         <div className={styles.carrousel}>
-          <CarrouselMobile title="Equipos" />
-          <CarrouselMobile title="Alquileres" />
-          <CarrouselMobile title="Servicio técnico" />
+          <CarrouselMobile spaceBetween={30} title="Equipos" />
+          <CarrouselMobile spaceBetween={30} title="Alquileres" />
+          <CarrouselMobile spaceBetween={30} title="Servicio técnico" />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

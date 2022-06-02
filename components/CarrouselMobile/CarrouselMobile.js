@@ -5,7 +5,7 @@ import Cards from "../Ui/Cards/Cards";
 import styles from "./CarrouselMobile.module.scss";
 import ProdCarrousel from "./ProdCarrousel";
 
-const CarrouselMobile = ({title}) => {
+const CarrouselMobile = ({title, spaceBetween}) => {
 
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -27,24 +27,9 @@ const CarrouselMobile = ({title}) => {
 											(element) => element.category == "EQUIPAMIENTO"
 										)}
 										loading={loading}
+										spaceBetween={spaceBetween}
 									/>
 								}
-								
-							
-							              {/* {
-				<div className={styles.carrousel}>
-					<div className={styles.seccions}>
-						<h3>Equipos</h3>
-						{/* {
-                loading &&
-                data.map(({id, description}) => (
-                  <div>
-                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
-                  </div>
-                    )
-                  )
-            
-              } */}
 						</div>
 					</div>
   )

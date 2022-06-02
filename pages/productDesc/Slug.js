@@ -7,9 +7,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import Cards from '../../components/Ui/Cards/Cards';
+import Link from "next/link";
+import CarrouselMobile from '../../components/CarrouselMobile/CarrouselMobile';
 
 const Slug = ({detail}) => {
-  const {img, title, description, application, techcnial} = detail;
+  const {img, title, description, application, techcnial, code} = detail;
 
   const settings = {
     className: "center",
@@ -19,6 +21,19 @@ const Slug = ({detail}) => {
     slidesToShow: 3,
     speed: 500
   };
+
+  const URL = 'https://wa.me';
+	let number = "+54 011 47162699";
+	number = number.replace(/[^\w\s]/gi, '').replace(/ /g, '');
+    let url = `${URL}/${number}`;
+
+    const enviarMsj = (event) =>{
+        event.preventDefault();
+        url += `?text=${encodeURI("Hola me gustaria consultarles por "+ title +" " + ' el codigo es ' + code)}`;
+
+        window.open(url);
+
+    }
 
 
   return (
@@ -30,11 +45,11 @@ const Slug = ({detail}) => {
         <div className={styles.detail}>
             <div className={styles.img_container}><img src={img} /></div>
             <div className={styles.detailInfo}>
-              Drescripcion:<br/>
-              {description}<br/>
-              Aplicaciones:<br/>
-              {application}<br/>
-              Ficha tecnica:<br/>
+              <b>Descripcion</b><br/>
+              {description}<br/><br/>
+              <b>Aplicaciones</b><br/>
+              {application}<br/><br/>
+              <b>Ficha tecnica</b><br/>
               {techcnial}
             </div>
             <div className={styles.contact}>
@@ -42,41 +57,22 @@ const Slug = ({detail}) => {
                 <div className={styles.cotizacion}>
                     <h5>{title}</h5>
                     <p>{description.slice(0, 50)}...</p>
-                    <button>Cotización via whatsapp</button>
-                    <button style={{background:'#8183CA'}}>Cotización via mail</button>
+                    <button onClick={enviarMsj}>Cotización via whatsapp</button>
+                    <button className={styles.btnMail} style={{background:'#8183CA'}}>Cotización via mail</button>
+                    <div className={styles.shopMobile}><img src='/cart2.png'/>Ver producto en tienda minorista</div>
                 </div>
-                <div className={styles.shop}><img src='/cart2.png'/>Ver producto en tienda minorista</div>
+                <div className={styles.shop}>
+                  <img src='/cart2.png'/>
+                  <Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
+								    Ver producto en tienda minorista
+							      </Link>
+              </div>
             </div>
         </div>
         <div className={styles.related}>
         <div className={styles.seccions}>
-            <h3>Productos relacionados</h3>
-              {/* {
-                loading &&
-                data.map(({id, description}) => (
-                  <div>
-                    <Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/>
-                  </div>
-                    )
-                  )
-            
-              } */}
             <div className={styles.swiper}>
-              <Swiper
-                      slidesPerView={"auto"}
-                      spaceBetween={30}
-                      modules={[Pagination]}
-                      
-                    >
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-                      <SwiperSlide className={styles.swiperSlide}><Cards img='/monitorSignosVitales.png' title="Monitor de signos vitales" description={description}/></SwiperSlide>
-              
-                    </Swiper>
+              <CarrouselMobile title="Productos relacionados" spaceBetween={60} />  
             </div>
           </div>
 
@@ -84,7 +80,7 @@ const Slug = ({detail}) => {
 
       </div>
 
-      <Footer />
+      <div className={styles.footer}><Footer /></div>
     </div>
   )
 }

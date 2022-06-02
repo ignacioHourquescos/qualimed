@@ -18,7 +18,7 @@
     -moz-box-shadow: 3px 4px 5px 0px rgb(56, 56, 56);
     box-shadow: 3px 4px 5px 0px rgb(67, 67, 67);
     border:0px solid whitesmoke;
-    z-index:1000;
+    z-index:5000;
     cursor: pointer;
     @media #{$mobile}{
         width: 180px;

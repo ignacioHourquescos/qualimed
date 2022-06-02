@@ -19,7 +19,7 @@ const Header = () => {
 		<>
 			<div className={styles.container}>
 				<div className={styles.navBar}>
-					{/* <img style={{ paddingLeft: "2rem" }} src="/logoChico.png"></img> */}
+					<Link href="/"><img style={{ paddingLeft: "2rem" }} src="/QualimedAzulPNG.png"></img></Link>
 					<ul className={styles.links}>
 						<li>
 							<Link href="/">
@@ -65,7 +65,7 @@ const Header = () => {
 							</Dropdown>
 						</li>
 						<li>
-							<Link href="/">
+							<Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
 								<a>Tienda Minorista</a>
 							</Link>
 						</li>

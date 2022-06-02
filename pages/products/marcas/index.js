@@ -5,6 +5,7 @@ import React, { useRef, useState, useEffect } from "react";
 import SubHeader from "../../../components/SubHeader/SubHeader";
 import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../../components/Filter/Filter";
+import Footer from '/components/Footer/Footer';
 
 const index = () => {
   const [products, setProducts] = useState([]);
@@ -34,6 +35,7 @@ const index = () => {
         </div>
 
       </div>
+    <Footer/>
     </div>
   );
 };

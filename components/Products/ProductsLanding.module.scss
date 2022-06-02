@@ -26,7 +26,7 @@
   }
 
   @media #{$mobile} {
-    height: 110vh;
+    height: 120vh;
     flex-direction: column;
 
   }
@@ -40,7 +40,7 @@
   box-sizing: content-box;
 
   @media #{$mobileXs} {
-    margin-top: 37%;
+    margin-top: -10%;
 
   }
 }
@@ -72,7 +72,7 @@
   }
 
   @media #{$mobileXs} {
-    margin-top: -14%;
+    margin-top: -7%;
     transform: translateY(100px);
   }
 
@@ -93,9 +93,15 @@
   justify-items: center;
   z-index: 105px;
 
-
-
   @media #{$mobile} {
+    width: 40vw;
+    height: 40vw;
+    margin-left: 0%;
+    margin-bottom: 10%;
+
+  }
+
+  @media #{$mobileS} {
     width: 60vw;
     height: 60vw;
     margin-left: 0%;
@@ -104,6 +110,10 @@
   }
 
   @media #{$mobileXs} {
+    width: 60vw;
+    height: 60vw;
+    margin-left: 0%;
+    margin-bottom: 5%;
     margin-top: 20%;
   }
 
@@ -116,9 +126,15 @@
 
     height: 50vh;
 
+
     @media #{$mobile} {
+      width: 40vw;
       height: auto;
-      width: 50vw;
+    }
+  
+    @media #{$mobileS} {
+      width: 60vw;
+      height: auto; 
     }
 
     @media #{$desktopXl} {
@@ -147,10 +163,11 @@
     text-align: center;
     margin: 0% 0% 0% 0%;
     // height: 20vh;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     align-self: center;
     justify-self: center;
     justify-content: center;
+    height: 60vh;
   }
 
   h3 {
@@ -165,9 +182,15 @@
     line-height: 2.2rem;
     color: #393838;
 
-    @media #{$mobile} {
+    @media #{$mobileXs} {
       width: 60%;
-      margin: auto auto 0 auto;
+      margin: auto auto 8% auto;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+
+    }
+    @media #{$mobile} {
+      margin: auto auto 2% auto;
       font-size: 1.2rem;
       line-height: 1.2rem;
 
@@ -200,7 +223,7 @@
     @media #{$mobile} {
       text-align: center;
       align-self: center;
-      margin: 4% 0% 0 0;
+      margin: 0% 0% 0 0;
       width: 45%;
       height: 100%;
       font-size: 0.7rem;
@@ -223,10 +246,18 @@
     color: $white;
     border: none;
 
+    @media #{$mobileXs} {
+      align-self: center;
+      justify-self: center;
+      margin: 0 0 70% 0;
+      width: 120px;
+
+
+    }
     @media #{$mobile} {
       align-self: center;
       justify-self: center;
-      margin: 0 0 15% 0;
+      margin: 0 0 80% 0;
       width: 120px;
 
 

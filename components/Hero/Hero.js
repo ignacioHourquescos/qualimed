@@ -30,12 +30,12 @@ const Hero = () => {
 		<>
 		<div className={styles.hero}>
 			<div className={styles.seccion1}>
-				<img src="./QualimedPNG.png"></img>
+				<img src="./QualimedPNG1.svg"></img>
 				<p>
 					30 años dedicados a la venta de insumos y equipamiasdasdento médico
 				</p>
 				<div className={styles.divSearch}>
-					<SearchOutlined className={styles.search}/>
+					{/* <SearchOutlined className={styles.search}/>
 					<input
 					type="text"
 					placeholder="    Buscar producto"
@@ -43,7 +43,7 @@ const Hero = () => {
 					autoComplete="off"
 					value={buscar}
 					// onChange={handleInputChange}
-					></input>
+					></input> */}
 				</div>
 				
 			</div>

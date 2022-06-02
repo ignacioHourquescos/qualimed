@@ -10,15 +10,16 @@
   align-items: flex-start;
   align-content: flex-start;
 
-  @media #{$mobile} {
-    grid-template-columns: 100%;
-  }
+  
 
   @media #{$desktopXl} {
     grid-template-columns: repeat(3, 32%);
     column-gap: 2%;
     row-gap: 2%;
 
+  }
+  @media #{$mobile} {
+    grid-template-columns: 100%;
   }
 }
 

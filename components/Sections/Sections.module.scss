@@ -34,13 +34,13 @@
   .carrousel_container {
     width: 50%;
     margin: 0 25%;
-    margin-top: 10%;
+    margin-top: 16%;
     height: 100%;
     z-index: 1;
 
     @media #{$mobile} {
       width: 60%;
-      margin-top: 10%;
+      margin-top: 30%;
 
     }
 
@@ -78,7 +78,7 @@
   h5 {
     font-family: $TitleFont;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 4rem;
     line-height: 1.3rem;
     color: #393838;
 

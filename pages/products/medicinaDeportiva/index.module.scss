@@ -10,7 +10,8 @@
     grid-gap: 15px;
     overflow: hidden;
     @media #{$mobile}{
-        padding: 0;
+        width: 90%;
+        margin: 5%;
         grid-template-columns: 100%;
         justify-content: center;
         align-items: center;

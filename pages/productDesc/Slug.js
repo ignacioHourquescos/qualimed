@@ -61,18 +61,13 @@ const Slug = ({detail}) => {
                     <button className={styles.btnMail} style={{background:'#8183CA'}}>Cotización via mail</button>
                     <div className={styles.shopMobile}><img src='/cart2.png'/>Ver producto en tienda minorista</div>
                 </div>
-                <div className={styles.shop}>
-                  <img src='/cart2.png'/>
-                  <Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
-								    Ver producto en tienda minorista
-							      </Link>
-              </div>
+     
             </div>
         </div>
         <div className={styles.related}>
         <div className={styles.seccions}>
             <div className={styles.swiper}>
-              <CarrouselMobile title="Productos relacionados" spaceBetween={60} />  
+              <CarrouselMobile title="Productos relacionados" spaceBetween={100} />  
             </div>
           </div>
 

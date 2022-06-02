@@ -72,7 +72,7 @@ const Slug = ({detail}) => {
         <div className={styles.related}>
         <div className={styles.seccions}>
             <div className={styles.swiper}>
-              <CarrouselMobile title="Productos relacionados" spaceBetween={60} />  
+              <CarrouselMobile title="Productos relacionados" spaceBetween={100} />  
             </div>
           </div>
 

@@ -223,13 +223,16 @@
     @media #{$mobile} {
       text-align: center;
       align-self: center;
-      margin: 0% 0% 0 0;
+      margin: 5% 0% 0 0;
       width: 45%;
       height: 100%;
       font-size: 0.7rem;
       line-height: 1rem;
     }
+    @media #{$mobileS} {
+      
 
+    }
 
 
   }
@@ -251,6 +254,14 @@
       align-self: center;
       justify-self: center;
       margin: 0 0 70% 0;
+      width: 120px;
+
+
+    }
+    @media #{$mobileS} {
+      align-self: center;
+      justify-self: center;
+      margin: 0 0 90% 0;
       width: 120px;
 
 

@@ -1,6 +1,6 @@
 import Header from "../../../components/Header/Header";
 import Products from "../../../components/Products/Products";
-import styles from "../equipamiento/index.module.scss";
+import styles from "../insumosMedicos/index.module.scss";
 import React, { useRef, useState, useEffect } from "react";
 import SubHeader from "../../../components/SubHeader/SubHeader";
 import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";

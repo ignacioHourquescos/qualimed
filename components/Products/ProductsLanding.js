@@ -47,7 +47,7 @@ const ProductsLanding = () => {
 					display: "flex",
 					width: "20%",
 					padding: "10px",
-					margin: "0 0 10% 43%",
+					margin: "0 0 22% 43%",
 					zIndex: "1500",
 				}}
 			>

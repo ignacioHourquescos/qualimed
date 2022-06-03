@@ -7,7 +7,7 @@ import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile
 import Filter from "../../../components/Filter/Filter";
 import Footer from '/components/Footer/Footer';
 
-const index = () => {
+const Index = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,4 +42,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

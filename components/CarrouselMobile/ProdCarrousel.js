@@ -34,11 +34,11 @@ const ProdCarrousel = ({ data, loading, spaceBetween }) => {
 							</ContentLoader>
 						</div>
 				  ))
-				: data.map((element) => (
+				: data.map((element, idx) => (
                     <SwiperSlide className={styles.swiperSlide}>
                             <Cards
-                                // key={element.code}
-                                title={element.title}
+								key={`SS_${idx}`}                                
+								title={element.title}
                                 description={element.description}
                                 imageUrl={element.img}
 						    />

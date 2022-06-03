@@ -40,7 +40,7 @@
 }
 
 .container {
-  height: 170vh;
+  height: 200vh;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -79,8 +79,8 @@
   font-family: $MainFont;
   font-weight: 500;
   font-size: 1.1rem;
-  line-height: 20px;
-  letter-spacing: 0.2px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
   color: #595858;
 
 
@@ -91,6 +91,12 @@
     font-size: 0.9rem;
     line-height: 20px;
     letter-spacing: 0.2px;
+
+  }
+  @media #{$desktopXl} {
+    font-size: 1.3rem;
+    line-height: 30px;
+    letter-spacing: 0.5px;
 
   }
 
@@ -146,8 +152,8 @@
   font-family: $MainFont;
   font-weight: 500;
   font-size: 1.1rem;
-  line-height: 20px;
-  letter-spacing: 0.2px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
   color: #595858;
 
   grid-row: 3;
@@ -160,6 +166,12 @@
     font-size: 0.9rem;
     line-height: 20px;
     letter-spacing: 0.2px;
+
+  }
+  @media #{$desktopXl} {
+    font-size: 1.3rem;
+    line-height: 30px;
+    letter-spacing: 0.5px;
 
   }
 
@@ -255,13 +267,21 @@
     align-items: center;
 
     p{
+      width: 90%;
       font-family: $MainFont;
       font-weight: 500;
-      font-size: 1.1rem;
-      line-height: 20px;
-      letter-spacing: 0.2px;
+      font-size: 1.2rem;
+      line-height: 30px;
+      letter-spacing: 0.5px;
       color: #595858;
     
+      
+      @media #{$desktopXl} {
+        font-size: 1.4rem;
+        line-height: 35px;
+        letter-spacing: 1px;
+    
+      }
       @media #{$mobile} {
         width: 80%;
         border-radius: 20px 20px 0px 0px;

@@ -2,7 +2,7 @@
 
 .contact {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -10,15 +10,17 @@
   background-color: $grey;
 
   @media #{$mobile} {
-    height: 55vh;
+    height: 65vh;
+  }
+  @media #{$mobileS} {
+    height: 70vh;
   }
 }
 
 .circle {
   width: 90%;
-  height: 100%;
   // background: #6F6BC0;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  // border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   // margin-right: -8%;
   display: flex;
   flex-direction: column;
@@ -26,9 +28,7 @@
   align-items: center;
 
   @media #{$mobile} {
-    height: 100%;
-    border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
-    margin: 0 0 0 0;
+    // border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
     width: 100%;
     // background: rgba(111, 107, 192, 0.4);
 
@@ -39,7 +39,6 @@
 
 .content {
   width: 620px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,7 +95,7 @@
   
     textArea {
       width: 100%;
-      height: 80%;
+      height: 20vh;
       border-radius: 0px;
       margin-bottom: 40px;
       border-radius: 0px;
@@ -106,7 +105,7 @@
   
       @media #{$mobile} {
         width: 80%;
-  
+        height: 20vh;
   
       }
     }
@@ -125,7 +124,7 @@
   
       @media #{$mobile} {
         width: 80%;
-  
+        margin-bottom: 8%;
   
   
       }
@@ -163,5 +162,6 @@
   // position: absolute;
   width: 100%;
   bottom: 0px;
+  margin-bottom: -4px;
   background-color: $grey;
 }

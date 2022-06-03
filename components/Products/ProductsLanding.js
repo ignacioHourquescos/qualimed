@@ -1,6 +1,6 @@
 import styles from "./ProductsLanding.module.scss";
 import "./ProductsLanding.module.scss";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
@@ -8,10 +8,60 @@ import Link from "next/link";
 
 const ProductsLanding = () => {
 	const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
-	const isMobile = useMediaQuery({ query: "(max-width: 999px)" });
-	const isMobileXs = useMediaQuery({ query: "(max-width : 340px)" });
+	const isTablet = useMediaQuery({ query: "(min-width: 700px)" });
 
-	const settings1 = {
+	const [settings, setSettings] = useState();
+
+	useEffect(() => {
+	  if (isDesktop) {
+	   return setSettings(settings = {
+			dots: true,
+			fade: true,
+			dotsClass: "slick-dots",
+			infinite: true,
+			speed: 1000,
+			autoplay: true,
+			autoplaySpeed: 4000,
+			appendDots: (dots) => (
+				<div
+					style={{
+						display: "flex",
+						width: "20%",
+						padding: "10px",
+						margin: "0 0 0% 75%",
+					}}
+				>
+					<ul className={styles.dots}> {dots} </ul>
+				</div>
+			),
+		})
+
+	  } if (isTablet){
+		return setSettings(settings = {
+			dots: true,
+			fade: true,
+			dotsClass: "slick-dots",
+			infinite: true,
+			speed: 1000,
+			autoplay: true,
+			autoplaySpeed: 4000,
+			appendDots: (dots) => (
+				<div
+					style={{
+						display: "flex",
+						width: "20%",
+						padding: "10px",
+						margin: "0 0 0% 48%",
+						zIndex: "1500",
+					}}
+				>
+					<ul className={styles.dots}> {dots} </ul>
+				</div>
+			),
+		})
+	  } else {
+
+	  return setSettings(settings = {
 		dots: true,
 		fade: true,
 		dotsClass: "slick-dots",
@@ -25,36 +75,22 @@ const ProductsLanding = () => {
 					display: "flex",
 					width: "20%",
 					padding: "10px",
-					margin: "0 0 0% 75%",
-				}}
-			>
-				<ul className={styles.dots}> {dots} </ul>
-			</div>
-		),
-	};
-
-	const settings2 = {
-		dots: true,
-		fade: true,
-		dotsClass: "slick-dots",
-		infinite: true,
-		speed: 1000,
-		autoplay: true,
-		autoplaySpeed: 4000,
-		appendDots: (dots) => (
-			<div
-				style={{
-					display: "flex",
-					width: "20%",
-					padding: "10px",
-					margin: "0 0 22% 43%",
+					margin: "0 0 14% 43%",
 					zIndex: "1500",
 				}}
 			>
 				<ul className={styles.dots}> {dots} </ul>
 			</div>
 		),
-	};
+	})
+}
+	
+	  
+	}, [])
+	
+	
+
+	
 
 	return (
 		<div className={styles.master}>
@@ -62,7 +98,7 @@ const ProductsLanding = () => {
 
 			<div className={styles.slider}>
 				{isDesktop ? (
-					<Slider {...settings1} className={styles.slides}>
+					<Slider {...settings} className={styles.slides}>
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
@@ -95,7 +131,7 @@ const ProductsLanding = () => {
 						</div>
 					</Slider>
 				) : (
-					<Slider {...settings2} className={styles.slides}>
+					<Slider {...settings} className={styles.slides}>
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>

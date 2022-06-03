@@ -59,7 +59,9 @@ const Slug = ({detail}) => {
                     <p>{description.slice(0, 50)}...</p>
                     <button onClick={enviarMsj}>Cotización via whatsapp</button>
                     <button className={styles.btnMail} style={{background:'#8183CA'}}>Cotización via mail</button>
-                    <div className={styles.shopMobile}><img src='/cart2.png'/>Ver producto en tienda minorista</div>
+                    <Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
+                      <div className={styles.shopMobile}><img src='/cart2.png'/>Ver producto en tienda minorista</div>
+                      </Link>
                 </div>
      
             </div>

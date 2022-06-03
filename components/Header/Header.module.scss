@@ -41,8 +41,11 @@
     cursor: pointer;
 
     @media #{$mobile} {
-      width: 100%;
-      display: none;
+      width: 30%;
+
+    }
+    @media #{$mobileS} {
+      width: 60%;
 
     }
   }

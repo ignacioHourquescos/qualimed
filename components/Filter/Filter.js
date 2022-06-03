@@ -68,7 +68,7 @@ const Filter = ({testFunction}) => {
 								}
 								key="1"
 							>
-								<li>Equipos</li>
+								<li>Venta</li>
 								<li>Alquileres</li>
 								<li>Servicio técnico</li>
 							</Panel>

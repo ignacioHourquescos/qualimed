@@ -162,8 +162,10 @@
     align-content: center;
     align-items: center;
     @media #{$mobile} {
-        height: 100px;
+      justify-content: start;
+        height: 140px;
         border-radius: 0;
+        padding-top: 9px;
       }
 
     h5 {
@@ -204,6 +206,7 @@
       border: none;
       margin-bottom: 10px;
       color: white;
+      
     }
 
   }

@@ -68,7 +68,7 @@ const index = () => {
         </div>
 
         <div className={styles.carrousel}>
-          <CarrouselMobile spaceBetween={30} title="Equipos" />
+          <CarrouselMobile spaceBetween={30} title="Venta" />
           <CarrouselMobile spaceBetween={30} title="Alquileres" />
           <CarrouselMobile spaceBetween={30} title="Servicio técnico" />
         </div>

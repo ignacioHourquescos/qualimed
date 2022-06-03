@@ -26,8 +26,8 @@ const Branding = () => {
         className={styles.swiper}
       >
           {
-              images.map (img => 
-                <SwiperSlide className={styles.swiperSlide}><img src={img}></img></SwiperSlide>
+              images.map ((img,idx) => 
+                <SwiperSlide 	key={`SS_${idx}`} className={styles.swiperSlide}><img src={img}></img></SwiperSlide>
 
               )
           }

@@ -7,6 +7,7 @@ import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile
 import Filter from "../../../components/Filter/Filter";
 import Footer from '/components/Footer/Footer';
 
+<<<<<<< HEAD
 const index = () => {
 
   const {searchText} = Filter;
@@ -23,6 +24,9 @@ const index = () => {
     console.log("esta es la fucntion test " + e )
   }
 
+=======
+const Index = () => {
+>>>>>>> fc43a4fa89c376b932af6e3774f15287c2bf42fa
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -78,4 +82,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

@@ -40,11 +40,11 @@
 }
 
 .container {
-  height: 120vh;
+  height: 170vh;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(2, 50%);  
+  grid-template-rows: 38% 30% 32%;  
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -77,8 +77,8 @@
   border-radius: 20px 0 0 0px;
   text-align: justify;
   font-family: $MainFont;
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 1.1rem;
   line-height: 20px;
   letter-spacing: 0.2px;
   color: #595858;
@@ -87,6 +87,10 @@
   @media #{$mobile} {
     width: 100%;
     border-radius: 20px 20px 0px 0px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 20px;
+    letter-spacing: 0.2px;
 
   }
 
@@ -140,19 +144,22 @@
   border-radius: 0px 0px 20px 0px;
   text-align: justify;
   font-family: $MainFont;
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 1.1rem;
   line-height: 20px;
   letter-spacing: 0.2px;
   color: #595858;
-  box-sizing: content-box;
 
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 2;
 
   @media #{$mobile} {
     width: 100%;
-    border-radius: 0px 0px 0 0px;
+    border-radius: 0px 0px 0px 0px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 20px;
+    letter-spacing: 0.2px;
 
   }
 
@@ -187,7 +194,7 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 1;
 
   @media #{$mobile} {
@@ -198,5 +205,81 @@
 
 }
 
+// --------------------------- SECCION 5
 
+.seccion5 {
+  width: 100%;
+  height: 100%;
+  display: grid;
 
+  grid-template-columns: 20% 60% 20%;
+  background-color: white;
+  grid-row: 2;
+  grid-column: 1/3;
+
+  @media #{$mobile} {
+    width: 100%;
+    height: 45vh;
+  }
+  .subSeccion1{
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    h2{
+      color: white;
+      transform: rotate(-90deg);
+      font-family: $TitleFont;
+      font-weight: 600;
+      font-size: 2.5rem;
+      @media #{$mobile} {
+        
+        font-size: 2rem;
+    
+      }
+    }
+
+  }
+  .subSeccion2{
+    width: 100%;  
+    height: 100%;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    p{
+      font-family: $MainFont;
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: #595858;
+    
+      @media #{$mobile} {
+        width: 80%;
+        border-radius: 20px 20px 0px 0px;
+        font-weight: 500;
+        font-size: 1.3rem;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+    
+      }
+    }
+
+  }
+  .subSeccion3{
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
+
+  }
+
+}

@@ -18,10 +18,17 @@ const index = () => {
             </p>
           </div>
           <div className={styles.seccion2}></div>
+          <div className={styles.seccion5}>
+            <div className={styles.subSeccion1}><h2>Sobre Nosotros</h2></div>
+            <div className={styles.subSeccion2}>
+              <p>
+              Ofrecemos atención personalizada, soporte post venta y distribución de los productos tanto para instituciones, revendedores o pequeños emprendimientos. 
+              </p>
+            </div>
+            <div className={styles.subSeccion3}></div>
+          </div>
           <div className={styles.seccion3}>
            <p>
-            Ofrecemos atención personalizada, soporte post venta y distribución de los productos tanto para instituciones, revendedores o pequeños emprendimientos. 
-            <br/><br/>
             Qualimed S.A se encuentra constantemente incorporando productos y nuevas tecnologías para mejorar la calidad del sector de la salud; como también desarrollando nuevas plataformas de venta y atención para brindar el mejor servicio a nuestros clientes.
             <br/><br/>
             Nuestra sede central se encuentra ubicada en el Partido de San Martin, Buenos Aires, Argentina. Contamos con sucursales mayoristas en la Costa Atlántica, el Partido de Chascomús y realizamos ventas a todo el país a través de las empresas de logística más importantes

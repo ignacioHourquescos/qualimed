@@ -19,21 +19,17 @@
   margin: 60px 0 0 0 ;
 
   h1 {
+    margin: 10px 0 0 0 ;
     color: white;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
   }
 
-
-  @media #{$mobile} {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
     @media #{$mobile} {
+      height: 20vh;
       width: 100%;
-      font-size: 30px;
-      line-height: 30px;
-      font-weight: 700;
-    }
+
   }
 }
 

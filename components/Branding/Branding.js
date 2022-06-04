@@ -37,8 +37,8 @@ const Branding = () => {
         <h3>Nuestras Marcas</h3>
         <div className={styles.gallery}>
         {
-              images.map (img => 
-                <div className={styles.circleImg}>
+              images.map ((img, idx) => 
+                <div className={styles.circleImg} key={`SS_${idx}`}>
                   <img src={img} />
                 </div>
 

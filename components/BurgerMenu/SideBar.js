@@ -48,13 +48,13 @@ const SideBar = (props) => {
                                 <Panel header={<a  style={{ color: sideDrawerOpen ? '#3E4095' : '#595858', fontWeight: sideDrawerOpen ? '700' : '400' }}  >Productos</a>} showArrow={false} key="1" className={classes.panel}  >
                                         <Collapse onChange={colorice} accordion={true} className={classes.collapse2} expandIconPosition='right'>
                                             <Panel key="1" showArrow={false} className={classes.items} header={<><img src='/ventilatorIcon.png' /><a style={{ color: color ? '#3E4095' : '#595858' }}>Equipamientos</a></>}>
-                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a onClick={props.click}>Ventas</a></Link></li>
-                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a onClick={props.click}>Alquileres</a></Link></li>
-                                                <li className={classes.liBott}><Link href="/products/equipamiento"><a onClick={props.click}>Servicio Tecnico</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/equipamiento" passHref><a onClick={props.click}>Ventas</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/equipamiento" passHref><a onClick={props.click}>Alquileres</a></Link></li>
+                                                <li className={classes.liBott}><Link href="/products/equipamiento" passHref><a onClick={props.click}>Servicio Tecnico</a></Link></li>
                                             </Panel>
-                                                <li className={classes.items2}><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"><a onClick={props.click}>Insumos médicos</a></Link></li>
-                                                <li className={classes.items2}><img src='/bandageIcon.png' /><Link href="/products/medicinaDeportiva"><a onClick={props.click}>Medicina Deportiva</a></Link></li>
-                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><Link href="/products/marcas"><a>Marcas</a></Link></>}className={classes.items}>
+                                                <li className={classes.items2}><img src='/maskIcon.png' /><Link href="/products/insumosMedicos"       passHref><a onClick={props.click}>Insumos médicos</a></Link></li>
+                                                <li className={classes.items2}><img src='/bandageIcon.png' /><Link href="/products/medicinaDeportiva" passHref><a onClick={props.click}>Medicina Deportiva</a></Link></li>
+                                                <Panel showArrow={false} key="4" header={<><img src='/labelIcon.png' /><Link href="/products/marcas"  passHref><a>Marcas</a></Link></>}className={classes.items}>
                                                 <li onClick={props.click}>Alere</li>
                                                 <li onClick={props.click}>Braun</li>
                                                 <li onClick={props.click}>Drager</li>
@@ -68,9 +68,9 @@ const SideBar = (props) => {
                                     
                             </Collapse>
                             </div>
-                        <li className={classes.liTop} onClick={props.click}><Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}><a >Tienda Minorista</a></Link></li>
-                        <li className={classes.liTop} onClick={props.click}><Link href="/about"><a >Quienes Somos</a></Link></li>
-                        <li className={classes.liTop} onClick={props.click}><Link href="/contact"><a >Contacto</a></Link></li>
+                        <li className={classes.liTop} onClick={props.click}><Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}} passHref><a >Tienda Minorista</a></Link></li>
+                        <li className={classes.liTop} onClick={props.click}><Link href="/about"   passHref><a >Quienes Somos</a></Link></li>
+                        <li className={classes.liTop} onClick={props.click}><Link href="/contact" passHref><a >Contacto</a></Link></li>
                   </ul>
                  
 

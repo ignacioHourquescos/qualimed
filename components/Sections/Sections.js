@@ -67,32 +67,32 @@ const Sections = () => {
 					{ desktop ? (
 						<Slider {...settings}>
 							<div>
-								<Link href="/products/equipamiento">
+								<Link href="/products/equipamiento" passHref>
 									<img src={"/monitor.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/medicinaDeportiva">
+								<Link href="/products/medicinaDeportiva" passHref>
 									<img src={"/medicinaDep1.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/insumosMedicos">
+								<Link href="/products/insumosMedicos" passHref>
 									<img src={"/seccionLand.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/equipamiento">
+								<Link href="/products/equipamiento" passHref>
 									<img src={"/monitor.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/medicinaDeportiva">
+								<Link href="/products/medicinaDeportiva" passHref>
 									<img src={"/medicinaDep1.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/insumosMedicos">
+								<Link href="/products/insumosMedicos" passHref>
 									<img src={"/seccionLand.png"}/>
 								</Link>
 							</div>
@@ -100,17 +100,17 @@ const Sections = () => {
 					) : (
 						<Slider {...settings1}>
 							<div>
-								<Link href="/products/equipamiento">
+								<Link href="/products/equipamiento" passHref>
 									<img src={"/monitor.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/medicinaDeportiva">
+								<Link href="/products/medicinaDeportiva" passHref>
 									<img src={"/medicinaDep1.png"}/>
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/insumosMedicos">
+								<Link href="/products/insumosMedicos" passHref>
 									<img src={"/seccionLand.png"}/>
 								</Link>
 							</div>

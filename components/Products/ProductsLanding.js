@@ -110,7 +110,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -125,7 +125,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -143,7 +143,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>
@@ -158,7 +158,7 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento"><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
 								</div>
 							</div>
 						</div>

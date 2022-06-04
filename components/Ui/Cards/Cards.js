@@ -8,7 +8,7 @@ const Cards = ({imageUrl, title, description, id}) => {
       <img src={imageUrl}/>
       <h5>{title}</h5>
       <p>{description.slice(0, 50)}...</p>
-          <Link as={`/productDesc/${title}`} href="/productDesc/[id]" >
+          <Link as={`/productDesc/${title}`} href="/productDesc/[id]" passHref>
             <button type='submit'>Ver mas</button>
           </Link>
     </div>

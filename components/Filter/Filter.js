@@ -75,13 +75,13 @@ const Filter = ({testFunction}) => {
 							<li className={styles.category}>
 								<img src="/maskIcon.png" />
 								<div>
-									<Link href="/products/insumosMedicos"><a>Insumos médicos</a></Link>
+									<Link href="/products/insumosMedicos" passHref><a>Insumos médicos</a></Link>
 								</div>
 							</li>
 							<li className={styles.category}>
 								<img src="/bandageIcon.png" />
 								<div>
-									<Link href="/products/medicinaDeportiva"><a>Medicina deportiva</a></Link>
+									<Link href="/products/medicinaDeportiva" passHref><a>Medicina deportiva</a></Link>
 								</div>
 							</li>
 						</Collapse>

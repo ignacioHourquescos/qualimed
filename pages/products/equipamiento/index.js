@@ -7,7 +7,7 @@ import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile
 import Filter from "../../../components/Filter/Filter";
 import Footer from '/components/Footer/Footer';
 
-const index = () => {
+const Index = () => {
 
   const {searchText} = Filter;
 
@@ -78,4 +78,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

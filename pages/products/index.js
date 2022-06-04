@@ -4,7 +4,7 @@ import Products from "../../components/Products/Products";
 
 import { getProducts } from "../api/getProducts";
 
-const index = () => {
+const Index = () => {
 	useEffect(() => {
 		fetch("api/getProducts").then((response) => console.log(response.json()));
 	}, []);
@@ -22,4 +22,4 @@ const index = () => {
 	);
 };
 
-export default index;
+export default Index;

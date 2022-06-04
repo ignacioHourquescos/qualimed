@@ -19,10 +19,10 @@ const Header = () => {
 		<>
 			<div className={styles.container}>
 				<div className={styles.navBar}>
-					<Link href="/"><img style={{ paddingLeft: "2rem" }} src="/QualimedAzulPNG.png"></img></Link>
+					<Link href="/" passHref><img style={{ paddingLeft: "2rem" }} src="/QualimedAzulPNG.png"></img></Link>
 					<ul className={styles.links}>
 						<li>
-							<Link href="/">
+							<Link href="/" passHref>
 								<a>Inicio</a>
 							</Link>
 						</li>
@@ -39,25 +39,25 @@ const Header = () => {
 								<DropdownMenu tag="div" className={styles.dropdownMenu}>
 									<DropdownItem>
 										<img src="/bandageIcon.png" />
-										<Link href="/products/equipamiento">
+										<Link href="/products/equipamiento" passHref>
 											<a>Equipamientos</a>
 										</Link>
 									</DropdownItem>
 									<DropdownItem>
 										<img src="/maskIcon.png" />
-										<Link href="/products/insumosMedicos">
+										<Link href="/products/insumosMedicos" passHref>
 											<a>Insumos médicos</a>
 										</Link>
 									</DropdownItem>
 									<DropdownItem>
 										<img src="/ventilatorIcon.png" />
-										<Link href="/products/medicinaDeportiva">
+										<Link href="/products/medicinaDeportiva" passHref>
 											<a>Medicina Deportiva</a>
 										</Link>
 									</DropdownItem>
 									<DropdownItem>
 										<img src="/labelIcon.png" />
-										<Link href="/products/marcas">
+										<Link href="/products/marcas" passHref>
 											<a>Marcas</a>
 										</Link>
 									</DropdownItem>
@@ -65,17 +65,17 @@ const Header = () => {
 							</Dropdown>
 						</li>
 						<li>
-							<Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}}>
+							<Link target="_blank" href={{pathname:"https://qualimed2021.mercadoshops.com.ar/"}} passHref>
 								<a>Tienda Minorista</a>
 							</Link>
 						</li>
 						<li>
-							<Link href="/about">
+							<Link href="/about" passHref>
 								<a>Quienes Somos</a>
 							</Link>
 						</li>
 						<li>
-							<Link href="/contact">
+							<Link href="/contact" passHref>
 								<a>Contacto</a>
 							</Link>
 						</li>

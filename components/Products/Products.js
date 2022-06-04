@@ -7,8 +7,8 @@ const Products = ({ data, loading }) => {
 	return (
 		<div className={styles.cards}>
 			{loading
-				? numberOfSkeletonCards.map((e) => (
-						<div className={styles.skeleton_container}>
+				? numberOfSkeletonCards.map((e, idx) => (
+						<div className={styles.skeleton_container} key={`SS_${idx}`}>
 							<ContentLoader
 								speed={2}
 								width={280}

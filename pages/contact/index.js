@@ -61,7 +61,6 @@ const index = () => {
 							<iframe
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.599795016996!2d-58.562708684175384!3d-34.58899166422712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb82cacb853bf%3A0x955574e27436a603!2sInfanta%20Isabel%202473%2C%20B1650%20Villa%20Libertad%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1650740531071!5m2!1ses!2sar"
 								className={styles.map}
-								allowFullscreen=""
 								loading="lazy"
 								referrerpolicy="no-referrer-when-downgrade"
 							></iframe>

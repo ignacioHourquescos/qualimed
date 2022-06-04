@@ -35,7 +35,7 @@ const ProdCarrousel = ({ data, loading, spaceBetween }) => {
 						</div>
 				  ))
 				: data.map((element, idx) => (
-                    <SwiperSlide className={styles.swiperSlide}>
+                    <SwiperSlide className={styles.swiperSlide} key={`SS_${idx}`}>
                             <Cards
 								key={`SS_${idx}`}                                
 								title={element.title}

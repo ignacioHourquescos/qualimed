@@ -11,13 +11,7 @@ const Index = () => {
 
 	return (
 		<>
-			<Header />
-			<div>
-				<div>
-					<h3>Equipamiento</h3>
-				</div>
-			</div>
-			<Products />
+
 		</>
 	);
 };

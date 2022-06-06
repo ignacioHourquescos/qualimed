@@ -5,6 +5,8 @@ import Link from "next/link";
 import useForm from "../../hooks/useForm";
 
 const Filter = ({testFunction}) => {
+
+
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 	const [state, setState] = useState(false);
 
@@ -36,11 +38,12 @@ const Filter = ({testFunction}) => {
   return (
     <div className={styles.filter}>
 					<div className={styles.categories}>
-						<form onSubmit={testFunction}>
+						<form>
 							<input 
 								type="text"
 								className={styles.input} 
-								placeholder="Buscar Producto"
+								placeholder="Buscar Producto"						
+								onKeyPress={(e) => e.key === 'Enter' ? testFunction : null }
 								name="searchText"
 								autoComplete="off"
 								value={searchText}

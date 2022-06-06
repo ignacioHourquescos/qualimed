@@ -22,9 +22,9 @@ const Slug = ({detail}) => {
     speed: 500
   };
 
-  const URL = 'https://wa.me';
-	let number = "+54 011 47162699";
-	number = number.replace(/[^\w\s]/gi, '').replace(/ /g, '');
+    const URL = 'https://wa.me';
+    let number = "+54 011 47162699";
+    number = number.replace(/[^\w\s]/gi, '').replace(/ /g, '');
     let url = `${URL}/${number}`;
 
     const enviarMsj = (event) =>{

@@ -6,21 +6,25 @@ import SubHeader from "../../../components/SubHeader/SubHeader";
 import CarrouselMobile from "../../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../../components/Filter/Filter";
 import Footer from '/components/Footer/Footer';
+import { useRouter} from "next/router";
 
 const Index = () => {
 
-  const {searchText} = Filter;
+  const [filter, setFilter] = useState("");
 
-  const [test, setTest] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
-    
-    console.log(searchText)
-  }, [searchText])
+    if (router.asPath == "/products/equipamiento") {
+      setFilter('EQUIPAMIENTO')
+    } else{
+      setFilter(router.query.searchText)
+    }
+  }, [])
   
   const testFunction = (e) =>{
     e.preventDefault();
-    console.log("esta es la fucntion test " + e )
+    console.log("esta es la fucntion test " + e.value)
   }
 
   const [products, setProducts] = useState([]);
@@ -52,7 +56,7 @@ const Index = () => {
             {/* searchText = "" ? */}
               <Products
               data={products.filter(
-                (element) => element.category == "EQUIPAMIENTO"
+                (element) => element.title == filter
               )}
               loading={loading}
             />

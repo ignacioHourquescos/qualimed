@@ -28,7 +28,7 @@ const ProductsLanding = () => {
 						display: "flex",
 						width: "20%",
 						padding: "10px",
-						margin: "0 0 0% 75%",
+						margin: "0 0 0% 78%",
 					}}
 				>
 					<ul className={styles.dots}> {dots} </ul>

@@ -157,11 +157,12 @@
     justify-items: center;
     align-content: center;
     align-items: center;
+
     @media #{$mobile} {
-      justify-content: start;
+        justify-content: start;
         height: 140px;
         border-radius: 0;
-        padding-top: 9px;
+        padding-top: 6px;
       }
 
     h5 {
@@ -370,39 +371,7 @@
             }
           }
 
-          .shopMobile {
-            width: 95%;
-            height: 50px;
-            background: #FFFFFF;
-            border: 3px dashed rgba(#3E4095, 0.2);
-            border-radius: 12px;
-            position: sticky;
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-            cursor: pointer;
-
-            font-family: $MainFont;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-            letter-spacing: 0.25px;
-            color: #000000;
-
-            img {
-              width: auto;
-              height: auto;
-              margin: 0 3% 0 3%;
-              box-shadow: none;
-
-            }
-
-            @media #{$desktop} {
-              display: none;
-            }
-          }
+          
 
           .footer {
             @media #{$mobile} {
@@ -413,6 +382,41 @@
       
     }
   }
+}
+.shopMobile {
+  width: 95%;
+  height: 50px;
+  background: #FFFFFF;
+  border: 3px dashed rgba(#3E4095, 0.2);
+  border-radius: 12px;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+
+  font-family: $MainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #000000;
+  @media #{$mobile} {
+    justify-content: center;
+
+  }
+  img {
+    width: auto;
+    height: auto;
+    margin: 0 3% 0 3%;
+    box-shadow: none;
+    cursor: pointer;
+
+  }
+
+ 
 }
 .btnMail {
     background: #8183CA;

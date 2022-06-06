@@ -48,6 +48,7 @@
   grid-template-rows: 20% 80%;
   grid-gap: 17px;
 
+
   @media #{$desktopXl} {
     grid-template-columns: 3% 56% 35% 3%;
     grid-template-rows: 20% 80%;
@@ -285,15 +286,17 @@
       margin-bottom: 0px;
       font-family: $TitleFont;
       font-weight: 700;
+
       @media #{$mobileS} {
         margin-left: 5%;
       }
     }
-    
+
 
     p {
       font-family: $MainFont;
       font-weight: 400;
+
       @media #{$mobileS} {
         margin-left: 5%;
       }
@@ -325,6 +328,7 @@
     margin: auto;
     justify-content: flex-start;
   }
+
   @media #{$mobileS} {
     margin-top: 5%;
     height: 95%;

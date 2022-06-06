@@ -7,7 +7,7 @@ const index = () => {
   return (
     <div className={styles.body}>
       <Header/>
-      <div className={styles.title}><h1>Somos Qualimed S.A</h1></div>
+      <div className={styles.title}><h1>Nosotros</h1></div>
       <div className={styles.container}>
           <div className={styles.seccion1}>
             <p>
@@ -19,13 +19,13 @@ const index = () => {
           </div>
           <div className={styles.seccion2}></div>
           <div className={styles.seccion5}>
-            <div className={styles.subSeccion1}><h2>Sobre Nosotros</h2></div>
+            {/* <div className={styles.subSeccion1}><h2>Sobre Nosotros</h2></div> */}
             <div className={styles.subSeccion2}>
               <p>
               Ofrecemos atención personalizada, soporte post venta y distribución de los productos tanto para instituciones, revendedores o pequeños emprendimientos. 
               </p>
             </div>
-            <div className={styles.subSeccion3}></div>
+            {/* <div className={styles.subSeccion3}></div> */}
           </div>
           <div className={styles.seccion3}>
            <p>

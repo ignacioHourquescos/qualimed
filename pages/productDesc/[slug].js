@@ -14,7 +14,7 @@ const Slug = ({detail}) => {
   const {img, title, description, application, techcnial, code} = detail;
   
   const router = useRouter();
-  const idEvent = router.query.id;
+  const idEvent = router.query.slug;
 const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 

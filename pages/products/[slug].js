@@ -25,6 +25,8 @@ const Index = () => {
     if (idCategory == "medicinaDeportiva") return "Medicina Deportiva"    
   }
 
+
+
   const [filter, setFilter] = useState("");
 
 
@@ -66,7 +68,7 @@ const Index = () => {
       <SubHeader title={idCategoryAdapter2()} img="equipHero1.png" />
 
       <div className={styles.container}>
-        <Filter testFunction={testFunction}/>
+        <Filter testFunction={testFunction} loading={loading} brands={loading ? "" : products.brand}/>
         <div className={styles.products}>
           {/* {  */}
             {/* searchText = "" ? */}
@@ -74,6 +76,7 @@ const Index = () => {
               data={products.filter(
                 // (element) => element.title == filter
                 (element) => element.category == idCategoryAdapter()
+
               )}
               loading={loading}
             />

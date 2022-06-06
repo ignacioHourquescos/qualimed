@@ -4,11 +4,12 @@ import styles from "./Filter.module.scss";
 import Link from "next/link";
 import useForm from "../../hooks/useForm";
 
-const Filter = ({testFunction}) => {
+const Filter = ({testFunction, brands, loading}) => {
 
 
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 	const [state, setState] = useState(false);
+	const [brandFilter, setBrandFilter] = useState(["ELECTRO"]);
 
     function callback(key) {
 		console.log(key);
@@ -32,6 +33,13 @@ const Filter = ({testFunction}) => {
 		
 
 	}
+
+	useEffect(() => {
+		if (brands) {
+			console.log(brands)
+		}
+	}, [brands])
+	
 
     const { Panel } = Collapse;
 
@@ -107,12 +115,16 @@ const Filter = ({testFunction}) => {
 								}
 								key="1"
 							>
-								<li>Alere</li>
+								{
+										brandFilter.map((e) => <li>{e}</li>)
+							
+								}
+								{/* <li>Alere</li>
 								<li>Braun</li>
 								<li>Drager</li>
 								<li>Fujifilm</li>
 								<li>Nutricia</li>
-								<li>Philips</li>
+								<li>Philips</li> */}
 							</Panel>
 						</Collapse>
 					</div>

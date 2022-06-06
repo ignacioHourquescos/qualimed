@@ -82,6 +82,7 @@
   }
 
   @media #{$mobile} {
+    background-color: #E5E5E5;
     width: 100%;
     margin: auto;
     grid-template-columns: 100%;
@@ -111,6 +112,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     color: #595858;
+    background-color: white;
 
   }
 
@@ -175,6 +177,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     color: #595858;
+    background-color: white;
 
   }
 
@@ -223,6 +226,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     color: #595858;
+    background-color: white;
 
   }
 

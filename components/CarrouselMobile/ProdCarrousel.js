@@ -8,6 +8,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const ProdCarrousel = ({ data, loading, spaceBetween }) => {
+  //AUXILIAR
+const numberOfSkeletonCards = Array.apply(null, Array(20)).map(function (x, i) {
+	return i;
+});
+
 	return (
 		<>
             <Swiper
@@ -55,7 +60,3 @@ const ProdCarrousel = ({ data, loading, spaceBetween }) => {
 
 export default ProdCarrousel;
 
-//AUXILIAR
-const numberOfSkeletonCards = Array.apply(null, Array(20)).map(function (x, i) {
-	return i;
-});

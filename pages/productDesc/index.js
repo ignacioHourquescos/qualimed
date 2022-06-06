@@ -1,6 +1,6 @@
 import { useRouter} from "next/router";
 import { useFetch } from "../../hooks/useFetch";
-import Slug from './Slug';
+
 import React, { useRef, useState, useEffect } from "react";
 
 export default function Id() {
@@ -26,7 +26,7 @@ export default function Id() {
     
     if (!loading) {
         let detail = products.find( (element) => element.title == idEvent );
-        return<Slug detail={detail} />
+        return<></>
     }
     
 

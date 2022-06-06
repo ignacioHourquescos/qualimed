@@ -1,26 +1,28 @@
 import Header from '/components/Header/Header';
 import Footer from '/components/Footer/Footer';
 import styles from "./slug.module.scss";
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
-import Cards from '../../components/Ui/Cards/Cards';
 import Link from "next/link";
 import CarrouselMobile from '../../components/CarrouselMobile/CarrouselMobile';
+import { useRouter} from "next/router";
+import React, { useRef, useState, useEffect } from "react";
+
+
 
 const Slug = ({detail}) => {
   const {img, title, description, application, techcnial, code} = detail;
+  
+  const router = useRouter();
+  const idEvent = router.query.id;
+const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: false,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500
-  };
+useEffect(() => {
+   fetch("../api/getProducts")
+    .then((response) => response.json())
+    .then((data) => (setProducts(data[0]), setLoading(false)));
+}, []);
 
   const URL = 'https://wa.me';
 	let number = "+54 011 47162699";
@@ -35,6 +37,8 @@ const Slug = ({detail}) => {
 
     }
 
+    if (!loading) {
+      let detail = products.find( (element) => element.title == idEvent );
 
   return (
     <div className={styles.contAll}>
@@ -80,6 +84,7 @@ const Slug = ({detail}) => {
       <div className={styles.footer}><Footer /></div>
     </div>
   )
+    }
 }
 
 export default Slug;

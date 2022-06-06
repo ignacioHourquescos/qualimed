@@ -12,6 +12,11 @@ const Index = () => {
 
   const router = useRouter();
   const idCategory = router.query.slug;
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedBrand, setSelectedBrand] = useState();
+  const [lookUpValue, setLookUpValue] = useState();
+  const [initialValues, setInitialValues] = useState(true)
 
   const idCategoryAdapter = () =>{
     if (idCategory == "insumosMedicos") return "INSUMOS MEDICOS"
@@ -25,26 +30,10 @@ const Index = () => {
     if (idCategory == "medicinaDeportiva") return "Medicina Deportiva"    
   }
 
-  const [filter, setFilter] = useState("");
-
-
-  // useEffect(() => {
-  // //   if (router.asPath == "/products/equipamiento") {
-  // //     setFilter('EQUIPAMIENTO')
-  // //   } else{
-  // //     setFilter(router.query.searchText)
-  // //   }
-  // // }, [])
-  //   console.log(searchText)
-  // }, [searchText])
-  
   const testFunction = (e) =>{
     e.preventDefault();
     console.log("esta es la fucntion test " + e.value)
   }
-
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("../api/getProducts")
@@ -52,10 +41,18 @@ const Index = () => {
       .then((data) => (setProducts(data[0]), setLoading(false)));
   }, []);
 
-  const prodFilter = function getProdByName(){
-      searchText = searchText.toLowerCase();
-      return products.filter(product => product.name.toLowerCase().includes(searchText))
-    }
+  const brandClickHandler = (element) =>{
+    setSelectedBrand(element)
+    setLookUpValue()
+    setInitialValues(false)
+  }
+
+  const lookUpValueHandler = (element) =>{
+    setLookUpValue(element)
+    setSelectedBrand()
+    setInitialValues(false)
+  }
+
 
   return (
     <div
@@ -64,19 +61,41 @@ const Index = () => {
     >
       <Header />
       <SubHeader title={idCategoryAdapter2()} img="equipHero1.png" />
-
       <div className={styles.container}>
-        <Filter testFunction={testFunction}/>
+        <Filter
+          testFunction={testFunction}
+          brands={DUMMYbrands} 
+          brandClickHandler={brandClickHandler}  
+          lookUpValueHandler={lookUpValueHandler}
+          />
         <div className={styles.products}>
           {/* {  */}
             {/* searchText = "" ? */}
-              <Products
+              {
+                initialValues
+                ?
+                <Products data={products.filter(
+                (element) => 
+                (element.category == idCategoryAdapter()))}/>
+                :
+                   <Products
               data={products.filter(
-                // (element) => element.title == filter
-                (element) => element.category == idCategoryAdapter()
+                (element) => 
+                (element.category == idCategoryAdapter()
+                 && element.brand == selectedBrand
+                 && element.title == lookUpValue)
+                // ||
+                // ( element.title == lookUpValue)
+                ||
+                 (element.category == idCategoryAdapter()
+                 && element.brand == selectedBrand)
               )}
               loading={loading}
+             
             />
+              }
+ 
+           
         </div>
 
         <div className={styles.carrousel}>
@@ -93,7 +112,16 @@ const Index = () => {
 export default Index;
 
 
+
+const DUMMYbrands = ["3M", "HIPOALERGIC", "MEDTRONIC"]
+
 {/* <SubHeader title="Insumos médicos" img="insumosMed.png" />
 <SubHeader title="Marcas" img="marcas.png" />      
 <SubHeader title="Equipamiento" img="equipHero1.png" /> 
 <SubHeader title="Medicina deportiva" img="medicinaDep2.png" />*/}
+
+
+// const prodFilter = function getProdByName(){
+//   searchText = searchText.toLowerCase();
+//   return products.filter(product => product.name.toLowerCase().includes(searchText))
+// }

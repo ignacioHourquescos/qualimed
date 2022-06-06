@@ -55,12 +55,12 @@ const Header = () => {
 											<a>Medicina Deportiva</a>
 										</Link>
 									</DropdownItem>
+                  {/* <Link href="/products/marcas" passHref>
 									<DropdownItem>
 										<img src="/labelIcon.png" />
-										<Link href="/products/marcas" passHref>
 											<a>Marcas</a>
-										</Link>
 									</DropdownItem>
+                  </Link> */}
 								</DropdownMenu>
 							</Dropdown>
 						</li>

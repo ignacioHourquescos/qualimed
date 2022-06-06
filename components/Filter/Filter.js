@@ -3,14 +3,19 @@ import { Collapse } from "antd";
 import styles from "./Filter.module.scss";
 import Link from "next/link";
 import useForm from "../../hooks/useForm";
+import { Form, Input, Button, Select, DatePicker } from "antd";
 
-const Filter = ({testFunction}) => {
+const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler}) => {
 
-
+	const [form] = Form.useForm();
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 	const [state, setState] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+	const formValues = Form.useWatch([], form);
+  const { Search } = Input;
 
-    function callback(key) {
+
+  function callback(key) {
 		console.log(key);
 		setSideDrawerOpen(!sideDrawerOpen);
 	}
@@ -18,39 +23,50 @@ const Filter = ({testFunction}) => {
 		console.log(key1);
 		setState(!state);
 	}
-		const [ formValues, handleInputChange] = useForm({
-			searchText:'',
-		});
-
-
-	const {searchText} = formValues;
-
-	
 
 	const handleSearch = (e) =>{
-		e.preventDefault();
-		
-
+		e.preventDefault();	
 	}
 
     const { Panel } = Collapse;
 
+    const onFinish = async (values) => {
+      try {
+      setSubmitting(true);
+      lookUpValueHandler(values.name);
+      }
+      finally {
+        setSubmitting(false);
+      }
+    };
+
   return (
     <div className={styles.filter}>
 					<div className={styles.categories}>
-						<form>
-							<input 
-								type="text"
-								className={styles.input} 
-								placeholder="Buscar Producto"						
-								onKeyPress={(e) => e.key === 'Enter' ? testFunction : null }
-								name="searchText"
-								autoComplete="off"
-								value={searchText}
-								onChange={handleInputChange}
-								
-								/>
-						</form>
+            <Form
+            	form={form} 
+				      name="name"
+				      layout="vertical"
+				      onFinish={onFinish}
+			      >
+
+					<Form.Item
+						name="name"
+						rules={[
+							{
+								max: 50,
+								message: "Maximo 50 caracteres",
+							},
+						]}
+					>
+						<Input />
+					</Form.Item>
+          <Form.Item>
+					<Button type="primary" htmlType="submit" loading={submitting}>
+					buscar
+					</Button>
+				</Form.Item>
+				</Form>
 						
 						<h3>Categorías</h3>
 						<Collapse onChange={callback} ghost expandIconPosition='right'>
@@ -107,12 +123,15 @@ const Filter = ({testFunction}) => {
 								}
 								key="1"
 							>
-								<li>Alere</li>
+                {
+                  brands.map(element=><li onClick={()=>brandClickHandler(element)}>{element}</li>)
+                }
+								{/* <li>Alere</li>
 								<li>Braun</li>
 								<li>Drager</li>
 								<li>Fujifilm</li>
 								<li>Nutricia</li>
-								<li>Philips</li>
+								<li>Philips</li> */}
 							</Panel>
 						</Collapse>
 					</div>

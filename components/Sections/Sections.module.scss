@@ -40,7 +40,11 @@
 
     @media #{$mobile} {
       width: 60%;
-      margin-top: 30%;
+
+    }
+    @media #{$mobileXs} {
+      width: 60%;
+      margin-top: 0%;
 
     }
 

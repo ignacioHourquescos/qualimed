@@ -13,7 +13,7 @@ const index = () => {
 
 	
 	return (
-		<div >
+		<div className={styles.body}>
 			<Header />
 			<div className={styles.title}>
 				<h1>Contactate con nosotros</h1>

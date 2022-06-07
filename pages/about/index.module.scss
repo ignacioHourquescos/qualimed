@@ -135,14 +135,13 @@
   background-image: url(../../public/deposito.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
-
+  background-position: cover;
   grid-row: 1;
   grid-column: 2;
 
   @media #{$mobile} {
     width: 100%;
-    height: 45vh;
+    height: 35vh;
   }
 
 }
@@ -221,7 +220,7 @@
 
   @media #{$mobile} {
     width: 100%;
-    height: 45vh;
+    height: 35vh;
     margin: 0 0 10px 0;
   }
 

@@ -2,8 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { Collapse } from "antd";
 import styles from "./Filter.module.scss";
 import Link from "next/link";
-import useForm from "../../hooks/useForm";
 import { Form, Input, Button, Select, DatePicker } from "antd";
+import {UnorderedListOutlined} from "@ant-design/icons"
+import { isDesktop } from "react-device-detect";
+
 
 const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler, loading}) => {
 
@@ -48,16 +50,18 @@ const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler, lo
 
 
   return (
-    <div className={styles.filter}>
-		<div className={styles.categories}>
+    <>
+    {
+      isDesktop
+      ?
+      <div className={styles.filter}>
+		  <div className={styles.categories}>
             <Form
             	form={form} 
 				      name="name"
 				      layout="vertical"
-				      onFinish={onFinish}
-					  
+				      onFinish={onFinish} 
 			      >
-
 					<Form.Item
 						name="name"
 						rules={[
@@ -142,9 +146,16 @@ const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler, lo
 								<li>Philips</li> */}
 							</Panel>
 						</Collapse>
-					</div>
-				</div>
-  )
+			</div>
+		  </div>
+      :
+      <div className={styles.icon_mobile}>
+        <UnorderedListOutlined/>
+      </div>
+      
+    }
+ 
+    </> )
 }
 
 export default Filter

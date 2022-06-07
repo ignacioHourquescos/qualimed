@@ -1,48 +1,51 @@
 @import "../../styles/constants.scss";
 
-.button2{
-    width: 200px;
-    height: 58px;
-    background-color: white;
-    position: fixed;
-    right:1.5rem;
-    bottom:1.5rem;
-    border-radius:10px;
-    display:flex;
-    justify-content: flex-start;
-    align-content: center;
-    align-items:center;
-    text-align: center;
-    text-justify: center;
-    -webkit-box-shadow: 3px 4px 5px 0px rgb(41, 41, 41);
-    -moz-box-shadow: 3px 4px 5px 0px rgb(56, 56, 56);
-    box-shadow: 3px 4px 5px 0px rgb(67, 67, 67);
-    border:0px solid whitesmoke;
-    z-index:5000;
-    cursor: pointer;
-    @media #{$mobile}{
-        width: 180px;
-        height: 42px;
+.button2 {
+  width: 200px;
+  height: 58px;
+  background-color: white;
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  text-justify: center;
+  -webkit-box-shadow: 3px 4px 5px 0px rgb(41, 41, 41);
+  -moz-box-shadow: 3px 4px 5px 0px rgb(56, 56, 56);
+  box-shadow: 3px 4px 5px 0px rgb(67, 67, 67);
+  border: 0px solid whitesmoke;
+  z-index: 5000;
+  cursor: pointer;
 
-        }
+  @media #{$mobile} {
+    width: 180px;
+    height: 42px;
 
-    p{
-        width: 102px;
-        font-family: $MainFont;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 21px;
-        /* identical to box height */
-        margin: auto 0 auto 0;
+  }
 
-        color: #595858;
-        @media #{$mobile}{
-            font-size: 16px;
+  p {
+    width: 102px;
+    font-family: $MainFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    /* identical to box height */
+    margin: auto 0 auto 0;
 
-    
-            }
+    color: #595858;
+
+    @media #{$mobile} {
+      font-size: 16px;
+
+
     }
-    img{
-        margin-left: 5%;
-    }
+  }
+
+  img {
+    margin-left: 5%;
+  }
 }

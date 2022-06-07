@@ -37,30 +37,27 @@ const Header = () => {
 									Productos
 								</DropdownToggle>
 								<DropdownMenu tag="div" className={styles.dropdownMenu}>
-									<DropdownItem>
-										<img src="/bandageIcon.png" />
-										<Link href="/products/equipamiento/" passHref>
-											<a>Equipamientos</a>
-										</Link>
-									</DropdownItem>
-									<DropdownItem>
-										<img src="/maskIcon.png" />
-										<Link href="/products/insumosMedicos" passHref>
-											<a>Insumos médicos</a>
-										</Link>
-									</DropdownItem>
-									<DropdownItem>
-										<img src="/ventilatorIcon.png" />
-										<Link href="/products/medicinaDeportiva" passHref>
-											<a>Medicina Deportiva</a>
-										</Link>
-									</DropdownItem>
+									<div className={styles.dropdownSubMenu}>
+
+											<Link href="/products/equipamiento/" passHref>
+												<a><img src="/bandageIcon.png" />Equipamientos</a>
+											</Link>
+										
+											<Link href="/products/insumosMedicos" passHref>
+												<a><img src="/maskIcon.png" />Insumos médicos</a>
+											</Link>
+										
+											<Link href="/products/medicinaDeportiva" passHref>
+												<a><img src="/ventilatorIcon.png"/>Medicina Deportiva</a>
+											</Link>
+										</div>
+
+                  {/* <Link href="/products/marcas" passHref>
 									<DropdownItem>
 										<img src="/labelIcon.png" />
-										<Link href="/products/marcas" passHref>
 											<a>Marcas</a>
-										</Link>
 									</DropdownItem>
+                  </Link> */}
 								</DropdownMenu>
 							</Dropdown>
 						</li>

@@ -35,6 +35,7 @@ const numberOfSkeletonCards = Array.apply(null, Array(20)).map(function (x, i) {
 							title={element.title}
 							description={element.description}
 							imageUrl={element.img}
+							brief={element.brief}
 						/>
 				  ))}
 		</div>

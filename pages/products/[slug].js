@@ -12,52 +12,52 @@ const Index = () => {
 
   const router = useRouter();
   const idCategory = router.query.slug;
-
-  const idCategoryAdapter = () =>{
-    if (idCategory == "insumosMedicos") return "INSUMOS MEDICOS"
-    if (idCategory == "equipamiento") return "EQUIPAMIENTO"
-    if (idCategory == "medicinaDeportiva") return "MEDICINA DEPORTIVA"    
-  }
-
-  const idCategoryAdapter2 = () =>{
-    if (idCategory == "insumosMedicos") return "Insumos Medicos"
-    if (idCategory == "equipamiento") return "Equipamiento"
-    if (idCategory == "medicinaDeportiva") return "Medicina Deportiva"    
-  }
-
-
-
-  const [filter, setFilter] = useState("");
-
-
-  // useEffect(() => {
-  // //   if (router.asPath == "/products/equipamiento") {
-  // //     setFilter('EQUIPAMIENTO')
-  // //   } else{
-  // //     setFilter(router.query.searchText)
-  // //   }
-  // // }, [])
-  //   console.log(searchText)
-  // }, [searchText])
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedBrand, setSelectedBrand] = useState();
+  const [lookUpValue, setLookUpValue] = useState();
+  const [initialValues, setInitialValues] = useState(true)
+  const [routerContent, setRouterContent] = useState([])
+  
+  useEffect(() => {
+      if (idCategory == "insumosMedicos") setRouterContent(["INSUMOS MEDICOS", setInitialValues(true), "Insumos Medicos"])
+      if (idCategory == "equipamiento")  setRouterContent( ["EQUIPAMIENTO", setInitialValues(true), "Equipamiento"])
+      if (idCategory == "medicinaDeportiva")  setRouterContent(["MEDICINA DEPORTIVA", setInitialValues(true), "Medicina Deportiva"  ])
+    
+  }, [idCategory])
   
   const testFunction = (e) =>{
     e.preventDefault();
     console.log("esta es la fucntion test " + e.value)
   }
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     fetch("../api/getProducts")
       .then((response) => response.json())
-      .then((data) => (setProducts(data[0]), setLoading(false)));
+      .then((data) => (setProducts(data[0]), setLoading(false)))
+      
   }, []);
 
-  const prodFilter = function getProdByName(){
-      searchText = searchText.toLowerCase();
-      return products.filter(product => product.name.toLowerCase().includes(searchText))
-    }
+  const trimFunction = (e) => {
+    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+    e.prototype.trim = function() {
+      return this.replace(rtrim, '');
+  }
+}
+  
+
+  const brandClickHandler = (element) =>{
+    setSelectedBrand(element)
+    setLookUpValue()
+    setInitialValues(false)
+  }
+
+  const lookUpValueHandler = (element) =>{
+    setLookUpValue(element)
+    setSelectedBrand()
+    setInitialValues(false)
+    
+  }
 
   return (
     <div
@@ -65,21 +65,43 @@ const Index = () => {
       className={styles.mainCont}
     >
       <Header />
-      <SubHeader title={idCategoryAdapter2()} img="equipHero1.png" />
-
+      <SubHeader title={routerContent[2]} img="equipHero1.png" />
       <div className={styles.container}>
-        <Filter testFunction={testFunction} loading={loading} brands={loading ? "" : products.brand}/>
+        <Filter
+          loading={loading}
+          testFunction={testFunction}
+          brands={products.map(e => e.brand) } 
+          brandClickHandler={brandClickHandler}  
+          lookUpValueHandler={lookUpValueHandler}
+          />
         <div className={styles.products}>
           {/* {  */}
             {/* searchText = "" ? */}
-              <Products
+              {
+                initialValues
+                ?
+                <Products data={products.filter(
+                (element) => 
+                (element.category == routerContent[0]))}/>
+                :
+                   <Products
               data={products.filter(
-                // (element) => element.title == filter
-                (element) => element.category == idCategoryAdapter()
-
+                (element) => 
+                (element.category == routerContent[0]
+                 && element.brand == selectedBrand
+                 && (element.title.replace(/ /g, '').toLowerCase()) == (lookUpValue.replace(/ /g, '').toLowerCase()))
+                ||
+                ( (element.title.replace(/ /g, '').toLowerCase()) == (lookUpValue.replace(/ /g, '').toLowerCase()))
+                ||
+                 (element.category == routerContent[0]
+                 && element.brand == selectedBrand)
               )}
               loading={loading}
+             
             />
+              }
+ 
+           
         </div>
 
         <div className={styles.carrousel}>
@@ -96,7 +118,15 @@ const Index = () => {
 export default Index;
 
 
+
+
 {/* <SubHeader title="Insumos médicos" img="insumosMed.png" />
 <SubHeader title="Marcas" img="marcas.png" />      
 <SubHeader title="Equipamiento" img="equipHero1.png" /> 
 <SubHeader title="Medicina deportiva" img="medicinaDep2.png" />*/}
+
+
+// const prodFilter = function getProdByName(){
+//   searchText = searchText.toLowerCase();
+//   return products.filter(product => product.name.toLowerCase().includes(searchText))
+// }

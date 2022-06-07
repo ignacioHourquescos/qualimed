@@ -3,15 +3,21 @@ import { Collapse } from "antd";
 import styles from "./Filter.module.scss";
 import Link from "next/link";
 import useForm from "../../hooks/useForm";
+import { Form, Input, Button, Select, DatePicker } from "antd";
 
-const Filter = ({testFunction, brands, loading}) => {
+const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler, loading}) => {
 
-
+	const [form] = Form.useForm();
 	const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 	const [state, setState] = useState(false);
-	const [brandFilter, setBrandFilter] = useState(["ELECTRO"]);
+ 	const [submitting, setSubmitting] = useState(false);
+	const formValues = Form.useWatch([], form);
+	const [brandContent, setBrandContent] = useState("");
+	const [brandLoad, setBrandLoad] = useState(true)
+  	const { Search } = Input;
 
-    function callback(key) {
+
+  function callback(key) {
 		console.log(key);
 		setSideDrawerOpen(!sideDrawerOpen);
 	}
@@ -19,46 +25,56 @@ const Filter = ({testFunction, brands, loading}) => {
 		console.log(key1);
 		setState(!state);
 	}
-		const [ formValues, handleInputChange] = useForm({
-			searchText:'',
-		});
-
-
-	const {searchText} = formValues;
-
-	
 
 	const handleSearch = (e) =>{
-		e.preventDefault();
-		
-
+		e.preventDefault();	
 	}
-
-	useEffect(() => {
-		if (brands) {
-			console.log(brands)
-		}
-	}, [brands])
-	
+			
+		
 
     const { Panel } = Collapse;
 
+    const onFinish = async (values) => {
+      try {
+      setSubmitting(true);
+      lookUpValueHandler(values.name);
+      }
+      finally {
+        setSubmitting(false);
+      }
+    };
+
+	const withoutDuplicates = [...new Set(brands)];
+
+
   return (
     <div className={styles.filter}>
-					<div className={styles.categories}>
-						<form>
-							<input 
-								type="text"
-								className={styles.input} 
-								placeholder="Buscar Producto"						
-								onKeyPress={(e) => e.key === 'Enter' ? testFunction : null }
-								name="searchText"
-								autoComplete="off"
-								value={searchText}
-								onChange={handleInputChange}
-								
-								/>
-						</form>
+		<div className={styles.categories}>
+            <Form
+            	form={form} 
+				      name="name"
+				      layout="vertical"
+				      onFinish={onFinish}
+					  
+			      >
+
+					<Form.Item
+						name="name"
+						rules={[
+							{
+								max: 50,
+								message: "Maximo 50 caracteres",
+							},
+						]}
+					>
+						<Input />
+					</Form.Item>
+          <Form.Item>
+					<Button type="primary" htmlType="submit" loading={submitting}>
+					buscar
+					</Button>
+				</Form.Item>
+				</Form>
 						
 						<h3>Categorías</h3>
 						<Collapse onChange={callback} ghost expandIconPosition='right'>
@@ -79,9 +95,9 @@ const Filter = ({testFunction, brands, loading}) => {
 								}
 								key="1"
 							>
-								<li>Venta</li>
-								<li>Alquileres</li>
-								<li>Servicio técnico</li>
+								<Link href="/products/equipamiento" passHref><li>Venta</li></Link> 
+								<Link href="/products/equipamiento" passHref><li>Alquileres</li></Link>
+								<Link href="/products/equipamiento" passHref><li>Servicio técnico</li></Link> 
 							</Panel>
 							<li className={styles.category}>
 								<img src="/maskIcon.png" />
@@ -115,10 +131,9 @@ const Filter = ({testFunction, brands, loading}) => {
 								}
 								key="1"
 							>
-								{
-										brandFilter.map((e) => <li>{e}</li>)
-							
-								}
+                {  
+                  withoutDuplicates.map((element, idx)=><li key={`bc_${idx}`} style={{cursor: "pointer"}} onClick={()=>brandClickHandler(element)}>{element}</li>)
+                }
 								{/* <li>Alere</li>
 								<li>Braun</li>
 								<li>Drager</li>

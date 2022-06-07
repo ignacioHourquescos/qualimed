@@ -38,12 +38,7 @@ const Index = () => {
       
   }, []);
 
-  const trimFunction = (e) => {
-    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-    e.prototype.trim = function() {
-      return this.replace(rtrim, '');
-  }
-}
+
   
 
   const brandClickHandler = (element) =>{
@@ -70,7 +65,7 @@ const Index = () => {
         <Filter
           loading={loading}
           testFunction={testFunction}
-          brands={products.map(e => e.brand) } 
+          brands={products.map(e => e.brand)} 
           brandClickHandler={brandClickHandler}  
           lookUpValueHandler={lookUpValueHandler}
           />
@@ -89,9 +84,9 @@ const Index = () => {
                 (element) => 
                 (element.category == routerContent[0]
                  && element.brand == selectedBrand
-                 && (element.title.replace(/ /g, '').toLowerCase()) == (lookUpValue.replace(/ /g, '').toLowerCase()))
+                 && (element.title.replace(/ /g, '').toLowerCase()).includes(lookUpValue.replace(/ /g, '').toLowerCase()))
                 ||
-                ( (element.title.replace(/ /g, '').toLowerCase()) == (lookUpValue.replace(/ /g, '').toLowerCase()))
+                ( (element.title.replace(/ /g, '').toLowerCase()).includes(lookUpValue.replace(/ /g, '').toLowerCase()))
                 ||
                  (element.category == routerContent[0]
                  && element.brand == selectedBrand)

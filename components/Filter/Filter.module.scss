@@ -168,6 +168,7 @@
 }
 .icon_mobile{
     display: none;
+    
 
   @media #{$mobile} {
     display: flex;

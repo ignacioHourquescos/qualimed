@@ -164,7 +164,7 @@ const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler, lo
 			</div>
 		  </div>
       
-      <div className={styles.icon_mobile} onClick={()=> showFilter()} style={{display: 'flex', cursor: 'pointer'}}>
+      <div className={styles.icon_mobile} onClick={()=> showFilter()} style={{cursor: 'pointer'}}>
         <UnorderedListOutlined style={{color:"#fff", fontSize: '1.2rem'}}/>
       </div>
       

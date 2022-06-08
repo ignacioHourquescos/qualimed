@@ -12,13 +12,15 @@
 
   @media #{$desktop} {
     grid-template-columns: 28% 72%;
-
+    padding-bottom: 15%;
 
   }
 
   @media #{$desktopXll} {
     grid-template-columns: 20% 80%;
     grid-gap: 0;
+    height: 100%;
+    padding-bottom: 20%;
 
 
   }
@@ -37,10 +39,10 @@
 
 .products {
   grid-column: 2;
-
+  height: 100%;
   @media #{$mobile} {
     grid-column: 1;
-    display: none;
+    // display: none;
 
   }
 }
@@ -51,7 +53,7 @@
   height: 100%;
 
   @media #{$mobile} {
-    display: flex;
+    // display: flex;
     margin: auto;
     flex-direction: column;
     justify-content: center;

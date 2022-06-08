@@ -8,12 +8,13 @@
   align-items: center;
 
   @media #{$mobile} {
+    display: none;
     position: fixed;
     width: 100%;
-    height: 100vh;
-    top: 0;
+    top: 10vh;
     left: 0;
     z-index: 120;
+    
   }
 }
 
@@ -23,7 +24,10 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   padding: 1rem;
-
+  @media #{$mobile} {
+    border-radius: 0;
+    height: 100vh;
+  }
   h3 {
     font-family: $TitleFont;
     font-style: normal;
@@ -44,11 +48,7 @@
   div {
     margin: -23px 0 18px 40px;
 
-    @media #{$mobile} {
-      display: none;
-
-    }
-
+    
   }
 
   a {
@@ -89,6 +89,7 @@
     line-height: 20px;
     margin: 0 0 7px 35px;
     color: #595858;
+    cursor: pointer;
   }
 }
 
@@ -132,6 +133,11 @@
   font-size: 16px;
   line-height: 22px;
   color: #595858;
+  @media #{$mobile} {
+      
+    padding: 100px;
+  }
+
 }
 
 .input::placeholder {
@@ -159,4 +165,36 @@
 
 
   }
+}
+.icon_mobile{
+    display: none;
+
+  @media #{$mobile} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    justify-self: start;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #3E4095;
+
+
+  }
+}
+.close{
+      margin: 0 0 3% 90%;
+      font-size: 2rem;
+      border-radius:200px;
+      width: 3rem;
+      height: 3rem; 
+      cursor: pointer;
+      fill: black;
+      z-index: 5500;
+      @media #{$desktop} {
+        display: none;
+    
+      }
 }

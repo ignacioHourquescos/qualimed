@@ -3,7 +3,7 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .container {
-  height: 110vh;
+  height: 70vh;
   width: 100%;
   background-color: $grey;
 
@@ -27,6 +27,11 @@
 
   @media #{$mobile} {
     height: 80vh;
+
+
+  }
+  @media #{$desktopXl} {
+    height: 100vh;
 
 
   }

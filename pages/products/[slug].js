@@ -7,6 +7,7 @@ import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../components/Filter/Filter";
 import Footer from '../../components/Footer/Footer';
 import { useRouter} from "next/router";
+import { useMediaQuery } from "react-responsive";
 
 const Index = () => {
 
@@ -18,11 +19,16 @@ const Index = () => {
   const [lookUpValue, setLookUpValue] = useState();
   const [initialValues, setInitialValues] = useState(true)
   const [routerContent, setRouterContent] = useState([])
-  
+  const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
+
   useEffect(() => {
       if (idCategory == "insumosMedicos") setRouterContent(["INSUMOS MEDICOS", setInitialValues(true), "Insumos Medicos"])
       if (idCategory == "equipamiento")  setRouterContent( ["EQUIPAMIENTO", setInitialValues(true), "Equipamiento"])
       if (idCategory == "medicinaDeportiva")  setRouterContent(["MEDICINA DEPORTIVA", setInitialValues(true), "Medicina Deportiva"  ])
+      if (idCategory == "equipamientoVenta")  setRouterContent(["EQUIPAMIENTO VENTA", setInitialValues(true), "Equipamiento"  ])
+      if (idCategory == "equipamientoAlquiler")  setRouterContent(["EQUIPAMIENTO ALQUILER", setInitialValues(true), "Equipamiento" ])
+      if (idCategory == "equipamientoSt")  setRouterContent(["EQUIPAMIENTO ST", setInitialValues(true), "Equipamiento"  ])
+
     
   }, [idCategory])
   
@@ -38,12 +44,22 @@ const Index = () => {
       
   }, []);
 
-
-  
+  const resetValues = () => {
+      setInitialValues(true)
+      setSelectedBrand()
+      setLookUpValue()
+    
+  }
+   
+  // const withoutSpaces = (element) => {
+  //   if (!element == null) {
+  //    return replace(/ /g, '')
+  //   }
+  // }
 
   const brandClickHandler = (element) =>{
     setSelectedBrand(element)
-    setLookUpValue()
+    setLookUpValue("  ")
     setInitialValues(false)
   }
 
@@ -53,6 +69,7 @@ const Index = () => {
     setInitialValues(false)
     
   }
+  console.log(products)
 
   return (
     <div
@@ -63,6 +80,7 @@ const Index = () => {
       <SubHeader title={routerContent[2]} img="equipHero1.png" />
       <div className={styles.container}>
         <Filter
+          resetValues={resetValues}
           loading={loading}
           testFunction={testFunction}
           brands={products.map(e => e.brand)} 
@@ -77,16 +95,16 @@ const Index = () => {
                 ?
                 <Products data={products.filter(
                 (element) => 
-                (element.category == routerContent[0]))}/>
+                (element.category.includes(routerContent[0])))}/>
                 :
                    <Products
               data={products.filter(
                 (element) => 
-                (element.category == routerContent[0]
+                (element.category.includes(routerContent[0])
                  && element.brand == selectedBrand
-                 && (element.title.replace(/ /g, '').toLowerCase()).includes(lookUpValue.replace(/ /g, '').toLowerCase()))
+                 && (element.title.toLowerCase()).includes(lookUpValue.toLowerCase()))
                 ||
-                ( (element.title.replace(/ /g, '').toLowerCase()).includes(lookUpValue.replace(/ /g, '').toLowerCase()))
+                ( (element.title.toLowerCase()).includes(lookUpValue.toLowerCase()))
                 ||
                  (element.category == routerContent[0]
                  && element.brand == selectedBrand)

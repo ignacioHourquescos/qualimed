@@ -27,8 +27,12 @@ const Filter = ({testFunction, brands, brandClickHandler, lookUpValueHandler, lo
 	}, [])
 	
 	function twoFunctions(){
+		if (!isDesktop) {
+			resetValues()
+			closeFilter()
+
+		}
 		resetValues()
-		closeFilter()
 	}
 
   	function callback(key) {

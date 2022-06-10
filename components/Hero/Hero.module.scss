@@ -42,7 +42,7 @@
       overflow: hidden;
 
       @media #{$desktopXl}{
-        width: 100vh;
+        width: 80vh;
         height: 100vh;
       }
 
@@ -57,11 +57,16 @@
 
 
 .seccion1 {
-  width: 30%;
-  margin: 0 0% 0 10%;
+  width: 50%;
+  margin: 0 0% 0 0%;
   display: flex;
   flex-direction: column;
-  
+  @media #{$desktop} {
+    width: 65%;
+  }
+  @media #{$desktopXl} {
+    width: 50%;
+  }
   @media #{$mobile} {
     width: 100%;
     height: 0vh;
@@ -74,41 +79,41 @@
   }
 
   img {
-      width: 85%;
-      height: 100%;
-      margin: auto;
+      width: 50%;
+      height: 80%;
+      margin: auto auto auto 25%;
+      
+      @media #{$mobile} {
+        position: absolute;
+        top: 15vh;
+        left: 20vw;
+        width: 60%;
+        height: 45%;
+        z-index: 1300;
 
-    @media #{$mobile} {
-      position: absolute;
-      top: 15vh;
-      left: 20vw;
-      width: 60%;
-      height: 45%;
-      z-index: 1300;
+      }
+      @media #{$mobileS} {
+        position: absolute;
+        top: 15vh;
+        left: 12vw;
+        width: 75%;
+        height: 45%;
+        z-index: 1300;
 
-    }
-    @media #{$mobileS} {
-      position: absolute;
-      top: 15vh;
-      left: 12vw;
-      width: 75%;
-      height: 45%;
-      z-index: 1300;
-
-    }
+      }
 
   }
 
   p {
-    width: 426px;
+    width: 100%;
     height: 48px;
     font-family: $TitleFont;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 0.65rem;
     line-height: 1.4rem;
     text-align: center;
     color: #d7d7d7;
-
+   
     @media #{$mobile} {
       font-weight: 600;
       font-size: 1.4rem;
@@ -124,8 +129,9 @@
     @media #{$mobileXs} {
       width: 65%;
       font-size: 1.1rem;
-
     }
+
+
   }
   .divSearch{
     width: 100%;

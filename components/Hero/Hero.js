@@ -32,7 +32,7 @@ const Hero = () => {
 			<div className={styles.seccion1}>
 				<img src="./QualimedPNG1.svg"></img>
 				<p>
-					30 años dedicados a la venta de insumos y equipamiento médico
+					30 AÑOS DEDICADOS A LA VENTA DE INSUMOS Y EQUIPAMIENTO MEDICO 
 				</p>
 				<div className={styles.divSearch}>
 					{/* <SearchOutlined className={styles.search}/>
@@ -61,3 +61,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+// años dedicados a la venta de insumos y equipamiento médico

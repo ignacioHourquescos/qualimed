@@ -90,6 +90,7 @@
         width: 60%;
         height: 45%;
         z-index: 1300;
+        margin: auto;
 
       }
       @media #{$mobileS} {
@@ -116,7 +117,7 @@
    
     @media #{$mobile} {
       font-weight: 600;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       line-height: 1.6rem;
       position: absolute;
       top: 60vh;

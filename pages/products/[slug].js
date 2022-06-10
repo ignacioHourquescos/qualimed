@@ -22,12 +22,12 @@ const Index = () => {
   const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
 
   useEffect(() => {
-      if (idCategory == "insumosMedicos") setRouterContent(["INSUMOS MEDICOS", setInitialValues(true), "Insumos Medicos"])
-      if (idCategory == "equipamiento")  setRouterContent( ["EQUIPAMIENTO", setInitialValues(true), "Equipamiento"])
-      if (idCategory == "medicinaDeportiva")  setRouterContent(["MEDICINA DEPORTIVA", setInitialValues(true), "Medicina Deportiva"  ])
-      if (idCategory == "equipamientoVenta")  setRouterContent(["EQUIPAMIENTO VENTA", setInitialValues(true), "Equipamiento"  ])
-      if (idCategory == "equipamientoAlquiler")  setRouterContent(["EQUIPAMIENTO ALQUILER", setInitialValues(true), "Equipamiento" ])
-      if (idCategory == "equipamientoSt")  setRouterContent(["EQUIPAMIENTO ST", setInitialValues(true), "Equipamiento"  ])
+      if (idCategory == "insumosMedicos") setRouterContent(["INSUMOS MEDICOS", setInitialValues(true), "Insumos Medicos", "./insumosMed1.jpg"])
+      if (idCategory == "equipamiento")  setRouterContent( ["EQUIPAMIENTO", setInitialValues(true), "Equipamiento", "./Equipamiento2.jpg"])
+      if (idCategory == "medicinaDeportiva")  setRouterContent(["MEDICINA DEPORTIVA", setInitialValues(true), "Medicina Deportiva", "./MedDepSub.jpg"])
+      if (idCategory == "equipamientoVenta")  setRouterContent(["EQUIPAMIENTO VENTA", setInitialValues(true), "Equipamiento", "./Equipamiento2.png"])
+      if (idCategory == "equipamientoAlquiler")  setRouterContent(["EQUIPAMIENTO ALQUILER", setInitialValues(true), "Equipamiento", "./Equipamiento2.png"])
+      if (idCategory == "equipamientoSt")  setRouterContent(["EQUIPAMIENTO ST", setInitialValues(true), "Equipamiento", "./Equipamiento2.png"])
 
     
   }, [idCategory])
@@ -77,7 +77,7 @@ const Index = () => {
       className={styles.mainCont}
     >
       <Header />
-      <SubHeader title={routerContent[2]} img="equipHero1.png" />
+      <SubHeader title={routerContent[2]} img={routerContent[3]} />
       <div className={styles.container}>
         <Filter
           resetValues={resetValues}

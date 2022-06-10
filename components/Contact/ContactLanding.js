@@ -17,7 +17,7 @@ const ContactLanding = () => {
         })
     }
 
-	let number = "+54 011 47162699";
+	let number = "+54 9 11 2537-9689";
 	number = number.replace(/[^\w\s]/gi, '').replace(/ /g, '');
     let url = `${URL}/${number}`;
 

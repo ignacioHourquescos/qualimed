@@ -40,7 +40,7 @@ const Header = () => {
 									<div className={styles.dropdownSubMenu}>
 
 											<Link href="/products/equipamiento/" passHref>
-												<a><img src="/bandageIcon.png" />Equipamientos</a>
+												<a><img src="/ventilatorIcon.png" />Equipamientos</a>
 											</Link>
 										
 											<Link href="/products/insumosMedicos" passHref>
@@ -48,7 +48,7 @@ const Header = () => {
 											</Link>
 										
 											<Link href="/products/medicinaDeportiva" passHref>
-												<a><img src="/ventilatorIcon.png"/>Medicina Deportiva</a>
+												<a><img src="/bandageIcon.png"/>Medicina Deportiva</a>
 											</Link>
 										</div>
 

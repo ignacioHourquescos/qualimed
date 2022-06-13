@@ -6,7 +6,7 @@
   height: 70vh;
   width: 100%;
   background-color: $grey;
-
+  // border: 1px solid red;
   // display: flex;
   // flex-direction: column;
   // justify-content: center;
@@ -16,20 +16,22 @@
   // overflow: hidden;  
   padding-top: 5%;
   padding: 10%;
-  padding-top: 10%;
+  padding-top: 5%;
   // margin:15% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   overflow: ai;
+  padding-bottom: 20%;
 
 
   @media #{$mobile} {
-    height: 80vh;
+    height: 60vh;
 
 
   }
+
   @media #{$desktopXl} {
     height: 100vh;
 
@@ -47,6 +49,7 @@
       width: 60%;
 
     }
+
     @media #{$mobileXs} {
       width: 60%;
       margin-top: 0%;
@@ -87,14 +90,16 @@
   h5 {
     font-family: $TitleFont;
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 1.3rem;
     color: #393838;
+
 
 
     @media #{$mobile} {
       font-size: 2rem;
       padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 

@@ -28,7 +28,7 @@ const ProductsLanding = () => {
 						display: "flex",
 						width: "20%",
 						padding: "10px",
-						margin: "0 0 0% 78%",
+						margin: "0 0 0% 73%",
 					}}
 				>
 					<ul className={styles.dots}> {dots} </ul>
@@ -70,13 +70,14 @@ const ProductsLanding = () => {
 		autoplay: true,
 		autoplaySpeed: 4000,
 		appendDots: (dots) => (
-			<div
+			<div className={styles.main_container}
 				style={{
 					display: "flex",
 					width: "20%",
 					padding: "10px",
 					margin: "0 0 14% 43%",
 					zIndex: "1500",
+ 
 				}}
 			>
 				<ul className={styles.dots}> {dots} </ul>

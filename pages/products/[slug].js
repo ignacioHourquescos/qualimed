@@ -106,7 +106,7 @@ const Index = () => {
                 ||
                 ( (element.title.toLowerCase()).includes(lookUpValue.toLowerCase()))
                 ||
-                 (element.category == routerContent[0]
+                 (element.category.includes(routerContent[0])
                  && element.brand == selectedBrand)
               )}
               loading={loading}

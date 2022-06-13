@@ -25,9 +25,9 @@ const Index = () => {
       if (idCategory == "insumosMedicos") setRouterContent(["INSUMOS MEDICOS", setInitialValues(true), "Insumos Medicos", "./insumosMed1.jpg"])
       if (idCategory == "equipamiento")  setRouterContent( ["EQUIPAMIENTO", setInitialValues(true), "Equipamiento", "./Equipamiento2.jpg"])
       if (idCategory == "medicinaDeportiva")  setRouterContent(["MEDICINA DEPORTIVA", setInitialValues(true), "Medicina Deportiva", "./MedDepSub.jpg"])
-      if (idCategory == "equipamientoVenta")  setRouterContent(["EQUIPAMIENTO VENTA", setInitialValues(true), "Equipamiento", "./Equipamiento2.png"])
-      if (idCategory == "equipamientoAlquiler")  setRouterContent(["EQUIPAMIENTO ALQUILER", setInitialValues(true), "Equipamiento", "./Equipamiento2.png"])
-      if (idCategory == "equipamientoSt")  setRouterContent(["EQUIPAMIENTO ST", setInitialValues(true), "Equipamiento", "./Equipamiento2.png"])
+      if (idCategory == "equipamientoVenta")  setRouterContent(["EQUIPAMIENTO VENTA", setInitialValues(true), "Equipamiento", "./Equipamiento2.jpg"])
+      if (idCategory == "equipamientoAlquiler")  setRouterContent(["EQUIPAMIENTO ALQUILER", setInitialValues(true), "Equipamiento", "./Equipamiento2.jpg"])
+      if (idCategory == "equipamientoSt")  setRouterContent(["EQUIPAMIENTO ST", setInitialValues(true), "Equipamiento", "./Equipamiento2.jpg"])
 
     
   }, [idCategory])

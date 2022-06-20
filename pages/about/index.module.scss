@@ -4,127 +4,98 @@
   background-color: #E5E5E5;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  text-justify: center;
-  height: 35vh;
-  width: 100%;
-  background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
+.container {
+  height: 100%;
+  width: 80%;
+  margin: 10%;
+  margin-top: 5%;
+  margin-bottom: 0;
+
+  // background-color: white;
 
 
   @media #{$mobile} {
-    height: 30vh;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    width: 100%;
+    margin: 10% 0;
+  }
+}
+
+
+.punchLine {
+  font-size: 2rem;
+  padding: 0 10%;
+  text-align: center;
+
+  @media #{$mobile} {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
   }
 
-  h1 {
-    justify-self: center;
-    align-self: center;
-    margin: 60px 0 0 0;
-    color: white;
-    font-family: $TitleFont;
-    font-size: 40px;
-    line-height: 49px;
-    font-weight: 700;
+}
+
+
+.action {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0%;
+  padding: 10%;
+
+  @media #{$mobile} {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    width: 20%;
+    z-index: 1;
 
     @media #{$mobile} {
       width: 90%;
-      font-size: 35px;
+    }
 
+    .image {
+      background-image: url(../../public/oficinaAbout.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 500px 0 0 500px;
+      height: 60vh;
+      width: 50vh;
+
+      @media #{$mobile} {
+        border-radius: 500px 500px 0 0;
+      }
+    }
+
+  }
+
+  .text {
+    width: 100%;
+    background-color: white;
+    border-radius: 0 500px 500px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    padding-left: 25%;
+    // padding-top: 5%;
+    padding-right: 10%;
+    font-size: 1.2rem;
+
+    @media #{$mobile} {
+      padding: 10%;
+      border-radius: 0 0 50px 50px;
+      height: 100%;
+      padding-bottom: 15%;
+      font-size: 1rem;
     }
   }
 }
 
-.container {
-  height: 200vh;
-  width: 80%;
-  margin: 5%;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: 38% 30% 32%;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  text-justify: center;
-  margin: 10%;
-
-  @media #{$mobile} {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 90%;
-    margin: 5%;
-
-  }
-
-}
-
-// --------------------------- SECCION 1
-
-.seccion1 {
-
-  grid-row: 1;
-  grid-column: 1;
-
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-color: white;
-  z-index: 100;
-  border-radius: 0px;
-  text-align: justify;
-  font-family: $MainFont;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 25px;
-  letter-spacing: 0.5px;
-  color: #595858;
-
-
-  @media #{$mobile} {
-    width: 100%;
-    border-radius: 0px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 20px;
-    letter-spacing: 0.2px;
-
-  }
-
-  @media #{$desktopXl} {
-    font-size: 1.3rem;
-    line-height: 30px;
-    letter-spacing: 0.5px;
-
-  }
-
-
-  p {
-    padding: 3rem;
-
-  }
-
-
-}
-
-.seccion1::-webkit-scrollbar,
-.seccion1::-webkit-scrollbar-thumb {
-  width: 24px;
-
-  background-clip: padding-box;
-  border: 10px solid transparent;
-
-}
-
-.seccion1::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 0 10px;
-}
 
 // --------------------------- SECCION 2
 .seccion2 {
@@ -146,179 +117,16 @@
 
 }
 
-// --------------------------- SECCION 3
-.seccion3 {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-color: white;
-  z-index: 100;
-  border-radius: 0px;
-  text-align: justify;
-  font-family: $MainFont;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 25px;
-  letter-spacing: 0.5px;
-  color: #595858;
-
-  grid-row: 3;
-  grid-column: 2;
-
-  @media #{$mobile} {
-    width: 100%;
-    border-radius: 0px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 20px;
-    letter-spacing: 0.2px;
-
-  }
-
-  @media #{$desktopXl} {
-    font-size: 1.3rem;
-    line-height: 30px;
-    letter-spacing: 0.5px;
-
-  }
-
-
-  p {
-    padding: 3rem;
-
-  }
-
-
-}
-
-.seccion3::-webkit-scrollbar,
-.seccion3::-webkit-scrollbar-thumb {
-  width: 24px;
-
-  background-clip: padding-box;
-  border: 10px solid transparent;
-
-}
-
-.seccion3::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 0 10px;
-}
-
-// --------------------------- SECCION 4
-
-.seccion4 {
-  width: 100%;
-  height: 100%;
-
+.image2 {
   background-image: url(../../public/deposito.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
-
-  grid-row: 3;
-  grid-column: 1;
-
-  @media #{$mobile} {
-    width: 100%;
-    height: 35vh;
-    margin: 0 0 10px 0;
-  }
-
-}
-
-// --------------------------- SECCION 5
-
-.seccion5 {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
-  grid-template-columns: 20% 60% 20%;
-  color: white;
-  grid-row: 2;
-  grid-column: 1/3;
+  background-position: center;
+  border-radius: 500px 0 0 500px;
+  height: 60vh;
+  width: 50vh;
 
   @media #{$mobile} {
-    width: 100%;
-    height: 45vh;
+    border-radius: 500px 500px 0 0;
   }
-
-  .subSeccion1 {
-    width: 100%;
-    height: 100%;
-    grid-column: 1;
-    background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
-    h2 {
-      color: white;
-      transform: rotate(-90deg);
-      font-family: $TitleFont;
-      font-weight: 600;
-      font-size: 2.5rem;
-
-      @media #{$mobile} {
-
-        font-size: 2rem;
-
-      }
-    }
-
-  }
-
-  .subSeccion2 {
-    width: 100%;
-    height: 100%;
-    grid-column: 2;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-
-    p {
-      width: 70%;
-      font-family: $MainFont;
-      font-weight: 500;
-      font-size: 1.2rem;
-      line-height: 30px;
-      letter-spacing: 0.5px;
-      color: #595858;
-      color: white;
-
-
-      @media #{$desktopXl} {
-        font-size: 1.4rem;
-        line-height: 35px;
-        letter-spacing: 1px;
-
-      }
-
-      @media #{$mobile} {
-        width: 80%;
-        border-radius: 20px 20px 0px 0px;
-        font-weight: 500;
-        font-size: 1.3rem;
-        line-height: 20px;
-        letter-spacing: 0.2px;
-
-      }
-    }
-
-  }
-
-  .subSeccion3 {
-    width: 100%;
-    height: 100%;
-    grid-column: 3;
-    background: linear-gradient(180deg, #3E4095 0%, #6162B4 100%);
-
-  }
-
-}
-
-
-.text {
-  padding: 2rem !important;
 }

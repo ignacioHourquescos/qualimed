@@ -1,14 +1,38 @@
 @import "../../styles/constants.scss";
 
+.body {
+  background-color: #E5E5E5 !important;
+}
 
 .container {
   height: 100%;
   width: 100%;
-  padding: 8%;
+  padding: 10%;
+  padding-top: 5%;
+  margin-bottom: 0;
+
+  background-color: #E5E5E5 !important;
+
+
+  @media #{$mobile} {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    width: 100%;
+    margin: 10% 0;
+  }
+}
+
+.container2 {
+  height: 100%;
+  width: 100%;
+  // padding: 8%;
   display: grid;
   grid-template-columns: 20% 80%;
   grid-gap: 15px;
   overflow: hidden;
+  background-color: white;
+  // border-right: 1px solid grey;
+  padding-top: 5%;
 
   @media #{$desktop} {
     grid-template-columns: 28% 72%;
@@ -40,6 +64,9 @@
 .products {
   grid-column: 2;
   height: 100%;
+
+  padding: 0 5%;
+
   @media #{$mobile} {
     grid-column: 1;
     // display: none;

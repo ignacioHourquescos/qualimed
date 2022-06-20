@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./Hero.module.scss";
 import { isBrowser, isMobile } from "react-device-detect";
-const Hero = () => {
+const Hero = ({ title, img }) => {
 	return (
 		<>
 			<div className={styles.hero}>
 				<div className={styles.seccion2}>
+					<h3>{title}</h3>
 					<div>
-						<img src="./medicoHero.png"></img>
+						<img src={`${img}`}></img>
 						<div className={styles.layout}></div>
 					</div>
 				</div>

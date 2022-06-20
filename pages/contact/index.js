@@ -14,7 +14,7 @@ const index = () => {
 	return (
 		<div className={styles.body}>
 			<Header />
-			<Hero />
+			<Hero title="Contacto" img="./contacto.jpg" />
 			{/* <div className={styles.title}>
 				<h1>Contactate con nosotros</h1>
 			</div> */}

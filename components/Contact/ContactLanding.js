@@ -1,33 +1,69 @@
-import React, {useState} from "react";
+import React, { useRef, useState } from "react";
 import styles from "./ContactLanding.module.scss";
-const URL = 'https://wa.me';
-
+const URL = "https://wa.me";
+import emailjs from "@emailjs/browser";
 
 const ContactLanding = () => {
+	const form = useRef();
+	const [sending, setSending] = useState(false);
+	const [wapMessage, setWapMessage] = useState({
+		Name: "",
+		Message: "",
+		Mail: "",
+		Telefono: "",
+	});
 
-	const [wapMessage, setWapMessage ] = useState({
-		Name: '',
-		Message: '' 
-	  });
+	const handleInputChange = (event) => {
+		setWapMessage({
+			...wapMessage,
+			[event.target.name]: event.target.value,
+		});
+	};
 
-	  const handleInputChange = (event) =>{
-        setWapMessage({
-          ...wapMessage, 
-          [event.target.name] : event.target.value 
-        })
-    }
+	const sendEmail = (e) => {
+		e.preventDefault();
+		setSending(true);
+		console.log("mensaje enviado");
+		emailjs
+			.sendForm(
+				"service_2qdstih",
+				"template_a2ty4bh",
+				form.current,
+				"user_GqWB6DWgQTHICnHQEnvCU"
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+					setSending(false);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+	};
 
 	let number = "+54 9 11 2537-9689";
-	number = number.replace(/[^\w\s]/gi, '').replace(/ /g, '');
-    let url = `${URL}/${number}`;
+	number = number.replace(/[^\w\s]/gi, "").replace(/ /g, "");
+	let url = `${URL}/${number}`;
 
-    const enviarMsj = (event) =>{
-        event.preventDefault();
-        url += `?text=${encodeURI("Hola me llamo "+ wapMessage.Name +" " + ' me gustaria pedirles: ' + wapMessage.Message)}`;
+	const enviarMsj = (event) => {
+		event.preventDefault();
+		url += `?text=${encodeURI(
+			"Hola! Soy " +
+				wapMessage.Name +
+				"\n" +
+				"Mi mail: " +
+				wapMessage.Mail +
+				"\n" +
+				"Mi telefono: " +
+				wapMessage.Telefono +
+				"\n" +
+				"Mi consulta: " +
+				wapMessage.Message
+		)}`;
 
-        window.open(url);
-
-    }
+		window.open(url);
+	};
 
 	return (
 		<>
@@ -35,12 +71,31 @@ const ContactLanding = () => {
 				<div className={styles.circle}>
 					<div className={styles.content}>
 						<h5>Contacto</h5>
-						<p>Contáctenos y responderemos su consulta en la brevedad.</p>
-						<form action="#" onSubmit={enviarMsj} >
+						<p>
+							Puede contactarse con Qualimed a través del siguiente formulario
+							y nos pondremos en contacto con usted a la brevedad
+						</p>
+						{/* <form action="#" onSubmit={enviarMsj}>
 							<input
 								type="text"
-								placeholder=" Nombre / Empresa"
+								placeholder=" &nbsp; Nombre / Empresa"
 								name="Name"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<input
+								type="text"
+								placeholder=" &nbsp;Correo"
+								name="Correo"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<input
+								type="text"
+								placeholder=" &nbsp;Telefono"
+								name="Telefono"
 								autoComplete="on"
 								onChange={handleInputChange}
 								required
@@ -53,24 +108,50 @@ const ContactLanding = () => {
 								required
 							></textarea>
 							<button type="submit">Enviar</button>
+						</form> */}
+
+						<form ref={form} onSubmit={sendEmail}>
+							<input
+								type="text"
+								placeholder=" &nbsp; Nombre / Empresa"
+								name="user_name"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<input
+								type="text"
+								placeholder=" &nbsp;Correo"
+								name="user_email"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<input
+								type="text"
+								placeholder=" &nbsp;Telefono"
+								name="telefono"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<textarea
+								type="text"
+								placeholder=" &nbsp;Consulta"
+								name="message"
+								onChange={handleInputChange}
+								required
+							></textarea>
+							{/* <input type="submit" value="Send" /> */}
+							<button type="submit" value="Send">
+								{!sending ? "Enviar" : "Enviando..."}
+							</button>
 						</form>
-						
 					</div>
 				</div>
 			</div>
-			<div className={styles.wave_bottom}>{waveSvg_Bottom}</div>
 		</>
 	);
 };
 
 export default ContactLanding;
-
-const waveSvg_Bottom = (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-		<path
-			fill="#3B3E8D"
-			fillOpacity="1"
-			d="M0,288L80,288C160,288,320,288,480,256C640,224,800,160,960,144C1120,128,1280,160,1360,176L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-		></path>
-	</svg>
-);

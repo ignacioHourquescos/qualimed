@@ -9,6 +9,11 @@
   z-index: 5000;
   overflow: hidden;
 
+  @media #{$mobile} {
+    display: none;
+
+  }
+
 
 }
 
@@ -27,8 +32,7 @@
 
 
   @media #{$mobile} {
-    height: 10vh;
-    overflow: hidden;
+    display: none;
 
   }
 
@@ -44,6 +48,7 @@
       width: 30%;
 
     }
+
     @media #{$mobileS} {
       width: 60%;
 
@@ -140,10 +145,11 @@
   font-size: 16px !important;
   line-height: 2rem;
 
-  a:hover{
+  a:hover {
     background-color: #E5E5E5;
     height: 100%;
   }
+
   img {
     margin-right: 10px;
     height: 50%;
@@ -154,20 +160,20 @@
 .dropdown::after {
   display: none !important;
 }
-.dropdownSubMenu{
- display: flex;
- flex-direction: column;
- width: 100%;
- height: 100%;
- justify-content: center;
- align-items: center;
- text-justify: center;
 
- a{
-   display: flex;
+.dropdownSubMenu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
   align-items: center;
   text-justify: center;
- }
- 
-}
 
+  a {
+    display: flex;
+    align-items: center;
+    text-justify: center;
+  }
+
+}

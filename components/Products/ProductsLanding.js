@@ -1,6 +1,6 @@
 import styles from "./ProductsLanding.module.scss";
 import "./ProductsLanding.module.scss";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
@@ -13,85 +13,84 @@ const ProductsLanding = () => {
 	const [settings, setSettings] = useState();
 
 	useEffect(() => {
-	  if (isDesktop) {
-	   return setSettings(settings = {
-			dots: true,
-			fade: true,
-			dotsClass: "slick-dots",
-			infinite: true,
-			speed: 1000,
-			autoplay: true,
-			autoplaySpeed: 4000,
-			appendDots: (dots) => (
-				<div
-					style={{
-						display: "flex",
-						width: "20%",
-						padding: "10px",
-						margin: "0 0 0% 73%",
-					}}
-				>
-					<ul className={styles.dots}> {dots} </ul>
-				</div>
-			),
-		})
-
-	  } if (isTablet){
-		return setSettings(settings = {
-			dots: true,
-			fade: true,
-			dotsClass: "slick-dots",
-			infinite: true,
-			speed: 1000,
-			autoplay: true,
-			autoplaySpeed: 4000,
-			appendDots: (dots) => (
-				<div
-					style={{
-						display: "flex",
-						width: "20%",
-						padding: "10px",
-						margin: "0 0 0% 48%",
-						zIndex: "1500",
-					}}
-				>
-					<ul className={styles.dots}> {dots} </ul>
-				</div>
-			),
-		})
-	  } else {
-
-	  return setSettings(settings = {
-		dots: true,
-		fade: true,
-		dotsClass: "slick-dots",
-		infinite: true,
-		speed: 1000,
-		autoplay: true,
-		autoplaySpeed: 4000,
-		appendDots: (dots) => (
-			<div className={styles.main_container}
-				style={{
-					display: "flex",
-					width: "20%",
-					padding: "10px",
-					margin: "0 0 14% 43%",
-					zIndex: "1500",
- 
-				}}
-			>
-				<ul className={styles.dots}> {dots} </ul>
-			</div>
-		),
-	})
-}
-	
-	  
-	}, [])
-	
-	
-
-	
+		if (isDesktop) {
+			return setSettings(
+				(settings = {
+					dots: true,
+					fade: true,
+					dotsClass: "slick-dots",
+					infinite: true,
+					speed: 1000,
+					autoplay: true,
+					autoplaySpeed: 4000,
+					appendDots: (dots) => (
+						<div
+							style={{
+								display: "flex",
+								width: "20%",
+								padding: "10px",
+								margin: "0 0 0% 73%",
+							}}
+						>
+							<ul className={styles.dots}> {dots} </ul>
+						</div>
+					),
+				})
+			);
+		}
+		if (isTablet) {
+			return setSettings(
+				(settings = {
+					dots: true,
+					fade: true,
+					dotsClass: "slick-dots",
+					infinite: true,
+					speed: 1000,
+					autoplay: true,
+					autoplaySpeed: 4000,
+					appendDots: (dots) => (
+						<div
+							style={{
+								display: "flex",
+								width: "20%",
+								padding: "10px",
+								margin: "0 0 0% 48%",
+								zIndex: "1500",
+							}}
+						>
+							<ul className={styles.dots}> {dots} </ul>
+						</div>
+					),
+				})
+			);
+		} else {
+			return setSettings(
+				(settings = {
+					dots: true,
+					fade: true,
+					dotsClass: "slick-dots",
+					infinite: true,
+					speed: 1000,
+					autoplay: true,
+					autoplaySpeed: 4000,
+					appendDots: (dots) => (
+						<div
+							className={styles.main_container}
+							style={{
+								display: "flex",
+								width: "20%",
+								padding: "10px",
+								margin: "0 0 14% 43%",
+								zIndex: "1500",
+							}}
+						>
+							<ul className={styles.dots}> {dots} </ul>
+						</div>
+					),
+				})
+			);
+		}
+	}, []);
 
 	return (
 		<div className={styles.master}>
@@ -111,7 +110,9 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref>
+										<button>Ver mas</button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -126,7 +127,9 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref>
+										<button>Ver mas</button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -144,7 +147,9 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref>
+										<button>Ver mas</button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -159,7 +164,9 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento" passHref><button>Ver mas</button></Link>
+									<Link href="./products/equipamiento" passHref>
+										<button>Ver mas</button>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -169,8 +176,8 @@ const ProductsLanding = () => {
 			{/* 
 			<div className={styles.wave_bottom}>{waveSvg_Bottom}</div> */}
 		</div>
-	)
-}
+	);
+};
 
 export default ProductsLanding;
 

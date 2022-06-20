@@ -2,32 +2,35 @@
 
 
 .toolbar {
-   position:fixed;
-   padding-top: 1.4rem;
-   display:flex;
+  position: fixed;
+  padding-top: 1.4rem;
+  display: flex;
 
-   background-color: transparent;
-   top:0;
-   right: 1rem;  
-   z-index:5500;
-   color: #3E4090;    
-   @media #{$desktop}{
-      display: none;
-      overflow: hidden;
+  background-color: transparent;
+  top: 0;
+  right: 1rem;
+  z-index: 5500;
+  color: #ffffff;
 
-      }  
-}  
-.burgerIcon {
-      width: 45px;
-      z-index:1000;
-      padding:0;
-      text-decoration:none;
-      background-color: transparent;
-      border: none;
-      color: #3E4090;
-      cursor: pointer;
-      overflow: hidden;
+  @media #{$desktop} {
+    display: none;
+    overflow: hidden;
 
+  }
 }
 
-   
+.burgerIcon {
+  // width: 45px;
+  z-index: 1000;
+  padding: 0;
+  text-decoration: none;
+  // background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: rgba(130, 56, 242, 0.502);
+  border: 5px solid transparent;
+  ;
+
+}

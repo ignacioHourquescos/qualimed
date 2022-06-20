@@ -14,7 +14,8 @@
 
   @media #{$mobile} {
     flex-direction: column-reverse;
-    height: 110vh;
+    height: 100vh;
+    background-color: transparent;
 
   }
 
@@ -31,24 +32,26 @@
   @media #{$mobile} {
     width: 100%;
     height: 100vh;
-    margin: 10vh 0 0 0;
+
   }
 
   img {
-    align-self: center;
-    width: 67vh;
+    align-self: left;
+    // width: 100%;
     height: 100vh;
     margin: 0px -5px 0px 0px;
     overflow: hidden;
 
     @media #{$desktopXl} {
-      width: 80vh;
-      height: 100vh;
+      // width: 100%;
+      // height: 100vh;
     }
 
     @media #{$mobile} {
-      width: 200%;
-      height: 100vh;
+      align-self: left;
+      margin-left: 50%;
+      // width: 100%;
+      // height: 100vh;
 
     }
   }
@@ -75,12 +78,13 @@
 
   @media #{$mobile} {
     width: 100%;
-    height: 0vh;
     justify-content: top;
     align-items: center;
     text-align: center;
     margin: 0 0% 0 0%;
     z-index: 100;
+    position: absolute;
+    top: 20%;
   }
 
   img {
@@ -89,21 +93,19 @@
     // margin: auto auto auto 25%;
 
     @media #{$mobile} {
-      position: absolute;
-      top: 15vh;
-      left: 20vw;
-      width: 60%;
+      // top: 50%;
+      // left: 20vw;
+      width: 100%;
       height: 45%;
       z-index: 1300;
       margin: auto;
-
     }
 
     @media #{$mobileS} {
-      position: absolute;
-      top: 15vh;
-      left: 12vw;
-      width: 75%;
+
+      // top: 15vh;
+      // left: 12vw;
+      width: 100%;
       height: 45%;
       z-index: 1300;
 
@@ -123,9 +125,9 @@
 
     @media #{$mobile} {
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 0.7rem;
       line-height: 1.6rem;
-      position: absolute;
+
       top: 60vh;
       z-index: 1300;
       color: #fff;
@@ -134,70 +136,13 @@
     }
 
     @media #{$mobileXs} {
-      width: 65%;
-      font-size: 1.1rem;
-    }
-
-
-  }
-
-  .divSearch {
-    width: 100%;
-
-    @media #{$mobile} {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    input {
-      width: 100%;
-      height: 45px;
+      width: 90%;
       font-size: 1rem;
-      border: none;
-      background-color: #f6f6f600;
-      border-bottom: 1px solid white;
-      color: white;
-      margin-bottom: 30%;
-
-      @media #{$mobile} {
-        background: #F6F6F6;
-        padding: 0 10%;
-        border-radius: 200px;
-        border: none;
-        z-index: 1300;
-        position: absolute;
-        top: 70vh;
-        width: 75%;
-        z-index: 1300;
-        margin: auto;
-
-        @media #{$mobileXs} {
-          padding: 0 10%;
-          border-radius: 20px;
-          margin-top: 10px;
-
-        }
-      }
     }
-
-    input::placeholder {
-      color: white;
-
-      @media #{$mobile} {
-        color: #757575;
-      }
-    }
-
-    input:focus {
-      border: 1px solid transparent;
-      outline: none;
-      border-bottom: 1px solid white;
-    }
-
 
 
   }
+
 
 }
 
@@ -206,12 +151,12 @@
 
   @media #{$mobile} {
     display: block;
-    background-color: rgba(130, 56, 242, 0.2);
+    background-color: rgba(130, 56, 242, 0.702);
     height: 100vh;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 10vh;
+    top: 0;
     overflow: hidden;
 
   }
@@ -242,7 +187,10 @@
 }
 
 .wave {
-  @media #{$mobile} {
-    display: none;
-  }
+  // @media #{$mobile} {
+  //   display: none;
+  // }
+  z-index: 1500;
+  position: absolute;
+  width: 100%;
 }

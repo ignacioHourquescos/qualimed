@@ -41,7 +41,7 @@ const numberOfSkeletonCards = Array.apply(null, Array(20)).map(function (x, i) {
 				  ))
 				: data.map((element, idx) => (
                     <SwiperSlide className={styles.swiperSlide} key={`SS_${idx}`}>
-                            <Cards
+                          <Cards 
 								key={`SS_${idx}`}                                
 								title={element.title}
                                 description={element.description}

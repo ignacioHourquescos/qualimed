@@ -10,9 +10,12 @@
   margin: 10%;
   margin-top: 5%;
   margin-bottom: 0;
+  padding-bottom: 10%;
 
   // background-color: white;
+  border-radius: 400px 200px 200px 400px;
 
+  // background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='80' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432'  stroke-width='1' stroke='hsla(259, 0%, 90%, 0.37)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
 
   @media #{$mobile} {
     margin-top: 15%;
@@ -25,22 +28,30 @@
 
 .punchLine {
   font-size: 2rem;
-  padding: 0 10%;
+  padding: 10% 20%;
   text-align: center;
+  padding-top: 10%;
 
   @media #{$mobile} {
     font-size: 1.5rem;
     margin-bottom: 3rem;
+    width: 100%;
+    padding: 10%;
   }
 
 }
 
+// .main {
+//   background-color: white;
+//   border: 1px solid grey;
+// }
 
 .action {
   display: flex;
   flex-direction: row;
   margin-top: 0%;
-  padding: 10%;
+
+  padding: 0 10%;
 
   @media #{$mobile} {
     padding: 5%;
@@ -49,11 +60,11 @@
   }
 
   .imageContainer {
-    width: 20%;
+    width: 30%;
     z-index: 1;
 
     @media #{$mobile} {
-      width: 90%;
+      width: 100%;
     }
 
     .image {
@@ -61,33 +72,51 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      border-radius: 500px 0 0 500px;
-      height: 60vh;
+      border-radius: 500px;
+      height: 50vh;
       width: 50vh;
 
       @media #{$mobile} {
         border-radius: 500px 500px 0 0;
+        width: 100%;
+      }
+    }
+
+    .image2 {
+      background-image: url(../../public/deposito.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 500px;
+      height: 50vh;
+      width: 50vh;
+
+      @media #{$mobile} {
+        border-radius: 500px 500px 0 0;
+        width: 100%;
       }
     }
 
   }
 
   .text {
-    width: 100%;
+    width: 70%;
     background-color: white;
     border-radius: 0 500px 500px 0;
+    // border: 1px solid grey;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     justify-items: center;
-    padding-left: 25%;
+    padding-left: 10%;
     // padding-top: 5%;
     padding-right: 10%;
     font-size: 1.2rem;
 
     @media #{$mobile} {
       padding: 10%;
+      width: 100%;
       border-radius: 0 0 50px 50px;
       height: 100%;
       padding-bottom: 15%;
@@ -117,16 +146,23 @@
 
 }
 
-.image2 {
-  background-image: url(../../public/deposito.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 500px 0 0 500px;
-  height: 60vh;
-  width: 50vh;
+.statistics {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 10%;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 10%;
 
   @media #{$mobile} {
-    border-radius: 500px 500px 0 0;
+    flex-direction: column;
+  }
+
+  span {
+    color: #6F6BC0;
+    font-size: 2rem;
+    font-weight: bold;
   }
 }

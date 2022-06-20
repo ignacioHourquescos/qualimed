@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import styles from "./index.module.scss";
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero2/Hero";
+import { Button, Col, Row, Statistic } from "antd";
 
 const index = () => {
 	return (
@@ -10,7 +11,15 @@ const index = () => {
 			<Header />
 			<Hero title="Acerca de nosotros" img="./medicoHero.png" />
 			<div className={styles.container}>
-				<div className={styles.punchLine}> {data.data1}</div>
+				<div className={styles.main}>
+					<div className={styles.punchLine}>{data.data1}</div>
+					<div className={styles.statistics}>
+						<span>+30 años</span>
+						<span>+10 marcas</span>
+						<span>+3 sucursales</span>
+					</div>
+				</div>
+
 				<div className={styles.action}>
 					<div className={styles.imageContainer}>
 						<div className={styles.image} />

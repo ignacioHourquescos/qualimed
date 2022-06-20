@@ -68,7 +68,6 @@ const Index = () => {
 
 	const testFunction = (e) => {
 		e.preventDefault();
-		console.log("esta es la fucntion test " + e.value);
 	};
 
 	useEffect(() => {
@@ -105,7 +104,7 @@ const Index = () => {
 	return (
 		<>
 			<Header />
-			<Hero title={routerContent[2]} img={routerContent[3]} />
+			<Hero title={routerContent[2]} img={routerContent[3]} color="white" />
 			<div className={styles.container}>
 				<div
 					style={{ background: "#E5E5E5", overflow: "hidden" }}

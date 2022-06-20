@@ -1,7 +1,7 @@
 @import "../../styles/constants.scss";
 
 .cards {
-  
+
   display: grid;
   grid-template-columns: repeat(2, 50%);
   justify-items: center;
@@ -35,49 +35,51 @@
     width: 300px;
     height: 380px;
   }
+
   @media #{$desktopXll} {
     grid-template-columns: repeat(3, 27%);
   }
 }
+
 .swiperSlide:nth-child(1n) {
-    width: 50%;
-  
-    @media #{$mobileS} {
-      width: 80%;
-  
-    }
-  
-    @media #{$mobileXs} {
-      width: 100%;
-  
-    }
-  
+  width: 70%;
+
+  @media #{$mobileS} {
+    width: 80%;
+
   }
-  
-  .swiperSlide:nth-child(2n) {
-    width: 50%;
-  
-    @media #{$mobileS} {
-      width: 80%;
-  
-    }
-  
-    @media #{$mobileXs} {
-      width: 100%;
-  
-    }
+
+  @media #{$mobileXs} {
+    width: 100%;
+
   }
-  
-  .swiperSlide:nth-child(3n) {
-    width: 50%;
-  
-    @media #{$mobileS} {
-      width: 80%;
-  
-    }
-  
-    @media #{$mobileXs} {
-      width: 100%;
-  
-    }
+
+}
+
+.swiperSlide:nth-child(2n) {
+  width: 70%;
+
+  @media #{$mobileS} {
+    width: 80%;
+
   }
+
+  @media #{$mobileXs} {
+    width: 100%;
+
+  }
+}
+
+.swiperSlide:nth-child(3n) {
+  width: 70%;
+
+  @media #{$mobileS} {
+    width: 80%;
+
+  }
+
+  @media #{$mobileXs} {
+    width: 100%;
+
+  }
+}

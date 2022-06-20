@@ -1,7 +1,7 @@
 @import "../../styles/constants.scss";
 
 .cards {
-  
+
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-row-gap: 20px;
@@ -10,7 +10,6 @@
   align-items: flex-start;
   align-content: flex-start;
 
-  
 
   @media #{$desktopXl} {
     grid-template-columns: repeat(3, 32%);
@@ -18,6 +17,7 @@
     row-gap: 2%;
 
   }
+
   @media #{$mobile} {
     grid-template-columns: 100%;
   }
@@ -37,6 +37,7 @@
     width: 300px;
     height: 380px;
   }
+
   @media #{$desktopXll} {
     grid-template-columns: repeat(3, 27%);
   }

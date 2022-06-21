@@ -8,7 +8,7 @@ const Hero = ({ title, img, color }) => {
 				<div className={styles.seccion2}>
 					<h3>{title}</h3>
 					<div>
-						<img src={`${img}`}></img>
+						<img src={`${img}`} alt="insumos medicos"></img>
 						<div className={styles.layout}></div>
 					</div>
 				</div>

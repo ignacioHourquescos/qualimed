@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import styles from "./Sections.module.scss";
@@ -6,18 +6,15 @@ import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
 const Sections = () => {
-
-
 	const isDesktop = useMediaQuery({ query: "(min-width: 700px)" });
 
 	const [desktop, setDesktop] = useState(true);
 
 	useEffect(() => {
-	  if (!isDesktop) {
-		  setDesktop(false)
-	  }
-	}, [])
-	
+		if (!isDesktop) {
+			setDesktop(false);
+		}
+	}, []);
 
 	const settings = {
 		className: "center",
@@ -58,60 +55,95 @@ const Sections = () => {
 		// lazyLoad: true,
 	};
 
-
 	return (
 		<>
 			<div className={styles.container}>
 				<h5>Categorias </h5>
 				<div className={styles.carrousel_container}>
-					{ desktop ? (
+					{desktop ? (
 						<Slider {...settings}>
 							<div>
-								<Link href="/products/equipamiento" passHref>
-									<img src={"/monitor.png"}/>
+								<Link
+									href="/products/equipamiento"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/monitor.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/medicinaDeportiva" passHref>
-									<img src={"/medicinaDep1.png"}/>
+								<Link
+									href="/products/medicinaDeportiva"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/medicinaDep1.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/insumosMedicos" passHref>
-									<img src={"/seccionLand.png"}/>
+								<Link
+									href="/products/insumosMedicos"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/seccionLand.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/equipamiento" passHref>
-									<img src={"/monitor.png"}/>
+								<Link
+									href="/products/equipamiento"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/monitor.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/medicinaDeportiva" passHref>
-									<img src={"/medicinaDep1.png"}/>
+								<Link
+									href="/products/medicinaDeportiva"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/medicinaDep1.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/insumosMedicos" passHref>
-									<img src={"/seccionLand.png"}/>
+								<Link
+									href="/products/insumosMedicos"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/seccionLand.webp"} />
 								</Link>
 							</div>
 						</Slider>
 					) : (
 						<Slider {...settings1}>
 							<div>
-								<Link href="/products/equipamiento" passHref>
-									<img src={"/monitor.png"}/>
+								<Link
+									href="/products/equipamiento"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/monitor.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/medicinaDeportiva" passHref>
-									<img src={"/medicinaDep1.png"}/>
+								<Link
+									href="/products/medicinaDeportiva"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/medicinaDep1.webp"} />
 								</Link>
 							</div>
 							<div>
-								<Link href="/products/insumosMedicos" passHref>
-									<img src={"/seccionLand.png"}/>
+								<Link
+									href="/products/insumosMedicos"
+									passHref
+									alt="insumos medicos"
+								>
+									<img src={"/seccionLand.webp"} />
 								</Link>
 							</div>
 						</Slider>

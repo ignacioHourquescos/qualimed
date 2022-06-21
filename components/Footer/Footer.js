@@ -9,7 +9,11 @@ const Footer = () => {
 			<div className={styles.footer}>
 				<div className={styles.lists}>
 					<div className={styles.logo}>
-						<img src="/QualimedPNG1.svg" style={{ margin: "0 0 0 -5%" }} />
+						<img
+							src="/QualimedPNG1.svg"
+							style={{ margin: "0 0 0 -5%" }}
+							alt="insumos medicos"
+						/>
 					</div>
 					<div className={styles.seccions}>
 						<li>
@@ -42,7 +46,11 @@ const Footer = () => {
 							href={{ pathname: "https://www.instagram.com/qualimed.insumos/" }}
 							passHref
 						>
-							<img src={"/instagram.png"} style={{ cursor: "pointer" }} />
+							<img
+								src={"/instagram.png"}
+								style={{ cursor: "pointer" }}
+								alt="insumos medicos"
+							/>
 						</Link>
 					</div>
 					<div style={{ gridRow: 2 }}>

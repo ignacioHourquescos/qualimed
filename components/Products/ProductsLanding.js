@@ -102,7 +102,7 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./camaTerapia2.png"></img>
+									<img src="./camaTerapia2.webp" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
 									<h3>Cama terapia intensiva</h3>
@@ -110,7 +110,11 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento" passHref>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
 										<button>Ver mas</button>
 									</Link>
 								</div>
@@ -119,7 +123,7 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./mesaDeAnestecia.png"></img>
+									<img src="./mesaDeAnestecia.webp" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
 									<h3>Mesa de anestesia</h3>
@@ -127,7 +131,11 @@ const ProductsLanding = () => {
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 										do eiusmod tempor incididunt ut labore{" "}
 									</p>
-									<Link href="./products/equipamiento" passHref>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
 										<button>Ver mas</button>
 									</Link>
 								</div>

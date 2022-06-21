@@ -15,7 +15,7 @@ const index = () => {
 					<div className={styles.punchLine}>{data.data1}</div>
 					<div className={styles.statistics}>
 						<span>+30 años</span>
-						<span>+10 marcas</span>
+						<span>+15 marcas</span>
 						<span>+3 sucursales</span>
 					</div>
 				</div>

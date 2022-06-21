@@ -162,15 +162,3 @@ const Index = () => {
 };
 
 export default Index;
-
-{
-	/* <SubHeader title="Insumos médicos" img="insumosMed.png" />
-<SubHeader title="Marcas" img="marcas.png" />      
-<SubHeader title="Equipamiento" img="equipHero1.png" /> 
-<SubHeader title="Medicina deportiva" img="medicinaDep2.png" />*/
-}
-
-// const prodFilter = function getProdByName(){
-//   searchText = searchText.toLowerCase();
-//   return products.filter(product => product.name.toLowerCase().includes(searchText))
-// }

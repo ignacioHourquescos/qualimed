@@ -71,10 +71,17 @@ const SideBar = (props) => {
 										className={classes.items}
 										header={
 											<>
-												<img src="/ventilatorIcon.png" />
-												<a style={{ color: color ? "#3E4095" : "#595858" }}>
-													Equipamientos
-												</a>
+												<Link href="/products/equipamiento" passHref>
+													<>
+														<img
+															src="/ventilatorIcon.png"
+															alt="insumos medicos"
+														/>
+														<a style={{ color: color ? "#3E4095" : "#595858" }}>
+															Equipamientos
+														</a>
+													</>
+												</Link>
 											</>
 										}
 									>
@@ -100,15 +107,20 @@ const SideBar = (props) => {
                       </li> */}
 									</Panel>
 									<li className={classes.items2}>
-										<img src="/maskIcon.png" />
 										<Link href="/products/insumosMedicos" passHref>
-											<a onClick={props.click}>Insumos médicos</a>
+											<>
+												<img src="/maskIcon.png" alt="insumos medicos" />
+												<a onClick={props.click}>Insumos médicos</a>
+											</>
 										</Link>
 									</li>
 									<li className={classes.items2}>
-										<img src="/bandageIcon.png" />
 										<Link href="/products/medicinaDeportiva" passHref>
-											<a onClick={props.click}>Medicina Deportiva</a>
+											<>
+												<img src="/bandageIcon.png" alt="insumos medicos" />
+
+												<a onClick={props.click}>Medicina Deportiva</a>
+											</>
 										</Link>
 									</li>
 									{/* <Panel

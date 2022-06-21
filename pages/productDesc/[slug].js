@@ -55,7 +55,7 @@ const Slug = () => {
 					<div className={styles.container}>
 						<div className={styles.detail}>
 							<div className={styles.img_container}>
-								<img src={detail.img} />
+								<img src={detail.img} alt="insumos medicos" />
 							</div>
 							<div className={styles.detailInfo}>
 								<b>Descripcion</b>
@@ -92,7 +92,7 @@ const Slug = () => {
 										passHref
 									>
 										<div className={styles.shopMobile}>
-											<img src="/cart2.png" />
+											<img src="/cart2.png" alt="insumos medicos" />
 											Ver producto en tienda minorista
 										</div>
 									</Link>

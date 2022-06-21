@@ -114,7 +114,7 @@ const Filter = ({
 							showArrow={true}
 							header={
 								<>
-									<img src="/ventilatorIcon.png" />
+									<img src="/ventilatorIcon.png" alt="insumos medicos" />
 									<a
 										style={{
 											color: sideDrawerOpen ? "#3E4095" : "#595858",
@@ -141,7 +141,7 @@ const Filter = ({
 							</Link>
 						</Panel>
 						<li className={styles.category}>
-							<img src="/maskIcon.png" />
+							<img src="/maskIcon.png" alt="insumos medicos" />
 							<div>
 								<Link href="/products/insumosMedicos" passHref>
 									<a onClick={() => twoFunctions()}>Insumos médicos</a>
@@ -149,7 +149,7 @@ const Filter = ({
 							</div>
 						</li>
 						<li className={styles.category}>
-							<img src="/bandageIcon.png" />
+							<img src="/bandageIcon.png" alt="insumos medicos" />
 							<div>
 								<Link href="/products/medicinaDeportiva" passHref>
 									<a onClick={() => twoFunctions()}>Medicina deportiva</a>

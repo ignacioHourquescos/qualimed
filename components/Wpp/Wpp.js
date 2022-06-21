@@ -37,7 +37,12 @@ const ReactWhatsapp = ({
 					}
 				}}
 			>
-				<img src="/whatsapp.png" width={"65%"} height={"65%"} />
+				<img
+					src="/whatsapp.png"
+					width={"65%"}
+					height={"65%"}
+					alt="insumos medicos"
+				/>
 			</div>
 		</>
 	);

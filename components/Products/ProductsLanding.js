@@ -102,13 +102,13 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./camaTerapia2.webp" alt="insumos medicos"></img>
+									<img src="./MAMO_PHILLIPS.png" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Cama terapia intensiva</h3>
+									<h3>Ecógrafo Philips ClearVue G</h3>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-										do eiusmod tempor incididunt ut labore{" "}
+										Plataforma multipropósito con tecnología con monitro de LED
+										de alta definición.
 									</p>
 									<Link
 										href="./products/equipamiento"
@@ -123,13 +123,74 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./mesaDeAnestecia.webp" alt="insumos medicos"></img>
+									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Mesa de anestesia</h3>
+									<h3>Equipos de Rayos X Fuji Film</h3>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-										do eiusmod tempor incididunt ut labore{" "}
+										FDR Smart X – Soluciones de rayos X multifuncionales,
+										Radiología digital avanzada.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./DETERGENTE.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Limpieza y desinfección</h3>
+									<p>
+										Detergentes y Desinfectantes: Enzimaticos, Trienzimaticos,
+										Pentaenzimaticos , Surgibac PA PLUS , Surgibac
+										glutaraldehido 2.5%.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./FUJI.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Películas Radiográficas FUJI-FILM</h3>
+									<p>Películas de Fujifilm adaptables a los equipos DryPix.</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Mamógrafo Amulet Felicia</h3>
+									<p>
+										solución integral en mamografía, con tecnología de avanzada
+										para procesamiento de imágenes.
 									</p>
 									<Link
 										href="./products/equipamiento"
@@ -147,13 +208,13 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./camaTerapia2.png"></img>
+									<img src="./MAMO_PHILLIPS.png"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Cama terapia intensiva</h3>
+									<h3>Ecógrafo Philips ClearVue G</h3>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-										do eiusmod tempor incididunt ut labore{" "}
+										Plataforma multipropósito con tecnología con monitro de LED
+										de alta definición.
 									</p>
 									<Link href="./products/equipamiento" passHref>
 										<button>Ver mas</button>
@@ -164,15 +225,75 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./mesaDeAnestecia.png"></img>
+									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Mesa de anestesia</h3>
+									<h3>Equipos de Rayos X Fuji Film</h3>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-										do eiusmod tempor incididunt ut labore{" "}
+										FDR Smart X – Soluciones de rayos X multifuncionales,
+										Radiología digital avanzada.
 									</p>
 									<Link href="./products/equipamiento" passHref>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./DETERGENTE.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Desinfectantes y Detergentes</h3>
+									<p>
+										Enzimaticos, Trienzimaticos, Pentaenzimaticos , Surgibac PA
+										PLUS , Surgibac glutaraldehido 2.5%.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./FUJI.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Películas Radiográficas FUJI-FILM</h3>
+									<p>Películas de Fujifilm adaptables a los equipos DryPix.</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Mamógrafo Amulet Felicia</h3>
+									<p>
+										solución integral en mamografía, con tecnología de avanzada
+										para procesamiento de imágenes.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
 										<button>Ver mas</button>
 									</Link>
 								</div>

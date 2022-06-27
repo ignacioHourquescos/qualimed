@@ -28,9 +28,9 @@
 
 .punchLine {
   font-size: 1.5rem;
-  padding: 10% 20%;
+  padding: 7% 20%;
   text-align: center;
-  padding-top: 5%;
+  padding-top: 3%;
 
   @media #{$mobile} {
     font-size: 1.5rem;
@@ -102,7 +102,7 @@
   .text {
     width: 70%;
     background-color: white;
-    border-radius: 0 500px 500px 0;
+    border-radius: 50px;
     // border: 1px solid grey;
     display: flex;
     justify-content: center;

@@ -57,5 +57,5 @@ const data = {
 	data3:
 		"Qualimed S.A se encuentra constantemente incorporando productos y nuevas tecnologías para mejorar la calidad del sector de la salud; como también desarrollando nuevas plataformas de venta y atención para brindar el mejor servicio a nuestros clientes.",
 	data4:
-		"Nuestra sede central se encuentra ubicada en el Partido de San Martin, Buenos Aires, Argentina. Contamos con sucursales mayoristas en la Costa Atlántica, el Partido de Chascomús y realizamos ventas a todo el país a través de las empresas de logística más importante",
+		"Nuestra sede central se encuentra ubicada en el Partido de San Martin, Buenos Aires, Argentina. Contamos con sucursales mayoristas en la Costa Atlántica, el Partido de Chascomús y realizamos ventas a todo el país a través de las empresas de logística más importante.",
 };

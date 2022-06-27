@@ -49,7 +49,8 @@
 
     @media #{$mobile} {
       align-self: left;
-      margin-left: 50%;
+      // margin-left: 50%;
+      width: 200%;
       // width: 100%;
       // height: 100vh;
 
@@ -125,7 +126,7 @@
 
     @media #{$mobile} {
       font-weight: 600;
-      font-size: 0.7rem;
+      font-size: 1rem;
       line-height: 1.6rem;
 
       top: 60vh;

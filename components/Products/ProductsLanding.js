@@ -29,7 +29,7 @@ const ProductsLanding = () => {
 								display: "flex",
 								width: "20%",
 								padding: "10px",
-								margin: "0 0 0% 73%",
+								margin: "0 0 0% 50%",
 							}}
 						>
 							<ul className={styles.dots}> {dots} </ul>
@@ -54,7 +54,7 @@ const ProductsLanding = () => {
 								display: "flex",
 								width: "20%",
 								padding: "10px",
-								margin: "0 0 0% 48%",
+								margin: "0 0 0% 0%",
 								zIndex: "1500",
 							}}
 						>
@@ -80,7 +80,7 @@ const ProductsLanding = () => {
 								display: "flex",
 								width: "20%",
 								padding: "10px",
-								margin: "0 0 14% 43%",
+								margin: "0 0 14% 30%",
 								zIndex: "1500",
 							}}
 						>
@@ -166,11 +166,15 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./FUJI.png" alt="insumos medicos"></img>
+									<img src="./fujifilm.png" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Películas Radiográficas FUJI-FILM</h3>
-									<p>Películas de Fujifilm adaptables a los equipos DryPix.</p>
+									<h3>Peliculas Radiograficas</h3>
+									<p>
+										Películas marca FUJIFILM adaptables a los equipos DryPix.
+										Peliculas LAser secas DI-HL / DI-ML & peliculas humedas HR-U
+										/ UM-MA HC
+									</p>
 									<Link
 										href="./products/equipamiento"
 										alt="insumos medicos"
@@ -263,10 +267,12 @@ const ProductsLanding = () => {
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./FUJI.png" alt="insumos medicos"></img>
+									<img src="./fujifilm.png" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Películas Radiográficas FUJI-FILM</h3>
+									<h3>
+										Películas Radiográficas <br /> FUJI-FILM
+									</h3>
 									<p>Películas de Fujifilm adaptables a los equipos DryPix.</p>
 									<Link
 										href="./products/equipamiento"

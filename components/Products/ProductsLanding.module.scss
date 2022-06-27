@@ -191,14 +191,12 @@
 
 
     @media #{$mobile} {
-      margin: auto auto 0% auto;
+      margin: 0;
       margin: 0;
       font-size: 1rem;
       line-height: 1.2rem;
 
     }
-
-
 
     @media #{$desktopXl} {
       font-size: 1.3rem;
@@ -209,7 +207,7 @@
 
   p {
     align-self: flex-end;
-    width: 50%;
+    width: 70%;
     height: 44px;
     // margin: 0 15% 0 0%;
 

@@ -59,12 +59,6 @@ const SideBar = (props) => {
 									key="1"
 									className={classes.panel}
 								>
-									{/* <Collapse
-										onChange={colorice}
-										accordion={true}
-										className={classes.collapse2}
-										expandIconPosition="right"
-									> */}
 									<Panel
 										key="1"
 										showArrow={false}
@@ -78,34 +72,13 @@ const SideBar = (props) => {
 															alt="insumos medicos"
 														/>
 														<a style={{ color: color ? "#3E4095" : "#595858" }}>
-															Equipamientos
+															Equipamiento
 														</a>
 													</>
 												</Link>
 											</>
 										}
-									>
-										{/* <li className={classes.liBott}>
-                        <Link href="/products/equipamiento" passHref>
-                          <a onClick={props.click}>Todos</a>
-                        </Link>
-                      </li>
-                      <li className={classes.liBott}>
-                        <Link href="/products/equipamientoVenta" passHref>
-                          <a onClick={props.click}>Ventas</a>
-                        </Link>
-                      </li>
-                      <li className={classes.liBott}>
-                        <Link href="/products/equipamientoAlquiler" passHref>
-                          <a onClick={props.click}>Alquileres</a>
-                        </Link>
-                      </li>
-                      <li className={classes.liBott}>
-                        <Link href="/products/equipamientoSt" passHref>
-                          <a onClick={props.click}>Servicio Tecnico</a>
-                        </Link>
-                      </li> */}
-									</Panel>
+									></Panel>
 									<li className={classes.items2}>
 										<Link href="/products/insumosMedicos" passHref>
 											<>

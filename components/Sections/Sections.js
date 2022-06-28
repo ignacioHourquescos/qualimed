@@ -14,7 +14,7 @@ const Sections = () => {
 		if (!isDesktop) {
 			setDesktop(false);
 		}
-	}, []);
+	}, [isDesktop]);
 
 	const settings = {
 		className: "center",
@@ -68,7 +68,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/monitor.PNG"} />
+									<img src={"/monitor.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -77,7 +77,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/medicinaDep1.PNG"} />
+									<img src={"/medicinaDep1.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -86,7 +86,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/seccionLand.PNG"} />
+									<img src={"/seccionLand.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -95,7 +95,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/monitor.PNG"} />
+									<img src={"/monitor.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -104,7 +104,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/medicinaDep1.PNG"} />
+									<img src={"/medicinaDep1.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -113,7 +113,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/seccionLand.PNG"} />
+									<img src={"/seccionLand.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 						</Slider>
@@ -125,7 +125,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/monitor.PNG"} />
+									<img src={"/monitor.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -134,7 +134,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/medicinaDep1.PNG"} />
+									<img src={"/medicinaDep1.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 							<div>
@@ -143,7 +143,7 @@ const Sections = () => {
 									passHref
 									alt="insumos medicos"
 								>
-									<img src={"/seccionLand.PNG"} />
+									<img src={"/seccionLand.PNG"} alt="insumos medicos" />
 								</Link>
 							</div>
 						</Slider>

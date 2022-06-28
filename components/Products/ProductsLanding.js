@@ -128,7 +128,7 @@ const ProductsLanding = () => {
 								<div className={styles.description}>
 									<h3>Equipos de Rayos X Fuji Film</h3>
 									<p>
-										FDR Smart X – Soluciones de rayos X multifuncionales,
+										FDR Smart X Soluciones de rayos X multifuncionales,
 										Radiología digital avanzada.
 									</p>
 									<Link

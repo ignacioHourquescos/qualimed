@@ -73,7 +73,13 @@ const Index = () => {
 	useEffect(() => {
 		fetch("../api/getProducts")
 			.then((response) => response.json())
-			.then((data) => (setProducts(data[0]), setLoading(false)));
+			.then(
+				(data) => (
+					console.log("USE EFFECT: ", data),
+					setProducts(data[0]),
+					setLoading(false)
+				)
+			);
 	}, []);
 
 	const resetValues = () => {

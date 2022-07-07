@@ -59,42 +59,48 @@ const SideBar = (props) => {
 									key="1"
 									className={classes.panel}
 								>
-									<Panel
-										key="1"
-										showArrow={false}
-										className={classes.items}
-										header={
-											<>
-												<Link href="/products/equipamiento" passHref>
-													<>
-														<img
-															src="/ventilatorIcon.png"
-															alt="insumos medicos"
-														/>
-														<a style={{ color: color ? "#3E4095" : "#595858" }}>
-															Equipamiento
-														</a>
-													</>
-												</Link>
-											</>
-										}
-									></Panel>
 									<li className={classes.items2}>
-										<Link href="/products/insumosMedicos" passHref>
-											<>
-												<img src="/maskIcon.png" alt="insumos medicos" />
+										<>
+											<Link href="/products/equipamiento" passHref>
+												<img
+													onClick={props.click}
+													src="/ventilatorIcon.png"
+													alt="insumos medicos"
+												/>
+											</Link>
+											<Link href="/products/equipamiento" passHref>
+												<a onClick={props.click}>Equipamiento</a>
+											</Link>
+										</>
+									</li>
+
+									<li className={classes.items2}>
+										<>
+											<Link href="/products/insumosMedicos" passHref>
+												<img
+													onClick={props.click}
+													src="/maskIcon.png"
+													alt="insumos medicos"
+												/>
+											</Link>
+											<Link href="/products/insumosMedicos" passHref>
 												<a onClick={props.click}>Insumos médicos</a>
-											</>
-										</Link>
+											</Link>
+										</>
 									</li>
 									<li className={classes.items2}>
-										<Link href="/products/medicinaDeportiva" passHref>
-											<>
-												<img src="/bandageIcon.png" alt="insumos medicos" />
-
+										<>
+											<Link href="/products/medicinaDeportiva" passHref>
+												<img
+													onClick={props.click}
+													src="/bandageIcon.png"
+													alt="insumos medicos"
+												/>
+											</Link>
+											<Link href="/products/medicinaDeportiva" passHref>
 												<a onClick={props.click}>Medicina Deportiva</a>
-											</>
-										</Link>
+											</Link>
+										</>
 									</li>
 									{/* <Panel
 										showArrow={false}

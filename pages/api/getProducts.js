@@ -22,10 +22,10 @@ const getProducts = (req, res) => {
 			for (var i = 1; i < data.values.length; i++) {
 				array.push({
 					code: data.values[i][0],
-					category: data.values[i][1],
+					category: !data.values[i][1] ? "" : data.values[i][1],
 					brand: data.values[i][2],
 					title: data.values[i][3],
-          			brief: data.values[i][4],
+					brief: data.values[i][4],
 					description: data.values[i][5],
 					application: data.values[i][6],
 					techcnial: data.values[i][7],

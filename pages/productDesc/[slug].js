@@ -8,34 +8,64 @@ import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import { useRouter } from "next/router";
 import React, { useRef, useState, useEffect } from "react";
 import Hero from "../../components/Hero2/Hero";
+import emailjs from "@emailjs/browser";
 
 const Slug = () => {
 	// const {img, title, description, application, techcnial, code} = detail;
-
+	const form = useRef();
 	const router = useRouter();
 	const idEvent = router.query.slug;
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
-
+	const [displayUserForm, setDisplayUserForm] = useState(false);
+	const [sending, setSending] = useState(false);
 	useEffect(() => {
 		fetch("../api/getProducts")
 			.then((response) => response.json())
 			.then((data) => (setProducts(data[0]), setLoading(false)));
 	}, []);
 
+	const sendEmail = (e) => {
+		e.preventDefault();
+		setSending(true);
+		console.log("mensaje enviado");
+		emailjs
+			.sendForm(
+				"service_2qdstih",
+				"template_a2ty4bh",
+				form.current,
+				"user_GqWB6DWgQTHICnHQEnvCU"
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+					setSending(false);
+					setDisplayUserForm(false);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+	};
+
+	const displayUserFormHandler = () => {
+		setDisplayUserForm(true);
+	};
+
 	const URL = "https://wa.me";
 	let number = "+54 011 47162699";
 	number = number.replace(/[^\w\s]/gi, "").replace(/ /g, "");
 	let url = `${URL}/${number}`;
 
-	const enviarMsj = (event) => {
+	const enviarMsj = (event, detail) => {
 		event.preventDefault();
 		url += `?text=${encodeURI(
-			"Hola me gustaria consultarles por " +
-				title +
+			"Hola me gustaria consultarles por el producto: " +
+				products.find((element) => element.title == idEvent).title +
 				" " +
-				" el codigo es " +
-				code
+				" ( codigo de producto:  " +
+				products.find((element) => element.title == idEvent)?.code +
+				")"
 		)}`;
 
 		window.open(url);
@@ -78,24 +108,65 @@ const Slug = () => {
 									<p>{detail.description.slice(0, 50)}...</p>
 									<br />
 									<button onClick={enviarMsj}>Cotización via whatsapp</button>
+
 									<button
 										className={styles.btnMail}
 										style={{ background: "#8183CA" }}
+										onClick={displayUserFormHandler}
 									>
 										Cotización via mail
 									</button>
-									<Link
-										target="_blank"
-										href={{
-											pathname: "https://qualimed2021.mercadoshops.com.ar/",
-										}}
-										passHref
-									>
-										<div className={styles.shopMobile}>
-											<img src="/cart2.png" alt="insumos medicos" />
-											Ver producto en tienda minorista
+
+									{displayUserForm ? (
+										<div className={styles.userForm}>
+											<form
+												className={styles.form}
+												ref={form}
+												onSubmit={sendEmail}
+											>
+												<input
+													className={styles.input}
+													type="text"
+													placeholder=" &nbsp; Nombre / Empresa"
+													name="user_name"
+													autoComplete="on"
+													required
+												></input>
+												<input
+													className={styles.input}
+													type="text"
+													placeholder=" &nbsp;Correo"
+													name="user_email"
+													autoComplete="on"
+													// onChange={handleInputChange}
+													required
+												></input>
+												<textarea
+													style={{ display: "none" }}
+													type="text"
+													placeholder=" &nbsp;Consulta"
+													name="message"
+													value={`Me gustaria tener mas informaciona cerca de  ${detail.title} codigo de producto: ${detail.code}`}
+													required
+												></textarea>
+												<button type="submit" value="Send">
+													{!sending ? "Enviar" : "Enviando..."}
+												</button>
+											</form>
 										</div>
+									) : (
+										""
+									)}
+									<Link href="https://nextjs.org">
+										{" "}
+										//external page
+										<a>Next.js</a>
 									</Link>
+
+									<div className={styles.shopMobile}>
+										<img src="/cart2.png" alt="insumos medicos" />
+										Ver producto en tienda minorista
+									</div>
 								</div>
 							</div>
 						</div>

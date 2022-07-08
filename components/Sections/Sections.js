@@ -58,7 +58,7 @@ const Sections = () => {
 	return (
 		<>
 			<div className={styles.container}>
-				<h5>Categorias </h5>
+				<h5>CATEGORIAS </h5>
 				<div className={styles.carrousel_container}>
 					{desktop ? (
 						<Slider {...settings}>

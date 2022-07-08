@@ -107,7 +107,7 @@ const ProductsLanding = () => {
 								<div className={styles.description}>
 									<h3>Ecógrafo Philips ClearVue G</h3>
 									<p>
-										Ecógrafo PHILIPS ClearVue con excelente calidad de imagen y
+										Ecógrafo philips ClearVue con excelente calidad de imagen y
 										diagnóstico confiable para aquellos que buscan su primer
 										ecógrafo.
 									</p>
@@ -121,16 +121,18 @@ const ProductsLanding = () => {
 								</div>
 							</div>
 						</div>
+
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
-									<img src="./XRAY_FUJI.png" alt="insumos medicos"></img>
+									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
 								</div>
 								<div className={styles.description}>
-									<h3>Equipos de Rayos X Fuji Film</h3>
+									<h3>Mamógrafo Amulet Felicia</h3>
 									<p>
-										TECNOLOGÍA INNOVADORA PARA EL DIAGNÓSTICO POR IMÁGENES. FDR
-										Smart X – Radiología digital avanzada
+										Solución integral en mamografía. Tecnología de procesamiento
+										de imágenes en alta calidad, lectura fácil y diagnósticos
+										más precisos.
 									</p>
 									<Link
 										href="./products/equipamiento"
@@ -142,6 +144,53 @@ const ProductsLanding = () => {
 								</div>
 							</div>
 						</div>
+
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./XRAY_FUJI.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Equipos de Rayos X Fuji Film</h3>
+									<p>
+										Tecnología Innovadora para el diagóstico por imágenes. FDR
+										Smart X <br />
+										Radiología digital avanzada
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./fujifilm.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Películas Radiográficas</h3>
+									<p>
+										Películas Laser DI-HL y Mamografícas DI-ML. Aplicable para
+										DRYPIX (Smart, Plus, 7000)
+										<br /> Películas Súper HR-U, Convencionales.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
@@ -164,50 +213,6 @@ const ProductsLanding = () => {
 								</div>
 							</div>
 						</div>
-						<div>
-							<div className={styles.slide1}>
-								<div className={styles.circle}>
-									<img src="./fujifilm.png" alt="insumos medicos"></img>
-								</div>
-								<div className={styles.description}>
-									<h3>Películas Radiográficas</h3>
-									<p>
-										Películas Laser DI-HL y Mamografías DI-ML. Aplicable para
-										DRYPIX Smart, DRYPIX Plus y DRYPIX7000. Películas Súper
-										HR-U, Convencionales.
-									</p>
-									<Link
-										href="./products/equipamiento"
-										alt="insumos medicos"
-										passHref
-									>
-										<button>Ver mas</button>
-									</Link>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div className={styles.slide1}>
-								<div className={styles.circle}>
-									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
-								</div>
-								<div className={styles.description}>
-									<h3>Mamógrafo Amulet Felicia</h3>
-									<p>
-										Solución integral en mamografía. Tecnología de procesamiento
-										de imágenes en alta calidad ,lectura fácil y diagnósticos
-										más precisos.
-									</p>
-									<Link
-										href="./products/equipamiento"
-										alt="insumos medicos"
-										passHref
-									>
-										<button>Ver mas</button>
-									</Link>
-								</div>
-							</div>
-						</div>
 					</Slider>
 				) : (
 					<Slider {...settings} className={styles.slides}>
@@ -219,7 +224,7 @@ const ProductsLanding = () => {
 								<div className={styles.description}>
 									<h3>Ecógrafo Philips ClearVue G</h3>
 									<p>
-										Ecógrafo PHILIPS ClearVue con excelente calidad de imagen y
+										Ecógrafo philips ClearVue con excelente calidad de imagen y
 										diagnóstico confiable para aquellos que buscan su primer
 										ecógrafo.
 									</p>
@@ -237,8 +242,9 @@ const ProductsLanding = () => {
 								<div className={styles.description}>
 									<h3>Equipos de Rayos X Fuji Film</h3>
 									<p>
-										TECNOLOGÍA INNOVADORA PARA EL DIAGNÓSTICO POR IMÁGENES FDR
-										Smart X – Radiología digital avanzada
+										Tecnología Innovadora para el diagóstico por imágenes. FDR
+										Smart X <br />
+										Radiología digital avanzada
 									</p>
 									<Link href="./products/equipamiento" passHref>
 										<button>Ver mas</button>
@@ -246,6 +252,53 @@ const ProductsLanding = () => {
 								</div>
 							</div>
 						</div>
+
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Mamógrafo Amulet Felicia</h3>
+									<p>
+										Solución integral en mamografía. Tecnología de procesamiento
+										de imágenes en alta calidad, lectura fácil y diagnósticos
+										más precisos.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div className={styles.slide1}>
+								<div className={styles.circle}>
+									<img src="./fujifilm.png" alt="insumos medicos"></img>
+								</div>
+								<div className={styles.description}>
+									<h3>Películas Radiográficas</h3>
+									<p>
+										Películas Laser DI-HL y Mamografícas DI-ML. Aplicable para
+										DRYPIX (Smart, Plus, 7000) <br /> Películas Súper HR-U,
+										Convencionales.
+									</p>
+									<Link
+										href="./products/equipamiento"
+										alt="insumos medicos"
+										passHref
+									>
+										<button>Ver mas</button>
+									</Link>
+								</div>
+							</div>
+						</div>
+
 						<div>
 							<div className={styles.slide1}>
 								<div className={styles.circle}>
@@ -256,50 +309,6 @@ const ProductsLanding = () => {
 									<p>
 										Enzimaticos, Trienzimaticos, Pentaenzimaticos , Surgibac PA
 										PLUS , Surgibac glutaraldehido 2.5%.
-									</p>
-									<Link
-										href="./products/equipamiento"
-										alt="insumos medicos"
-										passHref
-									>
-										<button>Ver mas</button>
-									</Link>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div className={styles.slide1}>
-								<div className={styles.circle}>
-									<img src="./fujifilm.png" alt="insumos medicos"></img>
-								</div>
-								<div className={styles.description}>
-									<h3>Películas Radiográficas</h3>
-									<p>
-										Películas Laser DI-HL y Mamografías DI-ML. Aplicable para
-										DRYPIX Smart, DRYPIX Plus y DRYPIX7000. Películas Súper
-										HR-U, Convencionales.
-									</p>
-									<Link
-										href="./products/equipamiento"
-										alt="insumos medicos"
-										passHref
-									>
-										<button>Ver mas</button>
-									</Link>
-								</div>
-							</div>
-						</div>
-						<div>
-							<div className={styles.slide1}>
-								<div className={styles.circle}>
-									<img src="./MAMO_AMULET.png" alt="insumos medicos"></img>
-								</div>
-								<div className={styles.description}>
-									<h3>Mamógrafo Amulet Felicia</h3>
-									<p>
-										Solución integral en mamografía. Tecnología de procesamiento
-										de imágenes en alta calidad ,lectura fácil y diagnósticos
-										más precisos.
 									</p>
 									<Link
 										href="./products/equipamiento"

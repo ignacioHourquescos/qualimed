@@ -439,3 +439,27 @@
     display: none;
   }
 }
+
+.userForm{
+  position:absolute;
+  width:100%;
+   height:100%;
+  top:0;
+  left:0;
+  background-color: rgba(221, 221, 221, 0.999);
+  z-index:20000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-content: center;
+  .form{
+    width:80%;
+    margin:10%;
+    .input{
+      width:95%;
+      margin-bottom:1rem;
+    }
+  }
+}

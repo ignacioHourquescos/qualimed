@@ -31,6 +31,7 @@ const getProducts = (req, res) => {
 					techcnial: data.values[i][7],
 					img:
 						"https://drive.google.com/uc?export=view&id=" + data.values[i][8],
+					ml: !data.values[i][8] ? "" : data.values[i][8],
 				});
 
 				categoriesArray.push(data.values[i][0]);

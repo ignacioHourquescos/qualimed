@@ -42,38 +42,15 @@ const ContactLanding = () => {
 			);
 	};
 
-	let number = "+54 9 11 2537-9689";
-	number = number.replace(/[^\w\s]/gi, "").replace(/ /g, "");
-	let url = `${URL}/${number}`;
-
-	const enviarMsj = (event) => {
-		event.preventDefault();
-		url += `?text=${encodeURI(
-			"Hola! Soy " +
-				wapMessage.Name +
-				"\n" +
-				"Mi mail: " +
-				wapMessage.Mail +
-				"\n" +
-				"Mi telefono: " +
-				wapMessage.Telefono +
-				"\n" +
-				"Mi consulta: " +
-				wapMessage.Message
-		)}`;
-
-		window.open(url);
-	};
-
 	return (
 		<>
 			<div className={styles.contact}>
 				<div className={styles.circle}>
 					<div className={styles.content}>
-						<h5>Contacto</h5>
+						<h5>CONTACTO</h5>
 						<p>
 							Puede contactarse con Qualimed a través del siguiente formulario
-							y nos pondremos en contacto con usted a la brevedad
+							y nos pondremos en contacto con usted a la brevedad.
 						</p>
 						{/* <form action="#" onSubmit={enviarMsj}>
 							<input

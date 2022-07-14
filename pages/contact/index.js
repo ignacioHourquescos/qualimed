@@ -31,7 +31,7 @@ const index = () => {
 					<div className={styles.contact_item}>
 						<MobileOutlined className={styles.contact_icon} />
 						<div>
-							<h5>Teléfono</h5>
+							<h5>Teléfono</h5>al
 							<p>4716-2652 // 4716-2699</p>
 						</div>
 					</div>

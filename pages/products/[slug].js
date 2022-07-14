@@ -138,6 +138,7 @@ const Index = ({}) => {
 									data={products.filter((element) =>
 										element.category.includes(routerContent[0])
 									)}
+									loading={loading}
 								/>
 							) : (
 								<Products

@@ -29,6 +29,7 @@
 
   .data_container{
     height:25%;
+
     
   @media #{$mobile} {
 height:auto;
@@ -61,6 +62,9 @@ height:auto;
   letter-spacing: -0.3px;
   color: #000000;
   padding: 0 5%;
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
 }
 
 .card button {

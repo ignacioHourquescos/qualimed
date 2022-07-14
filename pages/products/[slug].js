@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { useMediaQuery } from "react-responsive";
 import Hero from "../../components/Hero2/Hero";
 
-const Index = () => {
+const Index = ({ posts }) => {
 	const router = useRouter();
 	const idCategory = router.query.slug;
 	const [products, setProducts] = useState([]);
@@ -71,16 +71,20 @@ const Index = () => {
 	};
 
 	useEffect(() => {
-		fetch("../api/getProducts")
-			.then((response) => response.json())
-			.then(
-				(data) => (
-					console.log("USE EFFECT: ", data),
-					setProducts(data[0]),
-					setLoading(false)
-				)
-			);
+		setProducts(posts[0]);
 	}, []);
+
+	// useEffect(() => {
+	// 	fetch("../api/getProducts")
+	// 		.then((response) => response.json())
+	// 		.then(
+	// 			(data) => (
+	// 				console.log("USE EFFECT: ", data),
+	// 				setProducts(data[0]),
+	// 				setLoading(false)
+	// 			)
+	// 		);
+	// }, []);
 
 	const resetValues = () => {
 		setInitialValues(true);
@@ -168,3 +172,38 @@ const Index = () => {
 };
 
 export default Index;
+
+export async function getStaticPaths(slug) {
+	return {
+		paths: [
+			{ params: { slug: "productos" } }, // See the "paths" section below
+			{ params: { slug: "equipamiento" } }, // See the "paths" section below
+			{ params: { slug: "insumosMedicos" } }, // See the "paths" section below
+			,
+		],
+		fallback: false, // See the "fallback" section below
+	};
+}
+
+export async function getStaticProps(context) {
+	const server = "http://www.qualimed.com.ar";
+	const res = await fetch(`${server}/api/getProducts`);
+	const posts = await res.json();
+	return {
+		props: {
+			posts,
+		}, // will be passed to the page component as props
+	};
+}
+
+// useEffect(() => {
+// 	fetch("../api/getProducts")
+// 		.then((response) => response.json())
+// 		.then(
+// 			(data) => (
+// 				console.log("USE EFFECT: ", data),
+// 				setProducts(data[0]),
+// 				setLoading(false)
+// 			)
+// 		);
+// }, []);

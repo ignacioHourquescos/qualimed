@@ -19,6 +19,7 @@ const Slug = () => {
 	const [loading, setLoading] = useState(true);
 	const [displayUserForm, setDisplayUserForm] = useState(false);
 	const [sending, setSending] = useState(false);
+
 	useEffect(() => {
 		fetch("../api/getProducts")
 			.then((response) => response.json())
@@ -157,11 +158,7 @@ const Slug = () => {
 									) : (
 										""
 									)}
-									<Link href="https://nextjs.org">
-										{" "}
-										//external page
-										<a>Next.js</a>
-									</Link>
+									<Link href="https://www.qualimed.com.ar"></Link>
 
 									<div className={styles.shopMobile}>
 										<img src="/cart2.png" alt="insumos medicos" />
@@ -192,3 +189,26 @@ const Slug = () => {
 };
 
 export default Slug;
+
+export async function getStaticPaths(slug) {
+	return {
+		paths: [
+			{ params: { slug: "productos" } }, // See the "paths" section below
+			{ params: { slug: "equipamiento" } }, // See the "paths" section below
+			{ params: { slug: "insumosMedicos" } }, // See the "paths" section below
+			,
+		],
+		fallback: false, // See the "fallback" section below
+	};
+}
+
+export async function getStaticProps(context) {
+	const server = "http://www.qualimed.com.ar";
+	const res = await fetch(`${server}/api/getProducts`);
+	const posts = await res.json();
+	return {
+		props: {
+			posts,
+		}, // will be passed to the page component as props
+	};
+}

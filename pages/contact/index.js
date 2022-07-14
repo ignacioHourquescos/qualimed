@@ -24,8 +24,8 @@ const index = () => {
 					<div className={styles.contact_item}>
 						<EnvironmentOutlined className={styles.contact_icon} />
 						<div>
-							<h5>Ubicació n</h5>
-							<p>San Maritn, GBA</p>
+							<h5>Ubicación</h5>
+							<p>San Martín, GBA</p>
 						</div>
 					</div>
 					<div className={styles.contact_item}>

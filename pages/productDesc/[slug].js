@@ -190,25 +190,25 @@ const Slug = () => {
 
 export default Slug;
 
-export async function getStaticPaths(slug) {
-	return {
-		paths: [
-			{ params: { slug: "productos" } }, // See the "paths" section below
-			{ params: { slug: "equipamiento" } }, // See the "paths" section below
-			{ params: { slug: "insumosMedicos" } }, // See the "paths" section below
-			,
-		],
-		fallback: false, // See the "fallback" section below
-	};
-}
+// export async function getStaticPaths(slug) {
+// 	return {
+// 		paths: [
+// 			{ params: { slug: "productos" } }, // See the "paths" section below
+// 			{ params: { slug: "equipamiento" } }, // See the "paths" section below
+// 			{ params: { slug: "insumosMedicos" } }, // See the "paths" section below
+// 			,
+// 		],
+// 		fallback: false, // See the "fallback" section below
+// 	};
+// }
 
-export async function getStaticProps(context) {
-	const server = "http://www.qualimed.com.ar";
-	const res = await fetch(`${server}/api/getProducts`);
-	const posts = await res.json();
-	return {
-		props: {
-			posts,
-		}, // will be passed to the page component as props
-	};
-}
+// export async function getStaticProps(context) {
+// 	const server = "http://www.qualimed.com.ar";
+// 	const res = await fetch(`${server}/api/getProducts`);
+// 	const posts = await res.json();
+// 	return {
+// 		props: {
+// 			posts,
+// 		}, // will be passed to the page component as props
+// 	};
+// }

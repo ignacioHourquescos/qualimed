@@ -115,6 +115,7 @@ const Index = ({}) => {
 		<>
 			<Header />
 			<Hero title={routerContent[2]} img={routerContent[3]} color="white" />
+
 			<div className={styles.container}>
 				<div
 					style={{ background: "#E5E5E5", overflow: "hidden" }}

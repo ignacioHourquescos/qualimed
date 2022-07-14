@@ -29,9 +29,10 @@ const getProducts = (req, res) => {
 					description: data.values[i][5],
 					application: data.values[i][6],
 					techcnial: data.values[i][7],
-					img:
-						"https://drive.google.com/uc?export=view&id=" + data.values[i][8],
-					ml: !data.values[i][8] ? "" : data.values[i][8],
+					img: !data.values[i][8]
+						? "barbijo.png"
+						: "https://drive.google.com/uc?export=view&id=" + data.values[i][8],
+					ml: !data.values[i][9] ? "" : data.values[i][9],
 				});
 
 				categoriesArray.push(data.values[i][0]);

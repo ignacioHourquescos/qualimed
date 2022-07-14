@@ -158,16 +158,32 @@ const Slug = () => {
 									) : (
 										""
 									)}
-									<Link href="https://www.qualimed.com.ar"></Link>
+									{/* <Link
+										target="_blank"
+										href={{
+											pathname: "https://qualimed2021.mercadoshops.com.ar/",
+										}}
+										passHref
+									/> */}
+									{/* <Link href="https://www.qualimed.com.ar"></Link> */}
 
-									<div className={styles.shopMobile}>
+									<a
+										className={styles.shopMobile}
+										href={
+											detail.ml
+												? detail.ml
+												: "https://qualimed2021.mercadoshops.com.ar/"
+										}
+										target={"_blank"}
+										rel={"noreferrer"}
+									>
 										<img src="/cart2.png" alt="insumos medicos" />
 										Ver producto en tienda minorista
-									</div>
+									</a>
 								</div>
 							</div>
 						</div>
-						<div className={styles.related}>
+						{/* <div className={styles.related}>
 							<div className={styles.seccions}>
 								<div className={styles.swiper}>
 									<CarrouselMobile
@@ -176,7 +192,7 @@ const Slug = () => {
 									/>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				)}
 

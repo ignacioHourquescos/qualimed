@@ -6,8 +6,10 @@ const Cards = ({ imageUrl, title, description, id, brief }) => {
 	return (
 		<div className={styles.card}>
 			<img src={imageUrl} alt="insumos medicos" />
-			<h5>{title}</h5>
-			<p>{brief}</p>
+			<div className={styles.data_container}>
+				<h5>{title}</h5>
+				<p>{brief}</p>
+			</div>
 			<Link as={`/productDesc/${title}`} href="/productDesc/[id]" passHref>
 				<button type="submit">Ver mas</button>
 			</Link>

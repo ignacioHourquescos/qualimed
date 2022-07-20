@@ -21,7 +21,7 @@ const ContactLanding = () => {
 		});
 	};
 
-	const sendEmail = (e) => {
+	const sendEmail = (e, captchaValue) => {
 		e.preventDefault();
 		setSending(true);
 		const params = {

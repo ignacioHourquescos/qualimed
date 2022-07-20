@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import styles from "./ContactLanding.module.scss";
 const URL = "https://wa.me";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactLanding = () => {
 	const form = useRef();
@@ -121,10 +120,6 @@ const ContactLanding = () => {
 								required
 							></textarea>
 							{/* <input type="submit" value="Send" /> */}
-							<ReCAPTCHA
-								sitekey="6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6"
-								onChange={sendEmail}
-							/>
 							<button type="submit" value="Send">
 								{!sending ? "Enviar" : "Enviando..."}
 							</button>
@@ -137,6 +132,3 @@ const ContactLanding = () => {
 };
 
 export default ContactLanding;
-
-// SITE KEY = 6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6
-// CONST SECRETKEY =6LcswQQhAAAAAOhCMdJfVLprU1QAi3wQn2x1fRZS

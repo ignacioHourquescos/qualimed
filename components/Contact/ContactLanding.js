@@ -122,7 +122,7 @@ const ContactLanding = () => {
 							></textarea>
 							{/* <input type="submit" value="Send" /> */}
 							<ReCAPTCHA
-								sitekey={process.env.CAPTCHA_SITE_KEY}
+								sitekey="6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6"
 								onChange={sendEmail}
 							/>
 							<button type="submit" value="Send">
@@ -137,3 +137,6 @@ const ContactLanding = () => {
 };
 
 export default ContactLanding;
+
+// SITE KEY = 6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6
+// CONST SECRETKEY =6LcswQQhAAAAAOhCMdJfVLprU1QAi3wQn2x1fRZS

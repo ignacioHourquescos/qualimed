@@ -25,15 +25,15 @@ const ContactLanding = () => {
 		e.preventDefault();
 		setSending(true);
 		const params = {
-			"g-recaptcha-response": captchaValue,
+      form.current,
+		  'g-recaptcha-response': captchaValue,
 		};
 
 		emailjs
 			.sendForm(
 				"service_2qdstih",
 				"template_a2ty4bh",
-				form.current,
-				params,
+        params,
 				"user_GqWB6DWgQTHICnHQEnvCU"
 			)
 			.then(
@@ -93,6 +93,7 @@ const ContactLanding = () => {
 							<ReCAPTCHA
 								sitekey="6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6"
 								// onChange={sendEmail}
+                onChange={sendEmail}
 							/>
 							<button type="submit" value="Send">
 								{!sending ? "Enviar" : "Enviando..."}

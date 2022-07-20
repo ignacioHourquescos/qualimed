@@ -1,8 +1,6 @@
 import React from "react";
 import Cards from "../Ui/Cards/Cards";
 import styles from "./Products.module.scss";
-import ContentLoader from "react-content-loader";
-import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 
 const Products = ({ data, loading }) => {

@@ -41,6 +41,7 @@ export default function Home() {
 				/>
 				<meta property="og:url" content="https://www.qualimed.com.ar" />
 				<meta property="og:site_name" content="Qualimed" />
+
 				<link rel="icon" href="/favicon.ico" />
 				<link
 					href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"

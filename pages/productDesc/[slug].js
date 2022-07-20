@@ -10,8 +10,8 @@ import React, { useRef, useState, useEffect } from "react";
 import Hero from "../../components/Hero2/Hero";
 import emailjs from "@emailjs/browser";
 
-const Slug = () => {
-	// const {img, title, description, application, techcnial, code} = detail;
+const Index = () => {
+	// const {img, title, description, application, techcnial, code} = products;
 	const form = useRef();
 	const router = useRouter();
 	const idEvent = router.query.slug;
@@ -56,6 +56,9 @@ const Slug = () => {
 					brandsArray.push(data.values[i][2]);
 				}
 				setProducts(array);
+				const arrayFiltered = array.find((element) => element.title == idEvent);
+				setProducts(arrayFiltered);
+				console.log("PORDUCTDESC", arrayFiltered);
 				// res.send(
 				//   JSON.stringify([
 				//     array,
@@ -66,7 +69,7 @@ const Slug = () => {
 			})
 			.then((data) => {
 				console.log("aca desde usef ecct" + data);
-				// setProducts(data.values[0]);
+
 				setLoading(false);
 			});
 	};
@@ -74,11 +77,6 @@ const Slug = () => {
 	useEffect(() => {
 		getProducts();
 	}, []);
-	// useEffect(() => {
-	// 	fetch("../api/getProducts")
-	// 		.then((response) => response.json())
-	// 		.then((data) => (setProducts(data[0]), setLoading(false)));
-	// }, []);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -112,132 +110,132 @@ const Slug = () => {
 	number = number.replace(/[^\w\s]/gi, "").replace(/ /g, "");
 	let url = `${URL}/${number}`;
 
-	const enviarMsj = (event, detail) => {
+	const enviarMsj = () => {
 		event.preventDefault();
 		url += `?text=${encodeURI(
 			"Hola me gustaria consultarles por el producto: " +
-				products.find((element) => element.title == idEvent).title +
+				products.title +
 				" " +
 				" ( codigo de producto:  " +
-				products.find((element) => element.title == idEvent)?.code +
+				products.code +
 				")"
 		)}`;
 
 		window.open(url);
 	};
 
-	if (!loading) {
-		let detail = products.find((element) => element.title == idEvent);
+	// if (!loading) {
+	// 	let products = products.find((element) => element.title == idEvent);
 
-		return (
-			<div className={styles.contAll}>
-				<Header />
-				<Hero title={idEvent} img="../contacto.jpg" color="white" />
+	return (
+		<div className={styles.contAll}>
+			<Header />
+			<Hero title={idEvent} color="white" />
 
-				{loading ? (
-					""
-				) : (
-					<div className={styles.container}>
-						<div className={styles.detail}>
-							<div className={styles.img_container}>
-								<img src={detail.img} alt="insumos medicos" />
-							</div>
-							<div className={styles.detailInfo}>
-								<b>Descripcion</b>
+			{loading ? (
+				""
+			) : (
+				<div className={styles.container}>
+					<div className={styles.detail}>
+						<div className={styles.img_container}>
+							<img src={products.img} alt="insumos medicos" />
+						</div>
+						<div className={styles.detailInfo}>
+							<b>Descripcion</b>
+							<br />
+							{}
+							<br />
+							<br />
+							<b>Aplicaciones</b>
+							<br />
+							{products.application}
+							<br />
+							<br />
+							<b>Ficha tecnica</b>
+							<br />
+							{products.techcnial}
+						</div>
+						<div className={styles.contact}>
+							<div className={styles.cotizacion}>
+								<h5>{products.title}</h5>
+								<p>{products.description.slice(0, 50)}...</p>
 								<br />
-								{}
-								<br />
-								<br />
-								<b>Aplicaciones</b>
-								<br />
-								{detail.application}
-								<br />
-								<br />
-								<b>Ficha tecnica</b>
-								<br />
-								{detail.techcnial}
-							</div>
-							<div className={styles.contact}>
-								<div className={styles.cotizacion}>
-									<h5>{detail.title}</h5>
-									<p>{detail.description.slice(0, 50)}...</p>
-									<br />
-									<button onClick={enviarMsj}>Cotización via whatsapp</button>
+								<button onClick={enviarMsj}>Cotización via whatsapp</button>
 
-									<button
-										className={styles.btnMail}
-										style={{ background: "#8183CA" }}
-										onClick={displayUserFormHandler}
-									>
-										Cotización via mail
-									</button>
+								<button
+									className={styles.btnMail}
+									style={{ background: "#8183CA" }}
+									onClick={displayUserFormHandler}
+								>
+									Cotización via mail
+								</button>
 
-									{displayUserForm ? (
-										<div className={styles.userForm}>
-											<form
-												className={styles.form}
-												ref={form}
-												onSubmit={sendEmail}
-											>
-												<input
-													className={styles.input}
-													type="text"
-													placeholder=" &nbsp; Nombre / Empresa"
-													name="user_name"
-													autoComplete="on"
-													required
-												></input>
-												<input
-													className={styles.input}
-													type="text"
-													placeholder=" &nbsp;Correo"
-													name="user_email"
-													autoComplete="on"
-													// onChange={handleInputChange}
-													required
-												></input>
-												<textarea
-													style={{ display: "none" }}
-													type="text"
-													placeholder=" &nbsp;Consulta"
-													name="message"
-													value={`Me gustaria tener mas informaciona cerca de  ${detail.title} codigo de producto: ${detail.code}`}
-													required
-												></textarea>
-												<button type="submit" value="Send">
-													{!sending ? "Enviar" : "Enviando..."}
-												</button>
-											</form>
-										</div>
-									) : (
-										""
-									)}
-									{/* <Link
+								{displayUserForm ? (
+									<div className={styles.userForm}>
+										<form
+											className={styles.form}
+											ref={form}
+											onSubmit={sendEmail}
+										>
+											<input
+												className={styles.input}
+												type="text"
+												placeholder=" &nbsp; Nombre / Empresa"
+												name="user_name"
+												autoComplete="on"
+												required
+											></input>
+											<input
+												className={styles.input}
+												type="text"
+												placeholder=" &nbsp;Correo"
+												name="user_email"
+												autoComplete="on"
+												// onChange={handleInputChange}
+												required
+											></input>
+											<textarea
+												style={{ display: "none" }}
+												type="text"
+												placeholder=" &nbsp;Consulta"
+												name="message"
+												value={`Me gustaria tener mas informaciona cerca de  ${products.title} codigo de producto: ${products.code}`}
+												required
+											></textarea>
+											<button type="submit" value="Send">
+												{!sending ? "Enviar" : "Enviando..."}
+											</button>
+										</form>
+									</div>
+								) : (
+									""
+								)}
+								{/* <Link
 										target="_blank"
 										href={{
 											pathname: "https://qualimed2021.mercadoshops.com.ar/",
 										}}
 										passHref
 									/> */}
-									{/* <Link href="https://www.qualimed.com.ar"></Link> */}
+								{/* <Link href="https://www.qualimed.com.ar"></Link> */}
 
-									<a
-										className={styles.shopMobile}
-										href={
-											detail.ml
-												? detail.ml
-												: "https://qualimed2021.mercadoshops.com.ar/"
-										}
-										target={"_blank"}
-										rel={"noreferrer"}
-									>
-										<img src="/cart2.png" alt="insumos medicos" />
-										Ver producto en tienda minorista
-									</a>
-								</div>
+								<a
+									className={styles.shopMobile}
+									href={
+										products.ml
+											? products.ml
+											: "https://qualimed2021.mercadoshops.com.ar/"
+									}
+									target={"_blank"}
+									rel={"noreferrer"}
+								>
+									<img src="/cart2.png" alt="insumos medicos" />
+									Ver producto en tienda minorista
+								</a>
 							</div>
 						</div>
-						{/* <div className={styles.related}>
+					</div>
+					{/* <div className={styles.related}>
 							<div className={styles.seccions}>
 								<div className={styles.swiper}>
 									<CarrouselMobile
@@ -247,38 +245,14 @@ const Slug = () => {
 								</div>
 							</div>
 						</div> */}
-					</div>
-				)}
-
-				<div className={styles.footer}>
-					<Footer />
 				</div>
+			)}
+
+			<div className={styles.footer}>
+				<Footer />
 			</div>
-		);
-	}
+		</div>
+	);
 };
 
-export default Slug;
-
-// export async function getStaticPaths(slug) {
-// 	return {
-// 		paths: [
-// 			{ params: { slug: "productos" } }, // See the "paths" section below
-// 			{ params: { slug: "equipamiento" } }, // See the "paths" section below
-// 			{ params: { slug: "insumosMedicos" } }, // See the "paths" section below
-// 			,
-// 		],
-// 		fallback: false, // See the "fallback" section below
-// 	};
-// }
-
-// export async function getStaticProps(context) {
-// 	const server = "http://www.qualimed.com.ar";
-// 	const res = await fetch(`${server}/api/getProducts`);
-// 	const posts = await res.json();
-// 	return {
-// 		props: {
-// 			posts,
-// 		}, // will be passed to the page component as props
-// 	};
-// }
+export default Index;

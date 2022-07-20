@@ -9,7 +9,7 @@ const index = () => {
 	return (
 		<div className={styles.body}>
 			<Header />
-			<Hero title="Acerca de nosotros" img="./medicoHero.png" />
+			<Hero title="Acerca de nosotros" />
 			<div className={styles.container}>
 				<div className={styles.main}>
 					<div className={styles.punchLine}>{data.data1}</div>

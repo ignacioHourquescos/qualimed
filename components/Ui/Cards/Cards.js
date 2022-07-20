@@ -33,8 +33,8 @@ const Cards = ({ imageUrl, title, description, id, brief, loading }) => {
 							<p>{brief}</p>
 						</div>
 						<Link
-							as={`/productDesc/${title}`}
-							href="/productDesc/[id]"
+							as={`/productDesc/${encodeURIComponent(title)}`}
+							href={`/productDesc/${encodeURIComponent(title)}`}
 							passHref
 						>
 							<button type="submit">Ver mas</button>

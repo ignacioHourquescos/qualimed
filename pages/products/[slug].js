@@ -2,7 +2,6 @@ import Header from "../../components/Header/Header";
 import Products from "../../components/Products/Products";
 import styles from "./index.module.scss";
 import React, { useRef, useState, useEffect } from "react";
-import SubHeader from "../../components/SubHeader/SubHeader";
 import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
@@ -57,17 +56,8 @@ const Index = ({}) => {
 					brandsArray.push(data.values[i][2]);
 				}
 				setProducts(array);
-				// res.send(
-				//   JSON.stringify([
-				//     array,
-				//     categoriesArray.filter((v, i, a) => a.indexOf(v) === i),
-				//     brandsArray.filter((v, i, a) => a.indexOf(v) === i),
-				//   ])
-				// );
 			})
 			.then((data) => {
-				console.log("aca desde usef ecct" + data);
-				// setProducts(data.values[0]);
 				setLoading(false);
 			});
 	};
@@ -125,22 +115,6 @@ const Index = ({}) => {
 		e.preventDefault();
 	};
 
-	// useEffect(() => {
-	// 	setProducts(posts[0]);
-	// }, []);
-
-	// useEffect(() => {
-	// 	fetch("../api/getProducts")
-	// 		.then((response) => response.json())
-	// 		.then(
-	// 			(data) => (
-	// 				console.log("USE EFFECT: ", data),
-	// 				setProducts(data[0]),
-	// 				setLoading(false)
-	// 			)
-	// 		);
-	// }, []);
-
 	const resetValues = () => {
 		setInitialValues(true);
 		setSelectedBrand();
@@ -164,7 +138,6 @@ const Index = ({}) => {
 		setSelectedBrand();
 		setInitialValues(false);
 	};
-	console.log(products);
 
 	return (
 		<>
@@ -229,38 +202,3 @@ const Index = ({}) => {
 };
 
 export default Index;
-
-// export async function getStaticPaths(slug) {
-// 	return {
-// 		paths: [
-// 			{ params: { slug: "productos" } }, // See the "paths" section below
-// 			{ params: { slug: "equipamiento" } }, // See the "paths" section below
-// 			{ params: { slug: "insumosMedicos" } }, // See the "paths" section below
-// 			,
-// 		],
-// 		fallback: false, // See the "fallback" section below
-// 	};
-// }
-
-// export async function getStaticProps(context) {
-// 	const server = "http://www.qualimed.com.ar";
-// 	const res = await fetch(`${server}/api/getProducts`);
-// 	const posts = await res.json();
-// 	return {
-// 		props: {
-// 			posts,
-// 		}, // will be passed to the page component as props
-// 	};
-// }
-
-// useEffect(() => {
-// 	fetch("../api/getProducts")
-// 		.then((response) => response.json())
-// 		.then(
-// 			(data) => (
-// 				console.log("USE EFFECT: ", data),
-// 				setProducts(data[0]),
-// 				setLoading(false)
-// 			)
-// 		);
-// }, []);

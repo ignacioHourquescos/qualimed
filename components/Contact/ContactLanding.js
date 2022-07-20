@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import styles from "./ContactLanding.module.scss";
 const URL = "https://wa.me";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactLanding = () => {
 	const form = useRef();
@@ -120,6 +121,10 @@ const ContactLanding = () => {
 								required
 							></textarea>
 							{/* <input type="submit" value="Send" /> */}
+							<ReCAPTCHA
+								sitekey={process.env.CAPTCHA_SITE_KEY}
+								onChange={sendEmail}
+							/>
 							<button type="submit" value="Send">
 								{!sending ? "Enviar" : "Enviando..."}
 							</button>

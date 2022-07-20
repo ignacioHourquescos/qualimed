@@ -32,7 +32,6 @@ const ContactLanding = () => {
 			.sendForm(
 				"service_2qdstih",
 				"template_a2ty4bh",
-				params,
 				form.current,
 				"user_GqWB6DWgQTHICnHQEnvCU"
 			)

@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import styles from "./ContactLanding.module.scss";
 const URL = "https://wa.me";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactLanding = () => {
 	const form = useRef();
@@ -21,13 +20,10 @@ const ContactLanding = () => {
 		});
 	};
 
-	const sendEmail = (e, captchaValue) => {
+	const sendEmail = (e) => {
 		e.preventDefault();
 		setSending(true);
-		const params = {
-			"g-recaptcha-response": captchaValue,
-		};
-
+		console.log("mensaje enviado");
 		emailjs
 			.sendForm(
 				"service_2qdstih",
@@ -53,9 +49,43 @@ const ContactLanding = () => {
 					<div className={styles.content}>
 						<h5>CONTACTO</h5>
 						<p>
-							Puede contactarse con Qualimed a través del siguiente formulario y
-							nos pondremos en contacto con usted a la brevedad.
+							Puede contactarse con Qualimed a través del siguiente formulario
+							y nos pondremos en contacto con usted a la brevedad.
 						</p>
+						{/* <form action="#" onSubmit={enviarMsj}>
+							<input
+								type="text"
+								placeholder=" &nbsp; Nombre / Empresa"
+								name="Name"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<input
+								type="text"
+								placeholder=" &nbsp;Correo"
+								name="Correo"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<input
+								type="text"
+								placeholder=" &nbsp;Telefono"
+								name="Telefono"
+								autoComplete="on"
+								onChange={handleInputChange}
+								required
+							></input>
+							<textarea
+								type="text"
+								placeholder=" &nbsp;Consulta"
+								name="Message"
+								onChange={handleInputChange}
+								required
+							></textarea>
+							<button type="submit">Enviar</button>
+						</form> */}
 
 						<form ref={form} onSubmit={sendEmail}>
 							<input
@@ -89,20 +119,11 @@ const ContactLanding = () => {
 								onChange={handleInputChange}
 								required
 							></textarea>
-							<ReCAPTCHA
-								sitekey="6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6"
-								// onChange={sendEmail}
-								onChange={sendEmail}
-							/>
+							{/* <input type="submit" value="Send" /> */}
 							<button type="submit" value="Send">
 								{!sending ? "Enviar" : "Enviando..."}
 							</button>
 						</form>
-
-						{/* <div
-							className="g-recaptcha"
-							data-sitekey="6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6"
-						></div> */}
 					</div>
 				</div>
 			</div>
@@ -111,6 +132,3 @@ const ContactLanding = () => {
 };
 
 export default ContactLanding;
-
-// SITE KEY: 6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6
-// SECRET KEY: 6LcswQQhAAAAAOhCMdJfVLprU1QAi3wQn2x1fRZS

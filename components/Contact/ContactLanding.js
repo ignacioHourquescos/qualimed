@@ -28,7 +28,7 @@ const ContactLanding = () => {
 		emailjs
 			.sendForm(
 				"service_2qdstih",
-				"template_a2ty4bh",
+				"template_fldorhe",
 				form.current,
 				"user_GqWB6DWgQTHICnHQEnvCU"
 			)
@@ -39,6 +39,7 @@ const ContactLanding = () => {
 				},
 				(error) => {
 					console.log(error.text);
+					setSending(false);
 				}
 			);
 	};
@@ -53,40 +54,6 @@ const ContactLanding = () => {
 							Puede contactarse con Qualimed a través del siguiente formulario
 							y nos pondremos en contacto con usted a la brevedad.
 						</p>
-						{/* <form action="#" onSubmit={enviarMsj}>
-							<input
-								type="text"
-								placeholder=" &nbsp; Nombre / Empresa"
-								name="Name"
-								autoComplete="on"
-								onChange={handleInputChange}
-								required
-							></input>
-							<input
-								type="text"
-								placeholder=" &nbsp;Correo"
-								name="Correo"
-								autoComplete="on"
-								onChange={handleInputChange}
-								required
-							></input>
-							<input
-								type="text"
-								placeholder=" &nbsp;Telefono"
-								name="Telefono"
-								autoComplete="on"
-								onChange={handleInputChange}
-								required
-							></input>
-							<textarea
-								type="text"
-								placeholder=" &nbsp;Consulta"
-								name="Message"
-								onChange={handleInputChange}
-								required
-							></textarea>
-							<button type="submit">Enviar</button>
-						</form> */}
 
 						<form ref={form} onSubmit={sendEmail}>
 							<input

@@ -23,17 +23,17 @@ const ContactLanding = () => {
 
 	const sendEmail = (e, captchaValue) => {
 		e.preventDefault();
-		const params = {
-			...form.current,
-			"g-recaptcha-response": captchaValue,
-		};
+		// const params = {
+		// 	...form.current,
+		// 	"g-recaptcha-response": captchaValue,
+		// };
 		setSending(true);
 		console.log("mensaje enviado");
 		emailjs
 			.sendForm(
 				"service_2qdstih",
 				"template_fldorhe",
-				params,
+				form.current,
 				"user_GqWB6DWgQTHICnHQEnvCU"
 			)
 			.then(
@@ -59,7 +59,7 @@ const ContactLanding = () => {
 							y nos pondremos en contacto con usted a la brevedad.
 						</p>
 
-						<form ref={form} onSubmit={sendEmail}>
+						<form ref={form} onSubmit={sendEmail} method="POST">
 							<input
 								type="text"
 								placeholder=" &nbsp; Nombre / Empresa"

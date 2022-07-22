@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const ContactLanding = () => {
 	const form = useRef();
 	const [sending, setSending] = useState(false);
+	const [message, setMessage] = useState();
 	const [wapMessage, setWapMessage] = useState({
 		Name: "",
 		Message: "",
@@ -43,7 +44,7 @@ const ContactLanding = () => {
 				},
 				(error) => {
 					console.log("ERROR", error.text);
-					setSending(false);
+					setMessage("Hubo un problema!");
 				}
 			);
 	};

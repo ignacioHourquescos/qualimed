@@ -24,6 +24,7 @@ const ContactLanding = () => {
 	const sendEmail = (e, captchaValue) => {
 		e.preventDefault();
 		const params = {
+			...form.current,
 			"g-recaptcha-response": captchaValue,
 		};
 		setSending(true);
@@ -32,17 +33,16 @@ const ContactLanding = () => {
 			.sendForm(
 				"service_2qdstih",
 				"template_fldorhe",
-				form.current,
 				params,
 				"user_GqWB6DWgQTHICnHQEnvCU"
 			)
 			.then(
 				(result) => {
-					console.log(result.text);
+					console.log("SUCCESS", result.text);
 					setSending(false);
 				},
 				(error) => {
-					console.log(error.text);
+					console.log("ERROR", error.text);
 					setSending(false);
 				}
 			);

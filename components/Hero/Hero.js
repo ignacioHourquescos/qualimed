@@ -98,7 +98,7 @@ const logo = (
 
 const logoMobile = (
 	<svg
-		width="310"
+		width="280"
 		height="176"
 		viewBox="0 0 1399 176"
 		fill="none"

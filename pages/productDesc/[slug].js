@@ -3,12 +3,11 @@ import Footer from "/components/Footer/Footer";
 import styles from "./slug.module.scss";
 import "swiper/css";
 import "swiper/css/pagination";
-import Link from "next/link";
-import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import { useRouter } from "next/router";
 import React, { useRef, useState, useEffect } from "react";
 import Hero2 from "../../components/Hero2/Hero2";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Index = () => {
 	// const {img, title, description, application, techcnial, code} = products;
@@ -56,7 +55,12 @@ const Index = () => {
 					brandsArray.push(data.values[i][2]);
 				}
 				setProducts(array);
-				const arrayFiltered = array.find((element) => element.title == idEvent);
+				console.log("idEvent", idEvent);
+				console.log("idEvent Decoded", decodeURIComponent(idEvent));
+				console.log("array", array);
+				const arrayFiltered = array.find(
+					(element) => element.title == decodeURIComponent(idEvent)
+				);
 				setProducts(arrayFiltered);
 				console.log("PORDUCTDESC", arrayFiltered);
 				// res.send(
@@ -76,17 +80,20 @@ const Index = () => {
 		getProducts();
 	}, []);
 
-	const sendEmail = (e) => {
+	useEffect(() => {}, []);
+
+	const sendEmail = (e, captchaValue) => {
 		e.preventDefault();
 		setSending(true);
 		console.log("mensaje enviado");
 		emailjs
 			.sendForm(
 				"service_2qdstih",
-				"template_a2ty4bh",
+				"template_fldorhe",
 				form.current,
 				"user_GqWB6DWgQTHICnHQEnvCU"
 			)
+
 			.then(
 				(result) => {
 					console.log(result.text);
@@ -95,6 +102,7 @@ const Index = () => {
 				},
 				(error) => {
 					console.log(error.text);
+					setDisplayUserForm(false);
 				}
 			);
 	};
@@ -121,9 +129,6 @@ const Index = () => {
 
 		window.open(url);
 	};
-
-	// if (!loading) {
-	// 	let products = products.find((element) => element.title == idEvent);
 
 	return (
 		<div className={styles.contAll}>
@@ -174,6 +179,7 @@ const Index = () => {
 											className={styles.form}
 											ref={form}
 											onSubmit={sendEmail}
+											method="POST"
 										>
 											<input
 												className={styles.input}
@@ -200,6 +206,9 @@ const Index = () => {
 												value={`Me gustaria tener mas informaciona cerca de  ${products.title} codigo de producto: ${products.code}`}
 												required
 											></textarea>
+											<div className={styles.captcha_container}>
+												<ReCAPTCHA sitekey="6LcswQQhAAAAAAKJ6eLBf5qhExGmYKgsKnOXC3v6" />
+											</div>
 											<button type="submit" value="Send">
 												{!sending ? "Enviar" : "Enviando..."}
 											</button>
@@ -227,7 +236,7 @@ const Index = () => {
 									target={"_blank"}
 									rel={"noreferrer"}
 								>
-									<img src="/cart2.png" alt="insumos medicos" />
+									{/* <img src="/cart2.png" alt="insumos medicos" /> */}
 									Ver producto en tienda minorista
 								</a>
 							</div>

@@ -1,10 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
-import Products from "../components/Products/Products";
 import Header from "../components/Header/Header";
-import About from "../components/About/About";
-import Clients from "../components/Clients/Clients";
-import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero/Hero";
 import ProductsLanding from "../components/Products/ProductsLanding";
@@ -82,9 +78,6 @@ export default function Home() {
 			<ProductsLanding />
 			<Branding />
 			<ContactLanding />
-			{/* <About/>
-    <Clients/>
-    <Contact/> */}
 			<Footer />
 		</div>
 	);

@@ -136,7 +136,7 @@ const Filter = ({
 							<Link href="/products/equipamientoAlquiler" passHref>
 								<li onClick={() => twoFunctions()}>Alquileres</li>
 							</Link>
-							<Link href="/products/equipamientoSt" passHref>
+							<Link href="/products/equipamientoServicioTecnico" passHref>
 								<li onClick={() => twoFunctions()}>Servicio técnico</li>
 							</Link>
 						</Panel>

@@ -7,7 +7,7 @@ import Link from "next/link";
 import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import { useRouter } from "next/router";
 import React, { useRef, useState, useEffect } from "react";
-import Hero from "../../components/Hero2/Hero";
+import Hero2 from "../../components/Hero2/Hero2";
 import emailjs from "@emailjs/browser";
 
 const Index = () => {
@@ -68,8 +68,6 @@ const Index = () => {
 				// );
 			})
 			.then((data) => {
-				console.log("aca desde usef ecct" + data);
-
 				setLoading(false);
 			});
 	};
@@ -113,7 +111,7 @@ const Index = () => {
 	const enviarMsj = () => {
 		event.preventDefault();
 		url += `?text=${encodeURI(
-			"Hola me gustaria consultarles por el producto: " +
+			"Hola, me interesaría tener mas información acerca de: " +
 				products.title +
 				" " +
 				" ( codigo de producto:  " +
@@ -130,7 +128,7 @@ const Index = () => {
 	return (
 		<div className={styles.contAll}>
 			<Header />
-			<Hero title={idEvent} color="white" />
+			<Hero2 title={idEvent} color="white" />
 
 			{loading ? (
 				""

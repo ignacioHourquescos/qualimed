@@ -7,7 +7,7 @@ import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
 import { useRouter } from "next/router";
 import { useMediaQuery } from "react-responsive";
-import Hero from "../../components/Hero2/Hero";
+import Hero2 from "../../components/Hero2/Hero2";
 
 const Index = ({}) => {
 	const router = useRouter();
@@ -18,6 +18,7 @@ const Index = ({}) => {
 	const [lookUpValue, setLookUpValue] = useState();
 	const [initialValues, setInitialValues] = useState(true);
 	const [routerContent, setRouterContent] = useState([]);
+	const [brandsList, setBrandsList] = useState([]);
 	const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
 
 	const getProducts = () => {
@@ -46,7 +47,7 @@ const Index = ({}) => {
 						application: data.values[i][6],
 						techcnial: data.values[i][7],
 						img: !data.values[i][8]
-							? "barbijo.png"
+							? "./placeholder.png"
 							: "https://drive.google.com/uc?export=view&id=" +
 							  data.values[i][8],
 						ml: !data.values[i][9] ? "" : data.values[i][9],
@@ -56,6 +57,12 @@ const Index = ({}) => {
 					brandsArray.push(data.values[i][2]);
 				}
 				setProducts(array);
+				setBrandsList(
+					array.filter(
+						(element) =>
+							element.category == categoryToParamConverter(idCategory)
+					)
+				);
 			})
 			.then((data) => {
 				setLoading(false);
@@ -64,7 +71,7 @@ const Index = ({}) => {
 
 	useEffect(() => {
 		getProducts();
-	}, []);
+	}, [idCategory]);
 
 	useEffect(() => {
 		if (idCategory == "insumosMedicos")
@@ -92,21 +99,21 @@ const Index = ({}) => {
 			setRouterContent([
 				"EQUIPAMIENTO VENTA",
 				setInitialValues(true),
-				"Equipamiento",
+				"Equipamiento Venta",
 				"../Equipamiento2.jpg",
 			]);
 		if (idCategory == "equipamientoAlquiler")
 			setRouterContent([
 				"EQUIPAMIENTO ALQUILER",
 				setInitialValues(true),
-				"Equipamiento",
+				"Equipamiento Alquiler",
 				"../Equipamiento2.jpg",
 			]);
-		if (idCategory == "equipamientoSt")
+		if (idCategory == "equipamientoServicioTecnico")
 			setRouterContent([
-				"EQUIPAMIENTO ST",
+				"EQUIPAMIENTO SERVICIO TECNICO",
 				setInitialValues(true),
-				"Equipamiento",
+				"Equipamiento Servicio Técnico",
 				"../Equipamiento2.jpg",
 			]);
 	}, [idCategory]);
@@ -142,7 +149,7 @@ const Index = ({}) => {
 	return (
 		<>
 			<Header />
-			<Hero title={routerContent[2]} img={routerContent[3]} color="white" />
+			<Hero2 title={routerContent[2]} img={routerContent[3]} color="white" />
 
 			<div className={styles.container}>
 				<div
@@ -154,7 +161,7 @@ const Index = ({}) => {
 							resetValues={resetValues}
 							loading={loading}
 							testFunction={testFunction}
-							brands={products.map((e) => e.brand)}
+							brands={brandsList.map((e) => e.brand)}
 							brandClickHandler={brandClickHandler}
 							lookUpValueHandler={lookUpValueHandler}
 						/>
@@ -202,3 +209,20 @@ const Index = ({}) => {
 };
 
 export default Index;
+
+const categoryToParamConverter = (value) => {
+	switch (value) {
+		case "equipamiento":
+			return "EQUIPAMIENTO";
+		case "insumosMedicos":
+			return "INSUMOS MEDICOS";
+		case "medicinaDeportiva":
+			return "MEDICINA DEPORTIVA";
+		case "equipamientoAlquiler":
+			return "EQUIPAMIENTO ALQUILER";
+		case "equipamientoServicioTecnico":
+			return "EQUIPAMIENTO SERVICIO TECNICO";
+		case "equipamientoAlquiler":
+			return "EQUIPAMIENTO ALQUILER";
+	}
+};

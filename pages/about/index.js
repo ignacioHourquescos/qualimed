@@ -2,14 +2,14 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import styles from "./index.module.scss";
 import Footer from "../../components/Footer/Footer";
-import Hero from "../../components/Hero2/Hero";
+import Hero2 from "../../components/Hero2/Hero2";
 import { Button, Col, Row, Statistic } from "antd";
 
 const index = () => {
 	return (
 		<div className={styles.body}>
 			<Header />
-			<Hero title="Acerca de nosotros" />
+			<Hero2 title="Acerca de nosotros" />
 			<div className={styles.container}>
 				<div className={styles.main}>
 					<div className={styles.punchLine}>{data.data1}</div>

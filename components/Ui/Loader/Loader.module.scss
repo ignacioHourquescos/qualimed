@@ -1,0 +1,45 @@
+
+// @-webkit-keyframes rotate {
+//   from {
+//     -webkit-transform: rotate(0deg);
+//   }
+//   to { 
+//     -webkit-transform: rotate(360deg);
+//   }
+// }
+
+// svg.rotate
+// {
+//     -webkit-animation-name:             rotate; 
+//     -webkit-animation-duration:         0.5s; 
+//     -webkit-animation-iteration-count:  infinite;
+//     -webkit-animation-timing-function: linear;
+// }
+
+.svg {
+  // transform: rotate(-45deg);
+  // transform: rotate(180deg);
+  // transform-origin: 50% 50%;
+  // transition-duration: 6s;
+  animation-name: ckw;
+  animation-duration: 15.5s;
+  // -webkit-transition: transform 4s ease-in-out;
+  // -moz-transition: transform 4s ease-in-out;
+  // -o-transition: transform 4s ease-in-out;
+  // -ms-transition: transform 4s ease-in-out;
+  // transition: transform 4s ease-in-out;
+  // -webkit-transform: scale(1.5);
+  // -moz-transform: scale(1.5);
+  // -o-transform: scale(1.5);
+  // -ms-transform: scale(1.5);
+  // transform: scale(1.5);
+}
+
+@keyframes ckw {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(180deg);
+  }
+}

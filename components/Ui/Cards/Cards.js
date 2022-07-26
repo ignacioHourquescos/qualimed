@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { Suspense, lazy } from "react";
 import styles from "./Cards.module.scss";
 import Link from "next/link";
 import ContentLoader from "react-content-loader";
 import { Skeleton } from "antd";
 import { Spin } from "antd";
+import Image from "next/image";
+import Loader from "../Loader/Loader";
 
 const Cards = ({ imageUrl, title, description, id, brief, loading }) => {
+	const [loaded, setLoaded] = useState(false);
 	return (
 		<>
 			{/* <ContentLoader
@@ -27,18 +31,45 @@ const Cards = ({ imageUrl, title, description, id, brief, loading }) => {
 					<Spin />
 				) : (
 					<>
-						<img src={imageUrl} alt="insumos medicos" />
-						<div className={styles.data_container}>
-							<h5>{title}</h5>
-							<p>{brief}</p>
-						</div>
-						<Link
-							as={`/productDesc/${encodeURIComponent(title)}`}
-							href={`/productDesc/${encodeURIComponent(title)}`}
-							passHref
-						>
-							<button type="submit">Ver mas</button>
-						</Link>
+						{/* <div className={styles.image_container}>
+							<Image
+								// loader={myLoader}
+								src={imageUrl}
+								alt="Picture of the author"
+								width={500}
+								height={500}
+							/>
+						</div> */}
+
+						{loaded ? null : (
+							<div className={styles.loader_container}>
+								<Loader />
+							</div>
+						)}
+						<img
+							src={imageUrl}
+							className={styles.image_container}
+							style={loaded ? {} : { display: "none" }}
+							onLoad={() => setLoaded(true)}
+							alt="insumos medicos"
+						/>
+
+						{loaded ? (
+							<div className={styles.data_container}>
+								<h5>{title}</h5>
+								<p>{brief}</p>
+
+								<Link
+									as={`/productDesc/${encodeURIComponent(title)}`}
+									href={`/productDesc/${encodeURIComponent(title)}`}
+									passHref
+								>
+									<button type="submit">Ver mas</button>
+								</Link>
+							</div>
+						) : (
+							<></>
+						)}
 					</>
 				)}
 			</div>

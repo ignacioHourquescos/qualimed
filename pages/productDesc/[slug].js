@@ -8,9 +8,11 @@ import React, { useRef, useState, useEffect } from "react";
 import Hero2 from "../../components/Hero2/Hero2";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import Loader from "../../components/Ui/Loader/Loader";
 
 const Index = () => {
 	// const {img, title, description, application, techcnial, code} = products;
+	const [loaded, setLoaded] = useState(false);
 	const form = useRef();
 	const router = useRouter();
 	const idEvent = router.query.slug;
@@ -19,66 +21,70 @@ const Index = () => {
 	const [displayUserForm, setDisplayUserForm] = useState(false);
 	const [sending, setSending] = useState(false);
 
-	const getProducts = () => {
-		var array = [];
-		let categoriesArray = [];
-		let brandsArray = [];
-
-		let sheetName = "MASTER";
-		let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
-		let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-
-		fetch(
-			`https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
-		)
-			.then((response) => response.json())
-
-			.then((data) => {
-				for (var i = 1; i < data.values.length; i++) {
-					array.push({
-						code: data.values[i][0],
-						category: !data.values[i][1] ? "" : data.values[i][1],
-						brand: data.values[i][2],
-						title: data.values[i][3],
-						brief: data.values[i][4],
-						description: data.values[i][5],
-						application: data.values[i][6],
-						techcnial: data.values[i][7],
-						img: !data.values[i][8]
-							? "barbijo.png"
-							: "https://drive.google.com/uc?export=view&id=" +
-							  data.values[i][8],
-						ml: !data.values[i][9] ? "" : data.values[i][9],
-					});
-
-					categoriesArray.push(data.values[i][0]);
-					brandsArray.push(data.values[i][2]);
-				}
-				setProducts(array);
-				console.log("idEvent", idEvent);
-				console.log("idEvent Decoded", decodeURIComponent(idEvent));
-				console.log("array", array);
-				const arrayFiltered = array.find(
-					(element) => element.title == decodeURIComponent(idEvent)
-				);
-				setProducts(arrayFiltered);
-				console.log("PORDUCTDESC", arrayFiltered);
-				// res.send(
-				//   JSON.stringify([
-				//     array,
-				//     categoriesArray.filter((v, i, a) => a.indexOf(v) === i),
-				//     brandsArray.filter((v, i, a) => a.indexOf(v) === i),
-				//   ])
-				// );
-			})
-			.then((data) => {
-				setLoading(false);
-			});
-	};
-
 	useEffect(() => {
-		getProducts();
-	}, []);
+		if (!router.isReady) return;
+		const idEvent = router.query.slug;
+		if (router.isReady) {
+			const getProducts = () => {
+				var array = [];
+				let categoriesArray = [];
+				let brandsArray = [];
+
+				let sheetName = "MASTER";
+				let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
+				let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
+
+				fetch(
+					`https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
+				)
+					.then((response) => response.json())
+
+					.then((data) => {
+						for (var i = 1; i < data.values.length; i++) {
+							array.push({
+								code: data.values[i][0],
+								category: !data.values[i][1] ? "" : data.values[i][1],
+								brand: data.values[i][2],
+								title: data.values[i][3],
+								brief: data.values[i][4],
+								description: data.values[i][5],
+								application: data.values[i][6],
+								techcnial: data.values[i][7],
+								img: !data.values[i][8]
+									? "barbijo.png"
+									: "https://drive.google.com/uc?export=view&id=" +
+									  data.values[i][8],
+								ml: !data.values[i][9] ? "" : data.values[i][9],
+							});
+
+							categoriesArray.push(data.values[i][0]);
+							brandsArray.push(data.values[i][2]);
+						}
+						setProducts(array);
+						console.log("idEvent", idEvent);
+						console.log("idEvent Decoded", decodeURIComponent(idEvent));
+						console.log("array", array);
+						const arrayFiltered = array.find(
+							(element) => element.title == decodeURIComponent(idEvent)
+						);
+						setProducts(arrayFiltered);
+						console.log("PORDUCTDESC", arrayFiltered);
+						// res.send(
+						// 	JSON.stringify([
+						// 		array,
+						// 		categoriesArray.filter((v, i, a) => a.indexOf(v) === i),
+						// 		brandsArray.filter((v, i, a) => a.indexOf(v) === i),
+						// 	])
+						// );
+					})
+					.then((data) => {
+						setLoading(false);
+					});
+			};
+
+			getProducts();
+		}
+	}, [router.isReady, router.query]);
 
 	useEffect(() => {}, []);
 
@@ -140,21 +146,40 @@ const Index = () => {
 			) : (
 				<div className={styles.container}>
 					<div className={styles.detail}>
+						{loaded ? null : (
+							<div className={styles.loader_container}>
+								<Loader />
+							</div>
+						)}
+						{/* <img
+							src={imageUrl}
+							className={styles.image_container}
+							style={loaded ? {} : { display: "none" }}
+							onLoad={() => setLoaded(true)}
+							alt="insumos medicos"
+						/> */}
 						<div className={styles.img_container}>
-							<img src={products.img} alt="insumos medicos" />
+							<img
+								src={products.img}
+								alt="insumos medicos"
+								className={styles.image_container}
+								style={loaded ? {} : { display: "none" }}
+								onLoad={() => setLoaded(true)}
+								// alt="insumos medicos"
+							/>
 						</div>
 						<div className={styles.detailInfo}>
-							<b>Descripcion</b>
+							<h4>Descripción</h4>
 							<br />
-							{}
+							{products.description}
 							<br />
 							<br />
-							<b>Aplicaciones</b>
+							<h4>Aplicación</h4>
 							<br />
 							{products.application}
 							<br />
 							<br />
-							<b>Ficha tecnica</b>
+							<h4>Ficha Técnica</h4>
 							<br />
 							{products.techcnial}
 						</div>

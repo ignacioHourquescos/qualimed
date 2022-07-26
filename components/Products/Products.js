@@ -4,17 +4,10 @@ import styles from "./Products.module.scss";
 import { Spin } from "antd";
 
 const Products = ({ data, loading }) => {
-	//AUXILIAR
-	const numberOfSkeletonCards = Array.apply(null, Array(20)).map(function (
-		x,
-		i
-	) {
-		return i;
-	});
 	return (
 		<div className={styles.cards}>
-			{false ? (
-				<Spin />
+			{loading ? (
+				<></>
 			) : (
 				data.map((element, idx) => (
 					<Cards

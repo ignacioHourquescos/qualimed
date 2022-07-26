@@ -42,13 +42,8 @@
     }
 
     img {
-
-
-      // height: 50px;
       width: 80%;
       padding: 10%;
-      // grid-column: 1;
-      // object-fit: contain;
       background: #FFFFFF;
     }
 
@@ -73,9 +68,16 @@
     grid-column: 1;
     background: #FFFFFF;
     border-radius: 12px;
-    padding: 20px;
+    padding: 2.5rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media #{$mobile} {
+    
+      padding: 1.5rem;
+    }
 
+    h4{
+      margin-top: 0.5rem;
+    }
   }
 
 
@@ -89,12 +91,9 @@
 
     @media #{$mobile} {
       height: 20%;
-      position: fixed;
-      // border: 10px solid red;
-      // height: 100%;
+      position: fixed;;
       top: 80%;
       left: 0;
-      // top: 300px;
       width: 100%;
       z-index: 10000;
       margin: 0;
@@ -121,7 +120,6 @@
 
     @media #{$mobile} {
       justify-content: flex-start;
-      // height: 140px;
       border-radius: 0;
       padding-top: 6px;
       margin: 0;
@@ -170,8 +168,7 @@
       border: none;
       margin-bottom: 10px;
       color: white;
-
-    }
+     }
 
   }
 
@@ -224,7 +221,6 @@
       font-size: 16px;
       line-height: 20px;
       letter-spacing: 0.25px;
-      // color: #000000;
       color:blue;
 
       img {
@@ -329,6 +325,11 @@
 
           }
         }
+
+
+
+
+
 
         // MOBILE CLASSES
         .btnMail {

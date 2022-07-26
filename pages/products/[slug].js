@@ -21,7 +21,7 @@ const Index = ({}) => {
 	const [brandsList, setBrandsList] = useState([]);
 	const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
 
-	const getProducts = () => {
+	const getProducts = (brand) => {
 		var array = [];
 		let categoriesArray = [];
 		let brandsArray = [];
@@ -29,7 +29,7 @@ const Index = ({}) => {
 		let sheetName = "MASTER";
 		let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
 		let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-
+		setLoading(true);
 		fetch(
 			`https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
 		)
@@ -47,7 +47,7 @@ const Index = ({}) => {
 						application: data.values[i][6],
 						techcnial: data.values[i][7],
 						img: !data.values[i][8]
-							? "./placeholder.png"
+							? "/placeholder.png"
 							: "https://drive.google.com/uc?export=view&id=" +
 							  data.values[i][8],
 						ml: !data.values[i][9] ? "" : data.values[i][9],
@@ -56,7 +56,9 @@ const Index = ({}) => {
 					categoriesArray.push(data.values[i][0]);
 					brandsArray.push(data.values[i][2]);
 				}
-				setProducts(array);
+				if (!brand) setProducts(array);
+				else
+					setProducts(array.filter((item) => item.brand == brand.toString()));
 				setBrandsList(
 					array.filter(
 						(element) =>
@@ -135,9 +137,17 @@ const Index = ({}) => {
 	// }
 
 	const brandClickHandler = (element) => {
-		setSelectedBrand(element);
-		setLookUpValue("  ");
-		setInitialValues(false);
+		getProducts(element);
+		console.log("MARCA ELEGIDA", element);
+		console.log("PRODUCTS", products);
+		// const fitleredProducts = products.filter(
+		// 	(item) => item.brand == element.toString()
+		// );
+		// setProducts(fitleredProducts);
+		// setBrandSelection(brandSelection+1)
+		// setInitialValues(false);
+		// setSelectedBrand(element);
+		// setLookUpValue("  ");
 	};
 
 	const lookUpValueHandler = (element) => {
@@ -166,8 +176,6 @@ const Index = ({}) => {
 							lookUpValueHandler={lookUpValueHandler}
 						/>
 						<div className={styles.products}>
-							{/* {  */}
-							{/* searchText = "" ? */}
 							{initialValues ? (
 								<Products
 									data={products.filter((element) =>

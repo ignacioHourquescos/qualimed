@@ -24,11 +24,15 @@
 
   @media #{$desktopXll} {
     width: 100%;
-    height: 450px;
+    height: 480px;
   }
 
   .data_container{
-    height:25%;
+    height:3 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items:space-between;
 
     
   @media #{$mobile} {
@@ -37,9 +41,20 @@ height:auto;
   }
 }
 
-.card img {
-  width: 70%;
-  margin: auto;
+.image_container {
+   width: 65%;
+   margin: auto ;
+  height: 55%;
+}
+
+.loader_container{
+  height:100%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card h5 {
@@ -69,8 +84,9 @@ height:auto;
 
 .card button {
   width: 100%;
-  height: 15%;
+  // height: 15%;
   background: #3E4095;
+  padding: 1rem 0;
   border-radius: 0px 0px 12px 12px;
   border: none;
   font-family: $MainFont;

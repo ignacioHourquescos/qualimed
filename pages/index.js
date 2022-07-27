@@ -33,7 +33,7 @@ export default function Home() {
 				<meta property="og:title" content="Qualimed" />
 				<meta
 					property="og:description"
-					content="Servicio de bombas Industriales"
+					content="Insumos y Equipamiento Médicos"
 				/>
 				<meta property="og:url" content="https://www.qualimed.com.ar" />
 				<meta property="og:site_name" content="Qualimed" />

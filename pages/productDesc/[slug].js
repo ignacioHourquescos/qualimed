@@ -46,7 +46,7 @@ const Index = () => {
 								category: !data.values[i][1] ? "" : data.values[i][1],
 								brand: data.values[i][2],
 								title: data.values[i][3],
-								brief: data.values[i][4],
+								subtitle: data.values[i][4],
 								description: data.values[i][5],
 								application: data.values[i][6],
 								techcnial: data.values[i][7],
@@ -186,7 +186,7 @@ const Index = () => {
 						<div className={styles.contact}>
 							<div className={styles.cotizacion}>
 								<h5>{products.title}</h5>
-								<p>{products.description.slice(0, 50)}...</p>
+								<p>{products.subtitle}</p>
 								<br />
 								<button onClick={enviarMsj}>Cotización via whatsapp</button>
 

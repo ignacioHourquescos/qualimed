@@ -85,7 +85,9 @@ const Filter = ({
 					<div className={styles.close} onClick={() => closeFilter()}>
 						{closeIcon}
 					</div>
+
 					<Form form={form} name="name" layout="vertical" onFinish={onFinish}>
+						<h3>Buscador</h3>
 						<Row>
 							<Form.Item
 								name="name"

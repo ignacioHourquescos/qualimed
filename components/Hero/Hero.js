@@ -54,7 +54,7 @@ const Hero = () => {
 					>
 						<path
 							// fill="#0099ff"
-							// fill-opacity="1"
+							// fill-opacity="1111"
 							d="M0,15.78 C0.48,5.91 230.20,80.98 501.97,8.33 L500.00,150.00 L0.00,150.00 Z"
 							style={{ stroke: "none", fill: "#E5E5E5" }}
 						></path>

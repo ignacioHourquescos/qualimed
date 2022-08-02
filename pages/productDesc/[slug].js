@@ -22,7 +22,7 @@ const Index = () => {
 	const [sending, setSending] = useState(false);
 
 	useEffect(() => {
-		const idEvent = router.query.slug;
+		//const idEvent = router.query.slug;
 
 		// if (!router.isReady) return null;
 
@@ -89,8 +89,6 @@ const Index = () => {
 		}
 	}, [router.isReady, router.query]);
 
-	useEffect(() => {}, []);
-
 	const sendEmail = (e, captchaValue) => {
 		e.preventDefault();
 		setSending(true);
@@ -139,10 +137,11 @@ const Index = () => {
 		window.open(url);
 	};
 
+	if (!idEvent) return null;
 	return (
 		<div className={styles.contAll}>
 			<Header />
-			<Hero2 title={idEvent} color="white" />
+			<Hero2 title={products.title} color="white" />
 
 			{loading ? (
 				""

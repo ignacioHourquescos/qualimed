@@ -60,10 +60,15 @@ const Cards = ({ imageUrl, title, description, id, brief, loading }) => {
 								<p>{brief}</p>
 
 								<Link
-									as={`/productDesc/${encodeURIComponent(title)}`}
-									href={`/productDesc/${encodeURIComponent(title)}`}
+									as={`/productDesc/${title}`}
+									href={`/productDesc/${+title}`}
 									passHref
 								>
+									{/* <Link
+										as={`/productDesc/${encodeURIComponent(title)}`}
+										href={`/productDesc/${encodeURIComponent(title)}`}
+										passHref
+									></Link> */}
 									<button type="submit">Ver mas</button>
 								</Link>
 							</div>

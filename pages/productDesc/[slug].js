@@ -65,7 +65,8 @@ const Index = () => {
 						console.log("idEvent Decoded", decodeURIComponent(idEvent));
 						console.log("array", array);
 						const arrayFiltered = array.find(
-							(element) => element.title == decodeURIComponent(idEvent)
+							// (element) => element.title == decodeURIComponent(idEvent)
+							(element) => element.title == idEvent
 						);
 						setProducts(arrayFiltered);
 						console.log("PORDUCTDESC", arrayFiltered);

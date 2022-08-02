@@ -23,7 +23,7 @@ const Index = () => {
 
 	useEffect(() => {
 		const idEvent = router.query.slug;
-		router.push("/?counter=10", undefined, { shallow: true });
+
 		if (!router.isReady) return null;
 
 		if (router.isReady) {

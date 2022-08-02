@@ -22,8 +22,10 @@ const Index = () => {
 	const [sending, setSending] = useState(false);
 
 	useEffect(() => {
-		if (!router.isReady) return;
 		const idEvent = router.query.slug;
+		router.push("/?counter=10", undefined, { shallow: true });
+		if (!router.isReady) return null;
+
 		if (router.isReady) {
 			const getProducts = () => {
 				var array = [];
@@ -85,7 +87,7 @@ const Index = () => {
 
 			getProducts();
 		}
-	}, [router.isReady, router.query, idEvent]);
+	}, [router.isReady, router.query]);
 
 	useEffect(() => {}, []);
 

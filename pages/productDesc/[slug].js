@@ -24,7 +24,7 @@ const Index = () => {
 	useEffect(() => {
 		const idEvent = router.query.slug;
 
-		if (!router.isReady) return null;
+		// if (!router.isReady) return null;
 
 		if (router.isReady) {
 			const getProducts = () => {
@@ -140,7 +140,7 @@ const Index = () => {
 	};
 
 	return (
-		<div className={styles.contAll} key={idEvent}>
+		<div className={styles.contAll}>
 			<Header />
 			<Hero2 title={idEvent} color="white" />
 

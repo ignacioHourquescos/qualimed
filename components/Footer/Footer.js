@@ -59,7 +59,7 @@ const Footer = () => {
 						<li>4716-2652</li>
 					</div>
 					<div style={{ gridRow: 2 }}>
-						<h5>E-mail</h5>
+						<h5>Mail</h5>
 						<li>cotizaciones@qualimed.com.ar</li>
 					</div>
 					<div style={{ gridRow: 2 }}>

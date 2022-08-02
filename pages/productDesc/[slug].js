@@ -84,7 +84,7 @@ const Index = () => {
 
 			getProducts();
 		}
-	}, [router.isReady, router.query]);
+	}, [router.isReady, router.query, idEvent]);
 
 	useEffect(() => {}, []);
 
@@ -137,7 +137,7 @@ const Index = () => {
 	};
 
 	return (
-		<div className={styles.contAll}>
+		<div className={styles.contAll} key={idEvent}>
 			<Header />
 			<Hero2 title={idEvent} color="white" />
 

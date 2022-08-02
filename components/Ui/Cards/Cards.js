@@ -60,8 +60,8 @@ const Cards = ({ imageUrl, title, description, id, brief, loading }) => {
 								<p>{brief}</p>
 
 								<Link
-									as={`/productDesc/${title}`}
-									href={`/productDesc/${+title}`}
+									as={`/productDesc/${code}`}
+									href={`/productDesc/${code}`}
 									passHref
 								>
 									{/* <Link

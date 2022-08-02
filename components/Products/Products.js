@@ -17,6 +17,7 @@ const Products = ({ data, loading }) => {
 						description={element.description}
 						imageUrl={element.img}
 						brief={element.brief}
+						code={element.code}
 					/>
 				))
 			)}

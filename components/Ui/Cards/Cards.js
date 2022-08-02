@@ -8,7 +8,7 @@ import { Spin } from "antd";
 import Image from "next/image";
 import Loader from "../Loader/Loader";
 
-const Cards = ({ imageUrl, title, description, id, brief, loading }) => {
+const Cards = ({ imageUrl, title, description, id, brief, loading, code }) => {
 	const [loaded, setLoaded] = useState(false);
 	return (
 		<>

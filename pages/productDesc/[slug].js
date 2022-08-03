@@ -16,87 +16,25 @@ const Index = () => {
 	const [loaded, setLoaded] = useState(false);
 	const form = useRef();
 	const router = useRouter();
-	const idEvent = router.query.slug;
+	const { slug } = router.query;
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [displayUserForm, setDisplayUserForm] = useState(false);
 	const [sending, setSending] = useState(false);
 
 	useEffect(() => {
+		console.log("CODE PARAMS", slug);
 		const fetchData = async () => {
 			const response = await fetch("/api/getProducts");
 			const data = await response.json();
 			console.log("DATA", data[0]);
-			const arrayFiltered = data[0].find((element) => element.code == idEvent);
+
+			const arrayFiltered = data[0].find((element) => element.code == slug);
+			console.log("DATA", arrayFiltered);
 			setProducts(arrayFiltered);
 		};
-
-		//const idEvent = router.query.slug;
 		fetchData();
 		setLoading(false);
-		// if (!router.isReady) return null;
-
-		// if (router.isReady) {
-		// 	const getProducts = () => {
-		// 		var array = [];
-		// 		let categoriesArray = [];
-		// 		let brandsArray = [];
-
-		// 		let sheetName = "MASTER";
-		// 		let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
-		// 		let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-
-		// 		fetch(
-		// 			`https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
-		// 		)
-		// 			.then((response) => response.json())
-
-		// 			.then((data) => {
-		// 				for (var i = 1; i < data.values.length; i++) {
-		// 					array.push({
-		// 						code: data.values[i][0],
-		// 						category: !data.values[i][1] ? "" : data.values[i][1],
-		// 						brand: data.values[i][2],
-		// 						title: data.values[i][3],
-		// 						subtitle: data.values[i][4],
-		// 						description: data.values[i][5],
-		// 						application: data.values[i][6],
-		// 						techcnial: data.values[i][7],
-		// 						img: !data.values[i][8]
-		// 							? "barbijo.png"
-		// 							: "https://drive.google.com/uc?export=view&id=" +
-		// 							  data.values[i][8],
-		// 						ml: !data.values[i][9] ? "" : data.values[i][9],
-		// 					});
-
-		// 					categoriesArray.push(data.values[i][0]);
-		// 					brandsArray.push(data.values[i][2]);
-		// 				}
-		// 				setProducts(array);
-		// 				console.log("idEvent", idEvent);
-		// 				console.log("idEvent Decoded", decodeURIComponent(idEvent));
-		// 				console.log("array", array);
-		// 				const arrayFiltered = array.find(
-		// 					// (element) => element.title == decodeURIComponent(idEvent)
-		// 					(element) => element.code == idEvent
-		// 				);
-		// 				setProducts(arrayFiltered);
-		// 				console.log("PORDUCTDESC", arrayFiltered);
-		// 				// res.send(
-		// 				// 	JSON.stringify([
-		// 				// 		array,
-		// 				// 		categoriesArray.filter((v, i, a) => a.indexOf(v) === i),
-		// 				// 		brandsArray.filter((v, i, a) => a.indexOf(v) === i),
-		// 				// 	])
-		// 				// );
-		// 			})
-		// 			.then((data) => {
-		// 				setLoading(false);
-		// 			});
-		// 	};
-
-		// 	getProducts();
-		// }
 	}, []);
 
 	const sendEmail = (e, captchaValue) => {

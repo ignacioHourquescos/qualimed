@@ -25,7 +25,12 @@ const Index = () => {
 	useEffect(() => {
 		console.log("CODE PARAMS", slug);
 		const fetchData = async () => {
-			const response = await fetch("/api/getProducts");
+			const response = await fetch("/api/getProducts", {
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json",
+				},
+			});
 			const data = await response.json();
 			console.log("DATA", data[0]);
 

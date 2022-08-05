@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useMediaQuery } from "react-responsive";
 import Hero2 from "../../components/Hero2/Hero2";
 
+
 const Index = ({}) => {
 	const router = useRouter();
 	const idCategory = router.query.slug;

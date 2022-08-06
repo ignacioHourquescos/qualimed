@@ -41,7 +41,7 @@ export const getStaticPaths = async () => {
 
   const paths = array.map((product) => {
     return {
-      params: { slug: product.code.toString() },
+      params: { slug: product.code.toString() || '404' },
     };
   });
 
@@ -98,7 +98,7 @@ const Index = ({ products }) => {
 
   useEffect(() => {
     setLoading(!loading);
-	console.log(products)
+    console.log(products);
   }, [products]);
 
   // useEffect(() => {

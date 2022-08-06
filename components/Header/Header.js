@@ -45,7 +45,7 @@ const Header = () => {
                       href={`/products/` + equipamiento} passHref>
                       <a>
                         <img src="/ventilatorIcon.png" alt="insumos medicos" />
-                        Equipamiento
+                        Equipamiento1
                       </a>
                     </Link>
 

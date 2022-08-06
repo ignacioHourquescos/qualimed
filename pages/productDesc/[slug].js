@@ -41,13 +41,13 @@ export const getStaticPaths = async () => {
 
   const paths = array.map((product) => {
     return {
-      params: { slug: product.code.toString() || '404' },
+      params: { slug: product.code.toString() || "ECG80"},
     };
   });
 
   return {
     paths,
-    fallback: false,
+    fallback: false
   };
 };
 
@@ -96,10 +96,10 @@ const Index = ({ products }) => {
   const [displayUserForm, setDisplayUserForm] = useState(false);
   const [sending, setSending] = useState(false);
 
-  useEffect(() => {
-    setLoading(!loading);
-    console.log(products);
-  }, [products]);
+//   useEffect(() => {
+//     console.log(products);
+//   }, [products]);
+
 
   // useEffect(() => {
   // 	console.log("CODE PARAMS", slug);
@@ -169,6 +169,10 @@ const Index = ({ products }) => {
     window.open(url);
   };
 
+  useEffect(() => {
+	if(products) {setLoading(false)}
+  }, [products])
+  
   return (
     <div className={styles.contAll}>
       <Header />

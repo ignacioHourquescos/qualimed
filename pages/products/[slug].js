@@ -142,7 +142,6 @@ const Index = ({allProducts, categories, brands, slug}) => {
     // 			categoriesArray.push(data.values[i][0]);
     // 			brandsArray.push(data.values[i][2]);
     // 		}
-    setLoading(false)
     if (!brand) setProducts(allProducts);
     else setProducts(allProducts.filter((item) => item.brand == brand.toString()));
     setBrandsList(
@@ -159,6 +158,7 @@ const Index = ({allProducts, categories, brands, slug}) => {
 
   useEffect(() => {
     getProducts();
+    setLoading(false)
   }, [slug]);
 
   useEffect(() => {
@@ -241,6 +241,7 @@ const Index = ({allProducts, categories, brands, slug}) => {
     setSelectedBrand();
     setInitialValues(false);
   };
+  
   if (!products) return (<h1>Loading...</h1>);
 
   return (

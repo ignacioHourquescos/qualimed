@@ -82,6 +82,7 @@ const Footer = () => {
 							src={"/instagram.png"}
 							style={{ width: "26px", height: "26px", cursor: "pointer" }}
 							className={styles.insta}
+							alt={"insumos medicos"}
 						/>
 					</Link>
 				</div>

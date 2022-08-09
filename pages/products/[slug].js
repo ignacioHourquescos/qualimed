@@ -1,47 +1,23 @@
 import Header from "../../components/Header/Header";
 import Products from "../../components/Products/Products";
 import styles from "./index.module.scss";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
-import { useRouter } from "next/router";
 import { useMediaQuery } from "react-responsive";
 import Hero2 from "../../components/Hero2/Hero2";
-import { Loading3QuartersOutlined } from "@ant-design/icons";
+import getProducts from "../api/getProducts";
 
 export const getStaticPaths = async () => {
-  var array = [];
-  let sheetName = "MASTER";
-  let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
-  let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-
-  const res = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
-  )
-    .then((response) => response.json())
-
-    .then((data) => {
-      for (var i = 1; i < data.values.length; i++) {
-        array.push({
-          code: data.values[i][0],
-          category: !data.values[i][1] ? "" : data.values[i][1],
-          brand: data.values[i][2],
-          title: data.values[i][3],
-          brief: data.values[i][4],
-          description: data.values[i][5],
-          application: data.values[i][6],
-          techcnial: data.values[i][7],
-          img: !data.values[i][8]
-            ? "/placeholder.png"
-            : "https://drive.google.com/uc?export=view&id=" + data.values[i][8],
-          ml: !data.values[i][9] ? "" : data.values[i][9],
-        });
-      }
-    });
-
-  const paths =[{ params: { slug: "equipamiento" } }, { params: { slug: "insumosMedicos" } }, { params: { slug: "medicinaDeportiva" } },
-                { params: { slug: "equipamientoVenta" } }, { params: { slug: "equipamientoAlquiler" } }, { params: { slug: "equipamientoServicioTecnico" } }];
+  const paths = [
+    { params: { slug: "equipamiento" } },
+    { params: { slug: "insumosMedicos" } },
+    { params: { slug: "medicinaDeportiva" } },
+    { params: { slug: "equipamientoVenta" } },
+    { params: { slug: "equipamientoAlquiler" } },
+    { params: { slug: "equipamientoServicioTecnico" } },
+  ];
 
   return {
     paths,
@@ -49,56 +25,33 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context) => {
+export async function getStaticProps(context) {
   const slug = context.params.slug;
-  
-  var array = [];
-  let categoriesArray = [];
-  let brandsArray = [];
-  let sheetName = "MASTER";
-  let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
-  let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-
-  const res = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
-  )
-    .then((response) => response.json())
-
-    .then((data) => {
-      for (var i = 1; i < data.values.length; i++) {
-        array.push({
-          code: data.values[i][0],
-          category: !data.values[i][1] ? "" : data.values[i][1],
-          brand: data.values[i][2],
-          title: data.values[i][3],
-          brief: data.values[i][4],
-          description: data.values[i][5],
-          application: data.values[i][6],
-          techcnial: data.values[i][7],
-          img: !data.values[i][8]
-            ? "/placeholder.png"
-            : "https://drive.google.com/uc?export=view&id=" + data.values[i][8],
-          ml: !data.values[i][9] ? "" : data.values[i][9],
-        });
-        categoriesArray.push(data.values[i][0]);
-        brandsArray.push(data.values[i][2]);
-      }
-    });
-
+  const data = await getProducts();
+  const array = data.map((d) => ({
+    code: d[0],
+    category: !d[1] ? "" : d[1],
+    brand: d[2],
+    title: d[3],
+    brief: d[4],
+    description: d[5],
+    application: d[6],
+    techcnial: d[7],
+    img: !d[8]
+      ? "barbijo.png"
+      : "https://drive.google.com/uc?export=view&id=" + d[8],
+    ml: !d[9] ? "" : d[9],
+  }));
   return {
     props: {
       allProducts: array,
-      categories: categoriesArray,
-      brands: brandsArray,
-      slug
+      slug,
     },
   };
-};
+}
 
-const Index = ({allProducts, categories, brands, slug}) => {
-  // const router = useRouter();
-  // const slug = router.query.slug;
-  const [products, setProducts] = useState(null);
+const Index = ({ allProducts, slug }) => {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedBrand, setSelectedBrand] = useState();
   const [lookUpValue, setLookUpValue] = useState();
@@ -107,58 +60,29 @@ const Index = ({allProducts, categories, brands, slug}) => {
   const [brandsList, setBrandsList] = useState([]);
   const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
 
-  const getProducts = (brand) => {
-    // var array = [];
-    // let categoriesArray = [];
-    // let brandsArray = [];
+  const brandFilter = (brand) => {
+    if (!brand) {
+      setProducts(allProducts);
+    } else {
+      setProducts(allProducts.filter((item) => item.brand.includes(brand.toString())));
+      setBrandsList(
+        allProducts.filter((element) =>
+          element.category.includes(categoryToParamConverter(slug))
+        )
+      );
+    }
+  };
 
-    // let sheetName = "MASTER";
-    // let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
-    // let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-    // setLoading(true);
-    // fetch(
-    // 	`https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
-    // )
-    // 	.then((response) => response.json())
-
-    // 	.then((data) => {
-    // 		for (var i = 1; i < data.values.length; i++) {
-    // 			array.push({
-    // 				code: data.values[i][0],
-    // 				category: !data.values[i][1] ? "" : data.values[i][1],
-    // 				brand: data.values[i][2],
-    // 				title: data.values[i][3],
-    // 				brief: data.values[i][4],
-    // 				description: data.values[i][5],
-    // 				application: data.values[i][6],
-    // 				techcnial: data.values[i][7],
-    // 				img: !data.values[i][8]
-    // 					? "/placeholder.png"
-    // 					: "https://drive.google.com/uc?export=view&id=" +
-    // 					  data.values[i][8],
-    // 				ml: !data.values[i][9] ? "" : data.values[i][9],
-    // 			});
-
-    // 			categoriesArray.push(data.values[i][0]);
-    // 			brandsArray.push(data.values[i][2]);
-    // 		}
-    if (!brand) setProducts(allProducts);
-    else setProducts(allProducts.filter((item) => item.brand == brand.toString()));
-    setBrandsList(
-      allProducts.filter(
-        (element) => element.category == categoryToParamConverter(slug)
-      )
-    )
-  //   }
-  // )
-  // .then((data) => {
-  // 	setLoading(false);
-  // });
+  const changeToAllProducts = () => {
+    setInitialValues(true);
+    setSelectedBrand();
+    setLookUpValue();
+    setProducts(allProducts);
   };
 
   useEffect(() => {
-    getProducts();
-    setLoading(false)
+    brandFilter();
+    setLoading(false);
   }, [slug]);
 
   useEffect(() => {
@@ -216,24 +140,8 @@ const Index = ({allProducts, categories, brands, slug}) => {
     setLookUpValue();
   };
 
-  // const withoutSpaces = (element) => {
-  //   if (!element == null) {
-  //    return replace(/ /g, '')
-  //   }
-  // }
-
   const brandClickHandler = (element) => {
-    getProducts(element);
-    console.log("MARCA ELEGIDA", element);
-    console.log("PRODUCTS", products);
-    // const fitleredProducts = products.filter(
-    // 	(item) => item.brand == element.toString()
-    // );
-    // setProducts(fitleredProducts);
-    // setBrandSelection(brandSelection+1)
-    // setInitialValues(false);
-    // setSelectedBrand(element);
-    // setLookUpValue("  ");
+    brandFilter(element);
   };
 
   const lookUpValueHandler = (element) => {
@@ -241,8 +149,6 @@ const Index = ({allProducts, categories, brands, slug}) => {
     setSelectedBrand();
     setInitialValues(false);
   };
-  
-  if (!products) return (<h1>Loading...</h1>);
 
   return (
     <>
@@ -261,6 +167,7 @@ const Index = ({allProducts, categories, brands, slug}) => {
               brands={brandsList.map((e) => e.brand)}
               brandClickHandler={brandClickHandler}
               lookUpValueHandler={lookUpValueHandler}
+              changeToAllProducts={changeToAllProducts}
             />
             <div className={styles.products}>
               {initialValues ? (

@@ -28,7 +28,7 @@
   }
 
   .data_container{
-    height:3 0%;
+    height:40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,7 +36,7 @@
 
     
   @media #{$mobile} {
-height:auto;
+    height:auto;
   }
   }
 }
@@ -44,7 +44,7 @@ height:auto;
 .image_container {
    width: 65%;
    margin: auto ;
-  height: 55%;
+    height: 45%;
 }
 
 .loader_container{

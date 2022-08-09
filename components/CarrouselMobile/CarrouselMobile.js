@@ -9,11 +9,11 @@ const CarrouselMobile = ({ title, spaceBetween }) => {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
-		fetch("../api/getProducts")
-			.then((response) => response.json())
-			.then((data) => (setProducts(data[0]), setLoading(false)));
-	}, []);
+	// useEffect(() => {
+	// 	fetch("../api/getProducts")
+	// 		.then((response) => response.json())
+	// 		.then((data) => (setProducts(data[0]), setLoading(false)));
+	// }, []);
 
 	return (
 		<div className={styles.seccions}>

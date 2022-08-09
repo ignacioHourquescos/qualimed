@@ -6,7 +6,7 @@ const Hero = () => {
 		<>
 			<div className={styles.hero}>
 				<div className={styles.seccion1}>
-					<img className={styles.logo_container} src="./Logo_blanco.png"></img>
+					<img className={styles.logo_container} src="./Logo_blanco.png" alt="Qualimed"></img>
 
 					<p>INSUMOS Y EQUIPAMIENTO MEDICO</p>
 					<div className={styles.divSearch}></div>

@@ -41,11 +41,14 @@ const Header = () => {
                 </DropdownToggle>
                 <DropdownMenu tag="div" className={styles.dropdownMenu}>
                   <div className={styles.dropdownSubMenu}>
-                    <Link  as={`/products/` + equipamiento}
-                      href={`/products/` + equipamiento} passHref>
+                    <Link
+                      as={`/products/` + equipamiento}
+                      href={`/products/` + equipamiento}
+                      passHref
+                    >
                       <a>
                         <img src="/ventilatorIcon.png" alt="insumos medicos" />
-                        Equipamiento1
+                        Equipamiento
                       </a>
                     </Link>
 

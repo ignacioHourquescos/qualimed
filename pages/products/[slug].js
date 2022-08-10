@@ -63,8 +63,15 @@ const Index = ({ allProducts, slug }) => {
   const brandFilter = (brand) => {
     if (!brand) {
       setProducts(allProducts);
+      setBrandsList(
+        allProducts.filter((element) =>
+          element.category.includes(categoryToParamConverter(slug))
+        )
+      );
     } else {
-      setProducts(allProducts.filter((item) => item.brand.includes(brand.toString())));
+      setProducts(
+        allProducts.filter((item) => item.brand.includes(brand.toString()))
+      );
       setBrandsList(
         allProducts.filter((element) =>
           element.category.includes(categoryToParamConverter(slug))

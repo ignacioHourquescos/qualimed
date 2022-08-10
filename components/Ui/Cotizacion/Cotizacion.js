@@ -2,18 +2,18 @@ import { Form } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { openNotificationWithIcon, TYPE } from "../utils/notificationToast";
 import styles from "./Cotizacion.module.scss";
+import emailjs from "@emailjs/browser";
 
-
-const Cotizacion = ({title, subtitle, code, merlibre}) => {
+const Cotizacion = ({ title, subtitle, code, merlibre }) => {
   const [displayUserForm, setDisplayUserForm] = useState(false);
+  const [sending, setSending] = useState(false);
   const form = useRef();
 
   const displayUserFormHandler = () => {
     setDisplayUserForm(!displayUserForm);
   };
-
-  const [sending, setSending] = useState(false);
 
   const sendEmail = (e, captchaValue) => {
     e.preventDefault();
@@ -29,19 +29,22 @@ const Cotizacion = ({title, subtitle, code, merlibre}) => {
 
       .then(
         (result) => {
-          console.log(result.text);
+          console.log("SUCCESS", result.text);
           setSending(false);
           setDisplayUserForm(false);
+          openNotificationWithIcon(TYPE.SUCCESS, ("SUCCESS", result.text));
         },
         (error) => {
-          console.log(error.text);
+          setSending(false);
+          console.log("ERROR", error.text);
           setDisplayUserForm(false);
+          openNotificationWithIcon(TYPE.ERROR, ("ERROR", error.text));
         }
       );
   };
 
   const URL = "https://wa.me";
-  let number = "+54 011 47162699";
+  let number = "+549 11 25379689";
   number = number.replace(/[^\w\s]/gi, "").replace(/ /g, "");
   let url = `${URL}/${number}`;
 
@@ -78,7 +81,7 @@ const Cotizacion = ({title, subtitle, code, merlibre}) => {
           <div className={styles.close} onClick={displayUserFormHandler}>
             {closeIcon}
           </div>
-          <Form
+          <form
             className={styles.form}
             ref={form}
             onSubmit={sendEmail}
@@ -115,7 +118,7 @@ const Cotizacion = ({title, subtitle, code, merlibre}) => {
             <button type="submit" value="Send">
               {!sending ? "Enviar" : "Enviando..."}
             </button>
-          </Form>
+          </form>
         </div>
       ) : (
         ""
@@ -123,11 +126,7 @@ const Cotizacion = ({title, subtitle, code, merlibre}) => {
 
       <a
         className={styles.shopMobile}
-        href={
-          merlibre
-            ? merlibre
-            : "https://qualimed2021.mercadoshops.com.ar/"
-        }
+        href={merlibre ? merlibre : "https://qualimed2021.mercadoshops.com.ar/"}
         target={"_blank"}
         rel={"noreferrer"}
       >
@@ -140,28 +139,28 @@ const Cotizacion = ({title, subtitle, code, merlibre}) => {
 export default Cotizacion;
 
 const closeIcon = (
-    <svg
-      width="21"
-      height="21"
-      viewBox="0 0 21 21"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect
-        x="0.600586"
-        y="18.2778"
-        width="25"
-        height="3"
-        transform="rotate(-45 0.600586 18.2778)"
-        fill="#595858"
-      />
-      <rect
-        x="2.98438"
-        y="1.13428"
-        width="25"
-        height="3"
-        transform="rotate(45 2.98438 1.13428)"
-        fill="#595858"
-      />
-    </svg>
-  );
+  <svg
+    width="21"
+    height="21"
+    viewBox="0 0 21 21"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.600586"
+      y="18.2778"
+      width="25"
+      height="3"
+      transform="rotate(-45 0.600586 18.2778)"
+      fill="#595858"
+    />
+    <rect
+      x="2.98438"
+      y="1.13428"
+      width="25"
+      height="3"
+      transform="rotate(45 2.98438 1.13428)"
+      fill="#595858"
+    />
+  </svg>
+);

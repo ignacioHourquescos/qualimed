@@ -28,6 +28,14 @@ const Filter = ({
     }
   }, []);
 
+  function handleChangeToAllProducts() {
+    if (!isDesktop) {
+      changeToAllProducts();
+      closeFilter();
+    }
+    changeToAllProducts();
+  }
+
   function clearProducts() {
     if (!isDesktop) {
       resetValues();
@@ -82,10 +90,17 @@ const Filter = ({
             {closeIcon}
           </div>
 
-          <Form form={form} name="name" layout="vertical" onFinish={onFinish}>
+          <Form
+            form={form}
+            name="name"
+            layout="vertical"
+            onFinish={onFinish}
+            role="search"
+          >
             <h3>Buscador</h3>
             <Row>
               <Form.Item
+                role="search"
                 name="name"
                 rules={[
                   {
@@ -94,11 +109,21 @@ const Filter = ({
                   },
                 ]}
               >
-                <Search allowClear />
+                <Search
+                  allowClear
+                  role="searchbox"
+                  aria-label="Busca cualquier producto"
+                />
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" loading={submitting}>
-                  buscar
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  loading={submitting}
+                  role="search"
+                  className={styles.sendButton}
+                >
+                  Buscar
                 </Button>
               </Form.Item>
             </Row>
@@ -125,7 +150,7 @@ const Filter = ({
               key="1"
             >
               <Link href="/products/equipamiento" passHref>
-                <li onClick={() => changeToAllProducts()}>Todos</li>
+                <li onClick={() => handleChangeToAllProducts()}>Todos</li>
               </Link>
               <Link href="/products/equipamientoVenta" passHref>
                 <li onClick={() => clearProducts()}>Venta</li>
@@ -137,22 +162,24 @@ const Filter = ({
                 <li onClick={() => clearProducts()}>Servicio técnico</li>
               </Link>
             </Panel>
-            <li className={styles.category}>
-              <img src="/maskIcon.png" alt="insumos medicos" />
-              <div>
-                <Link href="/products/insumosMedicos" passHref>
-                  <a onClick={() => clearProducts()}>Insumos médicos</a>
-                </Link>
-              </div>
-            </li>
-            <li className={styles.category}>
-              <img src="/bandageIcon.png" alt="insumos medicos" />
-              <div>
-                <Link href="/products/medicinaDeportiva" passHref>
-                  <a onClick={() => clearProducts()}>Medicina deportiva</a>
-                </Link>
-              </div>
-            </li>
+            <ul className={styles.categoryBox}>
+              <li className={styles.category}>
+                <img src="/maskIcon.png" alt="insumos medicos" />
+                <div>
+                  <Link href="/products/insumosMedicos" passHref>
+                    <a onClick={() => clearProducts()}>Insumos médicos</a>
+                  </Link>
+                </div>
+              </li>
+              <li className={styles.category}>
+                <img src="/bandageIcon.png" alt="insumos medicos" />
+                <div>
+                  <Link href="/products/medicinaDeportiva" passHref>
+                    <a onClick={() => clearProducts()}>Medicina deportiva</a>
+                  </Link>
+                </div>
+              </li>
+            </ul>
           </Collapse>
           <Collapse
             onChange={colorice}

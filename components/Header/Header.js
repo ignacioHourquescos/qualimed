@@ -74,13 +74,6 @@ const Header = () => {
                       </a>
                     </Link>
                   </div>
-
-                  {/* <Link href="/products/marcas" passHref>
-									<DropdownItem>
-										<img src="/labelIcon.png" />
-											<a>Marcas</a>
-									</DropdownItem>
-                  </Link> */}
                 </DropdownMenu>
               </Dropdown>
             </li>

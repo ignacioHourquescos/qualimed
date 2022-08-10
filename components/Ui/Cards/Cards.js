@@ -52,6 +52,8 @@ const Cards = ({ imageUrl, title, description, id, brief, loading, code }) => {
 							style={loaded ? {} : { display: "none" }}
 							onLoad={() => setLoaded(true)}
 							alt="insumos medicos"
+
+							
 						/>
 
 						{loaded ? (

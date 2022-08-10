@@ -1,0 +1,31 @@
+{
+    "code": "POLICY_MODULE",
+    "labelCode": "policy-module",
+    "path": null,
+    "menus": [
+      {
+        "code": "POLICY_ADMIN",
+        "labelCode": "policy-admin-title",
+        "path": null,
+        "menus": [
+          {
+            "code": "POLICY_SEARCH",
+            "labelCode": "search-policy-subtitle",
+            "path": null,
+            "menus": null,
+            "actions": null
+          },
+          {
+            "code": "POLICY_CREATE",
+            "labelCode": "create-policy-subtitle",
+            "path": null,
+            "menus": null,
+            "actions": null
+          }
+        ],
+        "actions": null
+      }
+    ],
+    "services": null,
+    "labels": []
+  }

@@ -32,13 +32,19 @@ const Cotizacion = ({ title, subtitle, code, merlibre }) => {
           console.log("SUCCESS", result.text);
           setSending(false);
           setDisplayUserForm(false);
-          openNotificationWithIcon(TYPE.SUCCESS, ("SUCCESS", result.text));
+          openNotificationWithIcon(
+            TYPE.SUCCESS,
+            ("SUCCESS", result.text, "Mensaje Enviado")
+          );
         },
         (error) => {
           setSending(false);
           console.log("ERROR", error.text);
           setDisplayUserForm(false);
-          openNotificationWithIcon(TYPE.ERROR, ("ERROR", error.text));
+          openNotificationWithIcon(
+            TYPE.ERROR,
+            ("ERROR", error.text, "Error en el envio")
+          );
         }
       );
   };

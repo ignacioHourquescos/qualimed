@@ -3,6 +3,7 @@ import styles from "./ContactLanding.module.scss";
 const URL = "https://wa.me";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import { openNotificationWithIcon, TYPE } from "../Ui/utils/notificationToast";
 
 const ContactLanding = () => {
   const form = useRef();
@@ -41,9 +42,18 @@ const ContactLanding = () => {
         (result) => {
           console.log("SUCCESS", result.text);
           setSending(false);
+          openNotificationWithIcon(
+            TYPE.SUCCESS,
+            ("SUCCESS", result.text, "Mensaje Enviado")
+          );
         },
         (error) => {
           console.log("ERROR", error.text);
+          setSending(false);
+          openNotificationWithIcon(
+            TYPE.ERROR,
+            ("ERROR", error.text, "Error en el envio")
+          );
           setMessage("Hubo un problema!");
         }
       );

@@ -3,7 +3,7 @@ import { Collapse } from "antd";
 import styles from "./Filter.module.scss";
 import Link from "next/link";
 import { Form, Input, Button, Row } from "antd";
-import { UnorderedListOutlined } from "@ant-design/icons";
+import { SearchOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import { useMediaQuery } from "react-responsive";
 const { Search } = Input;
 
@@ -224,7 +224,7 @@ const Filter = ({
         onClick={() => showFilter()}
         style={{ cursor: "pointer" }}
       >
-        <UnorderedListOutlined style={{ color: "#fff", fontSize: "1.2rem" }} />
+        <SearchOutlined style={{ color: "#fff", fontSize: "1.8rem" }} />
       </div>
     </>
   );

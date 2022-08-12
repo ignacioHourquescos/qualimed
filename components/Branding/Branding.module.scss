@@ -34,6 +34,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
+  img{
+    width: 85%;
+  }
+  
 }
 
 .contentMobile {
@@ -80,10 +86,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
 
     img {
-      width: 70%;
+      width: 85%;
       height: 50%;
     }
   }

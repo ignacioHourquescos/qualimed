@@ -28,14 +28,12 @@
 }
 
 .container2 {
-  height: 100%;
   width: 100%;
   // padding: 8%;
   display: grid;
   grid-template-columns: 17% 83%;
   grid-gap: 15px;
   overflow: hidden;
-  background-color: white;
   // border-right: 1px solid grey;
   padding-bottom:5%;
   // padding-top: 2%;
@@ -72,8 +70,6 @@
   grid-column: 2;
   height: 100%;
   min-height: 100vh;
-  background-color: #E5E5E5 !important;
-
   padding: 0% 5% 0 2%;
   padding-bottom: 20%;
 

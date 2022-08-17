@@ -1,17 +1,56 @@
 import Header from "../../components/Header/Header";
 import Products from "../../components/Products/Products";
 import styles from "./index.module.scss";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CarrouselMobile from "../../components/CarrouselMobile/CarrouselMobile";
 import Filter from "../../components/Filter/Filter";
 import Footer from "../../components/Footer/Footer";
-import { useRouter } from "next/router";
 import { useMediaQuery } from "react-responsive";
 import Hero2 from "../../components/Hero2/Hero2";
+import getProducts from "../api/getProducts";
 
-const Index = ({}) => {
-	const router = useRouter();
-	const idCategory = router.query.slug;
+export const getStaticPaths = async () => {
+	const paths = [
+		{ params: { slug: "equipamiento" } },
+		{ params: { slug: "insumosMedicos" } },
+		{ params: { slug: "medicinaDeportiva" } },
+		{ params: { slug: "equipamientoVenta" } },
+		{ params: { slug: "equipamientoAlquiler" } },
+		{ params: { slug: "equipamientoServicioTecnico" } },
+	];
+
+	return {
+		paths,
+		fallback: false,
+	};
+};
+
+export async function getStaticProps(context) {
+	const slug = context.params.slug;
+	const data = await getProducts();
+	const array = data.map((d) => ({
+		code: d[0],
+		category: !d[1] ? "" : d[1],
+		brand: d[2],
+		title: d[3],
+		brief: d[4],
+		description: d[5],
+		application: d[6],
+		techcnial: d[7],
+		img: !d[8]
+			? "barbijo.png"
+			: "https://drive.google.com/uc?export=view&id=" + d[8],
+		ml: !d[9] ? "" : d[9],
+	}));
+	return {
+		props: {
+			allProducts: array,
+			slug,
+		},
+	};
+}
+
+const Index = ({ allProducts, slug }) => {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [selectedBrand, setSelectedBrand] = useState();
@@ -21,104 +60,82 @@ const Index = ({}) => {
 	const [brandsList, setBrandsList] = useState([]);
 	const isDesktop = useMediaQuery({ query: "(min-width: 1000px)" });
 
-	const getProducts = (brand) => {
-		var array = [];
-		let categoriesArray = [];
-		let brandsArray = [];
+	const brandFilter = (brand) => {
+		if (!brand) {
+			setProducts(allProducts);
+			setBrandsList(
+				allProducts.filter((element) =>
+					element.category.includes(categoryToParamConverter(slug))
+				)
+			);
+		} else {
+			setProducts(
+				allProducts.filter((item) => item.brand.includes(brand.toString()))
+			);
+			setBrandsList(
+				allProducts.filter((element) =>
+					element.category.includes(categoryToParamConverter(slug))
+				)
+			);
+		}
+	};
 
-		let sheetName = "MASTER";
-		let fileCode = "1CMfYFGhXhIBEMO-Ob9CZucRujqTdkRSIkD7hM-xaYew"; //codigo de la derecha
-		let APIkey = "AIzaSyAQGQq6Vbh7blIY3J7XwzVrUBDe3tQelm8";
-		setLoading(true);
-		fetch(
-			`https://sheets.googleapis.com/v4/spreadsheets/${fileCode}/values/${sheetName}?alt=json&key=${APIkey}`
-		)
-			.then((response) => response.json())
-
-			.then((data) => {
-				for (var i = 1; i < data.values.length; i++) {
-					array.push({
-						code: data.values[i][0],
-						category: !data.values[i][1] ? "" : data.values[i][1],
-						brand: data.values[i][2],
-						title: data.values[i][3],
-						brief: data.values[i][4],
-						description: data.values[i][5],
-						application: data.values[i][6],
-						techcnial: data.values[i][7],
-						img: !data.values[i][8]
-							? "/placeholder.png"
-							: "https://drive.google.com/uc?export=view&id=" +
-							  data.values[i][8],
-						ml: !data.values[i][9] ? "" : data.values[i][9],
-					});
-
-					categoriesArray.push(data.values[i][0]);
-					brandsArray.push(data.values[i][2]);
-				}
-				if (!brand) setProducts(array);
-				else
-					setProducts(array.filter((item) => item.brand == brand.toString()));
-				setBrandsList(
-					array.filter(
-						(element) =>
-							element.category == categoryToParamConverter(idCategory)
-					)
-				);
-			})
-			.then((data) => {
-				setLoading(false);
-			});
+	const changeToAllProducts = () => {
+		setInitialValues(true);
+		setSelectedBrand();
+		setLookUpValue();
+		setProducts(allProducts);
 	};
 
 	useEffect(() => {
-		getProducts();
-	}, [idCategory]);
+		brandFilter();
+		setLoading(false);
+	}, [slug]);
 
 	useEffect(() => {
-		if (idCategory == "insumosMedicos")
+		if (slug == "insumosMedicos")
 			setRouterContent([
 				"INSUMOS MEDICOS",
 				setInitialValues(true),
 				"Insumos Medicos",
 				"../insumosMedMin.jpg",
 			]);
-		if (idCategory == "equipamiento")
+		if (slug == "equipamiento")
 			setRouterContent([
 				"EQUIPAMIENTO",
 				setInitialValues(true),
 				"Equipamiento",
 				"../Equipamiento2.jpg",
 			]);
-		if (idCategory == "medicinaDeportiva")
+		if (slug == "medicinaDeportiva")
 			setRouterContent([
 				"MEDICINA DEPORTIVA",
 				setInitialValues(true),
 				"Medicina Deportiva",
 				"../MedDepSub.jpg",
 			]);
-		if (idCategory == "equipamientoVenta")
+		if (slug == "equipamientoVenta")
 			setRouterContent([
 				"EQUIPAMIENTO VENTA",
 				setInitialValues(true),
 				"Equipamiento Venta",
 				"../Equipamiento2.jpg",
 			]);
-		if (idCategory == "equipamientoAlquiler")
+		if (slug == "equipamientoAlquiler")
 			setRouterContent([
 				"EQUIPAMIENTO ALQUILER",
 				setInitialValues(true),
 				"Equipamiento Alquiler",
 				"../Equipamiento2.jpg",
 			]);
-		if (idCategory == "equipamientoServicioTecnico")
+		if (slug == "equipamientoServicioTecnico")
 			setRouterContent([
 				"EQUIPAMIENTO SERVICIO TECNICO",
 				setInitialValues(true),
 				"Equipamiento Servicio Técnico",
 				"../Equipamiento2.jpg",
 			]);
-	}, [idCategory]);
+	}, [slug]);
 
 	const testFunction = (e) => {
 		e.preventDefault();
@@ -130,24 +147,8 @@ const Index = ({}) => {
 		setLookUpValue();
 	};
 
-	// const withoutSpaces = (element) => {
-	//   if (!element == null) {
-	//    return replace(/ /g, '')
-	//   }
-	// }
-
 	const brandClickHandler = (element) => {
-		getProducts(element);
-		console.log("MARCA ELEGIDA", element);
-		console.log("PRODUCTS", products);
-		// const fitleredProducts = products.filter(
-		// 	(item) => item.brand == element.toString()
-		// );
-		// setProducts(fitleredProducts);
-		// setBrandSelection(brandSelection+1)
-		// setInitialValues(false);
-		// setSelectedBrand(element);
-		// setLookUpValue("  ");
+		brandFilter(element);
 	};
 
 	const lookUpValueHandler = (element) => {
@@ -160,7 +161,6 @@ const Index = ({}) => {
 		<>
 			<Header />
 			<Hero2 title={routerContent[2]} img={routerContent[3]} color="white" />
-
 			<div className={styles.container}>
 				<div
 					style={{ background: "#E5E5E5", overflow: "hidden" }}
@@ -174,6 +174,7 @@ const Index = ({}) => {
 							brands={brandsList.map((e) => e.brand)}
 							brandClickHandler={brandClickHandler}
 							lookUpValueHandler={lookUpValueHandler}
+							changeToAllProducts={changeToAllProducts}
 						/>
 						<div className={styles.products}>
 							{initialValues ? (

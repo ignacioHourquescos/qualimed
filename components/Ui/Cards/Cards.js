@@ -52,6 +52,8 @@ const Cards = ({ imageUrl, title, description, id, brief, loading, code }) => {
 							style={loaded ? {} : { display: "none" }}
 							onLoad={() => setLoaded(true)}
 							alt="insumos medicos"
+
+							
 						/>
 
 						{loaded ? (
@@ -60,8 +62,8 @@ const Cards = ({ imageUrl, title, description, id, brief, loading, code }) => {
 								<p>{brief}</p>
 
 								<Link
-									as={`/productDesc/${code}`}
-									href={`/productDesc/${code}`}
+									as={`/productDesc/` + code.toString().toLowerCase().trim()}
+									href={`/productDesc/` + code.toString().toLowerCase().trim()}
 									passHref
 								>
 									{/* <Link

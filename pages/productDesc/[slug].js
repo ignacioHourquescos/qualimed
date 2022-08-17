@@ -37,6 +37,7 @@ export const getStaticProps = async (context) => {
 	);
 	return {
 		props: { data: arrayFiltered },
+		revalidate: 10,
 	};
 };
 

@@ -9,7 +9,6 @@ import Hero2 from "../../components/Hero2/Hero2";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import Loader from "../../components/Ui/Loader/Loader";
-import { getProducts } from "../api/getProducts";
 
 const Index = () => {
 	// const {img, title, description, application, techcnial, code} = products;

@@ -47,7 +47,7 @@ export async function getStaticProps(context) {
 			allProducts: array,
 			slug,
 		},
-		revalidate: 10,
+		revalidate: 1,
 	};
 }
 
